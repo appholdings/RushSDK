@@ -8,16 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		96224AD3252CA8E4002C1988 /* RushSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 96224AD1252CA8E4002C1988 /* RushSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE4252CE39B002C1988 /* AppDelegate.swift */; };
+		96224AE9252CE39B002C1988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE8252CE39B002C1988 /* ViewController.swift */; };
+		96224AEE252CE39C002C1988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96224AED252CE39C002C1988 /* Assets.xcassets */; };
+		96224AF1252CE39C002C1988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96224AEF252CE39C002C1988 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		96224ACE252CA8E4002C1988 /* RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96224AD1252CA8E4002C1988 /* RushSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RushSDK.h; sourceTree = "<group>"; };
 		96224AD2252CA8E4002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96224AE2252CE39B002C1988 /* RushSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RushSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96224AE4252CE39B002C1988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96224AE8252CE39B002C1988 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96224AED252CE39C002C1988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96224AF0252CE39C002C1988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96224AF2252CE39C002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		96224ACB252CA8E4002C1988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96224ADF252CE39B002C1988 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				96224AD0252CA8E4002C1988 /* RushSDK */,
+				96224AE3252CE39B002C1988 /* RushSDKSample */,
 				96224ACF252CA8E4002C1988 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				96224ACE252CA8E4002C1988 /* RushSDK.framework */,
+				96224AE2252CE39B002C1988 /* RushSDKSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,6 +69,18 @@
 				96224AD2252CA8E4002C1988 /* Info.plist */,
 			);
 			path = RushSDK;
+			sourceTree = "<group>";
+		};
+		96224AE3252CE39B002C1988 /* RushSDKSample */ = {
+			isa = PBXGroup;
+			children = (
+				96224AE4252CE39B002C1988 /* AppDelegate.swift */,
+				96224AE8252CE39B002C1988 /* ViewController.swift */,
+				96224AED252CE39C002C1988 /* Assets.xcassets */,
+				96224AEF252CE39C002C1988 /* LaunchScreen.storyboard */,
+				96224AF2252CE39C002C1988 /* Info.plist */,
+			);
+			path = RushSDKSample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,17 +115,38 @@
 			productReference = 96224ACE252CA8E4002C1988 /* RushSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		96224AE1252CE39B002C1988 /* RushSDKSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96224AF3252CE39C002C1988 /* Build configuration list for PBXNativeTarget "RushSDKSample" */;
+			buildPhases = (
+				96224ADE252CE39B002C1988 /* Sources */,
+				96224ADF252CE39B002C1988 /* Frameworks */,
+				96224AE0252CE39B002C1988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RushSDKSample;
+			productName = RushSDKSample;
+			productReference = 96224AE2252CE39B002C1988 /* RushSDKSample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		96224AC5252CA8E4002C1988 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					96224ACD252CA8E4002C1988 = {
 						CreatedOnToolsVersion = 12.0.1;
 						LastSwiftMigration = 1200;
+					};
+					96224AE1252CE39B002C1988 = {
+						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
@@ -112,6 +164,7 @@
 			projectRoot = "";
 			targets = (
 				96224ACD252CA8E4002C1988 /* RushSDK */,
+				96224AE1252CE39B002C1988 /* RushSDKSample */,
 			);
 		};
 /* End PBXProject section */
@@ -121,6 +174,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96224AE0252CE39B002C1988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96224AF1252CE39C002C1988 /* LaunchScreen.storyboard in Resources */,
+				96224AEE252CE39C002C1988 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +196,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96224ADE252CE39B002C1988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96224AE9252CE39B002C1988 /* ViewController.swift in Sources */,
+				96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96224AEF252CE39C002C1988 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96224AF0252CE39C002C1988 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		96224AD4252CA8E4002C1988 /* Debug */ = {
@@ -314,6 +396,46 @@
 			};
 			name = Release;
 		};
+		96224AF4252CE39C002C1988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UDD4QZUY96;
+				INFOPLIST_FILE = RushSDKSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDKSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		96224AF5252CE39C002C1988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UDD4QZUY96;
+				INFOPLIST_FILE = RushSDKSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDKSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +453,15 @@
 			buildConfigurations = (
 				96224AD7252CA8E4002C1988 /* Debug */,
 				96224AD8252CA8E4002C1988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96224AF3252CE39C002C1988 /* Build configuration list for PBXNativeTarget "RushSDKSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96224AF4252CE39C002C1988 /* Debug */,
+				96224AF5252CE39C002C1988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
