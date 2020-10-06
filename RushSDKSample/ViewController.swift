@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RushSDK
 
 class ViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
         view.addSubview(button)
         return button
     }()
+    
+    private let test = Test()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,8 +1,22 @@
 PODS:
   - RushSDK (1.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - RushSDK (from `.`)
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 EXTERNAL SOURCES:
   RushSDK:
@@ -10,7 +24,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   RushSDK: c89d1c33cdd1ddbcb8a86ad747d44cd0104eb3e7
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 41d4e10845bf0bf1cc2a2a471797cb98538acd64
+PODFILE CHECKSUM: 711710b7e6157574b31a037e1b00c0e99174726d
 
 COCOAPODS: 1.10.0.rc.1
