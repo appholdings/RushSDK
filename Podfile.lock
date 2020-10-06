@@ -1,0 +1,16 @@
+PODS:
+  - RushSDK (1.0)
+
+DEPENDENCIES:
+  - RushSDK (from `.`)
+
+EXTERNAL SOURCES:
+  RushSDK:
+    :path: "."
+
+SPEC CHECKSUMS:
+  RushSDK: c89d1c33cdd1ddbcb8a86ad747d44cd0104eb3e7
+
+PODFILE CHECKSUM: 41d4e10845bf0bf1cc2a2a471797cb98538acd64
+
+COCOAPODS: 1.10.0.rc.1

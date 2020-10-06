@@ -36,3 +36,5 @@ contents.xcworkspacedata
 *.generated.swift
 
 .idea/
+
+Pods/

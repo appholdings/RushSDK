@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0B89C955D809F6214FDC96 /* Pods_RushSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */; };
 		96224AD3252CA8E4002C1988 /* RushSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 96224AD1252CA8E4002C1988 /* RushSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE4252CE39B002C1988 /* AppDelegate.swift */; };
 		96224AE9252CE39B002C1988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE8252CE39B002C1988 /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48704A6EA165B99A5D78DA28 /* Pods-RushSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-RushSDKSample/Pods-RushSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
+		9425EFACF97695F8CE13EDC1 /* Pods-RushSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDKSample.release.xcconfig"; path = "Target Support Files/Pods-RushSDKSample/Pods-RushSDKSample.release.xcconfig"; sourceTree = "<group>"; };
 		96224ACE252CA8E4002C1988 /* RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96224AD1252CA8E4002C1988 /* RushSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RushSDK.h; sourceTree = "<group>"; };
 		96224AD2252CA8E4002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		96224AED252CE39C002C1988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96224AF0252CE39C002C1988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96224AF2252CE39C002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0B89C955D809F6214FDC96 /* Pods_RushSDKSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 				96224AD0252CA8E4002C1988 /* RushSDK */,
 				96224AE3252CE39B002C1988 /* RushSDKSample */,
 				96224ACF252CA8E4002C1988 /* Products */,
+				AC18086969F08593E8470DD1 /* Pods */,
+				CBC1C6D9DAE95973CBC73724 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +88,24 @@
 				96224AF2252CE39C002C1988 /* Info.plist */,
 			);
 			path = RushSDKSample;
+			sourceTree = "<group>";
+		};
+		AC18086969F08593E8470DD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48704A6EA165B99A5D78DA28 /* Pods-RushSDKSample.debug.xcconfig */,
+				9425EFACF97695F8CE13EDC1 /* Pods-RushSDKSample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CBC1C6D9DAE95973CBC73724 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +144,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96224AF3252CE39C002C1988 /* Build configuration list for PBXNativeTarget "RushSDKSample" */;
 			buildPhases = (
+				A59DE1B49B4E850158A0387E /* [CP] Check Pods Manifest.lock */,
 				96224ADE252CE39B002C1988 /* Sources */,
 				96224ADF252CE39B002C1988 /* Frameworks */,
 				96224AE0252CE39B002C1988 /* Resources */,
@@ -187,6 +213,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A59DE1B49B4E850158A0387E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RushSDKSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		96224ACA252CA8E4002C1988 /* Sources */ = {
@@ -398,6 +449,7 @@
 		};
 		96224AF4252CE39C002C1988 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48704A6EA165B99A5D78DA28 /* Pods-RushSDKSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -418,6 +470,7 @@
 		};
 		96224AF5252CE39C002C1988 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9425EFACF97695F8CE13EDC1 /* Pods-RushSDKSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
