@@ -11,10 +11,8 @@
 		8BDB76EC1450EAD44912637B /* Pods_RushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */; };
 		96224AD3252CA8E4002C1988 /* RushSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 96224AD1252CA8E4002C1988 /* RushSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE4252CE39B002C1988 /* AppDelegate.swift */; };
-		96224AE9252CE39B002C1988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE8252CE39B002C1988 /* ViewController.swift */; };
 		96224AEE252CE39C002C1988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96224AED252CE39C002C1988 /* Assets.xcassets */; };
 		96224AF1252CE39C002C1988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96224AEF252CE39C002C1988 /* LaunchScreen.storyboard */; };
-		96224B16252CFBA3002C1988 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224B15252CFBA3002C1988 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +25,9 @@
 		96224AD2252CA8E4002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96224AE2252CE39B002C1988 /* RushSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RushSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96224AE4252CE39B002C1988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96224AE8252CE39B002C1988 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96224AED252CE39C002C1988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96224AF0252CE39C002C1988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96224AF2252CE39C002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96224B15252CFBA3002C1988 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,7 +77,6 @@
 			children = (
 				96224AD1252CA8E4002C1988 /* RushSDK.h */,
 				96224AD2252CA8E4002C1988 /* Info.plist */,
-				96224B15252CFBA3002C1988 /* Test.swift */,
 			);
 			path = RushSDK;
 			sourceTree = "<group>";
@@ -90,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				96224AE4252CE39B002C1988 /* AppDelegate.swift */,
-				96224AE8252CE39B002C1988 /* ViewController.swift */,
 				96224AED252CE39C002C1988 /* Assets.xcassets */,
 				96224AEF252CE39C002C1988 /* LaunchScreen.storyboard */,
 				96224AF2252CE39C002C1988 /* Info.plist */,
@@ -295,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96224B16252CFBA3002C1988 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +296,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96224AE9252CE39B002C1988 /* ViewController.swift in Sources */,
 				96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +455,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -493,7 +485,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
