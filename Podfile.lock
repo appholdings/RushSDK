@@ -1,7 +1,30 @@
 PODS:
   - Alamofire (5.1.0)
+  - Amplitude-iOS (4.10.0)
+  - Branch (0.33.1):
+    - Branch/Core (= 0.33.1)
+  - Branch/Core (0.33.1)
+  - FacebookSDK (6.5.1):
+    - FacebookSDK/CoreKit (= 6.5.1)
+    - FacebookSDK/MarketingKit (= 6.5.1)
+  - FacebookSDK/CoreKit (6.5.1):
+    - FBSDKCoreKit (~> 6.5.1)
+  - FacebookSDK/MarketingKit (6.5.1):
+    - FacebookSDK/CoreKit
+    - FBSDKMarketingKit (~> 6.5.1)
+  - FBSDKCoreKit (6.5.2):
+    - FBSDKCoreKit/Basics (= 6.5.2)
+    - FBSDKCoreKit/Core (= 6.5.2)
+  - FBSDKCoreKit/Basics (6.5.2)
+  - FBSDKCoreKit/Core (6.5.2):
+    - FBSDKCoreKit/Basics
+  - FBSDKMarketingKit (6.5.2):
+    - FBSDKCoreKit (~> 6.5.2)
   - RushSDK (1.1.4):
     - Alamofire
+    - Amplitude-iOS
+    - Branch
+    - FacebookSDK
     - RxCocoa
     - RxSwift
     - SwiftyStoreKit
@@ -15,6 +38,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Amplitude-iOS
+  - Branch
+  - FacebookSDK
   - RushSDK (from `.`)
   - RxCocoa
   - RxSwift
@@ -23,6 +49,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Amplitude-iOS
+    - Branch
+    - FacebookSDK
+    - FBSDKCoreKit
+    - FBSDKMarketingKit
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -34,12 +65,17 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  RushSDK: d0461c6c9c0799abbb576c06934d5f08dd582a25
+  Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
+  Branch: 65d05ffb137ef504777cff6bd4fb6f770f17145a
+  FacebookSDK: cb4b62619b27a9712170d82a95f7ebd48a4720da
+  FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
+  FBSDKMarketingKit: 2c6f0e0e2c16179d8bdf9a4921e68500a4cce4d8
+  RushSDK: e85f93440189ca22ce6d6660371760977bf1f02c
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: cc3614b87c4048a00d9eca511b25592c486f5533
+PODFILE CHECKSUM: 048ad20e813951922c7fb3034fa53acd3ba32c7e
 
 COCOAPODS: 1.10.0.rc.1

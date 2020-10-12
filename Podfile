@@ -10,7 +10,13 @@ end
 
 target 'RushSDK' do
   pod 'Alamofire'
+  
   pod 'RxSwift'
   pod 'RxCocoa'
+  
   pod 'SwiftyStoreKit'
+  
+  pod 'FacebookSDK'
+  pod 'Amplitude-iOS'
+  pod 'Branch'
 end

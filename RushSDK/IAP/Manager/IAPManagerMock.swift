@@ -9,11 +9,11 @@ import RxSwift
 import SwiftyStoreKit
 import StoreKit
 
-public final class IAPManagerMock: IAPManager {}
+final class IAPManagerMock: IAPManager {}
 
 // MARK: IAPManager(initialize)
 
-public extension IAPManagerMock {
+extension IAPManagerMock {
     static func initialize() {
         SwiftyStoreKit.completeTransactions { purchases in
             for purchase in purchases {
@@ -28,7 +28,7 @@ public extension IAPManagerMock {
 
 // MARK: IAPManager(obtain)
 
-public extension IAPManagerMock {
+extension IAPManagerMock {
     // Мокер возвращает фейковые продукты, не применимые к использованию c Core менеджерами.
     func obtainProducts(ids: [String]) -> Single<[IAPProduct]> {
         Single<[IAPProduct]>
@@ -48,7 +48,7 @@ public extension IAPManagerMock {
 
 // MARK: IAPManager(actions)
 
-public extension IAPManagerMock {
+extension IAPManagerMock {
     func buyProduct(with id: String) -> Single<IAPActionResult> {
         guard SwiftyStoreKit.canMakePayments else {
             return .error(IAPError(.paymentsDisabled))
@@ -76,7 +76,7 @@ public extension IAPManagerMock {
 
 // MARK: IAPManager(receipt)
 
-public extension IAPManagerMock {
+extension IAPManagerMock {
     // forceUpdate игнорируется в мокере
     func retrieveReceipt(forceUpdate: Bool) -> Single<String?> {
         .deferred {

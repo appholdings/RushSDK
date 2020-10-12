@@ -5,8 +5,8 @@
 //  Created by Andrey Chernyshev on 09.10.2020.
 //
 
-final class SDKStorage {
-    static let shared = SDKStorage()
+public final class SDKStorage {
+    public static let shared = SDKStorage()
     
     private init() {}
     
@@ -20,10 +20,21 @@ final class SDKStorage {
     var isTest: Bool = false
     
     // MARK: Dependencies
-    var restApiTransport: RestAPITransport {
+    public var restApiTransport: RestAPITransport {
         RestAPITransport()
     }
-    var iapManager: IAPManager {
+    public var iapManager: IAPManager {
         isTest ? IAPManagerMock() : IAPManagerCore()
+    }
+    var abTestsManager: ABTestsManager {
+        isTest ? ABTestsManagerMock() : ABTestsManagerCore()
+    }
+    
+    // MARK: Computed
+    public var applicationAnonymousID: String {
+        ApplicationAnonymousID.anonymousID
+    }
+    public var abTestsOutput: ABTestsOutput? {
+        abTestsManager.getCachedTests()
     }
 }

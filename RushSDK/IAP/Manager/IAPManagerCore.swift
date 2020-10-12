@@ -8,11 +8,11 @@
 import RxSwift
 import SwiftyStoreKit
 
-public final class IAPManagerCore: IAPManager {}
+final class IAPManagerCore: IAPManager {}
 
 // MARK: IAPManager(initialize)
 
-public extension IAPManagerCore {
+extension IAPManagerCore {
     static func initialize() {
         SwiftyStoreKit.completeTransactions { purchases in
             for purchase in purchases {
@@ -27,7 +27,7 @@ public extension IAPManagerCore {
 
 // MARK: IAPManager(obtain)
 
-public extension IAPManagerCore {
+extension IAPManagerCore {
     func obtainProducts(ids: [String]) -> Single<[IAPProduct]> {
         Single<[IAPProduct]>
             .create { event in
@@ -44,7 +44,7 @@ public extension IAPManagerCore {
 
 // MARK: IAPManager(actions)
 
-public extension IAPManagerCore {
+extension IAPManagerCore {
     func buyProduct(with id: String) -> Single<IAPActionResult> {
         guard SwiftyStoreKit.canMakePayments else {
             return .error(IAPError(.paymentsDisabled))
@@ -91,7 +91,7 @@ public extension IAPManagerCore {
 
 // MARK: IAPManager(receipt)
 
-public extension IAPManagerCore {
+extension IAPManagerCore {
     func retrieveReceipt(forceUpdate: Bool) -> Single<String?> {
         Single<String?>
             .create { event in

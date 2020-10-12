@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RushSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

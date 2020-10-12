@@ -16,4 +16,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'RxSwift'
   spec.dependency 'RxCocoa'
   spec.dependency 'SwiftyStoreKit'
+  spec.dependency 'FacebookSDK'
+  spec.dependency 'Amplitude-iOS'
+  spec.dependency 'Branch'
 end
