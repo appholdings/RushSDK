@@ -42,15 +42,3 @@ public extension SDKProvider {
         
     }
 }
-
-// MARK: Обновление
-
-public extension SDKProvider {
-    func set(userToken: String) {
-        SDKStorage.shared.userToken = userToken
-    }
-    
-    func set(userId: Int) {
-        SDKStorage.shared.userId = userId
-    }
-}

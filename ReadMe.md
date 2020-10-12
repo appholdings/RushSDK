@@ -20,3 +20,8 @@ ApplicationAnonymousID - хранилище anonymousId для фиче-прил
 5. ABTests
 ABTestsOutput - набор параметров теста 
 ABTestsManager - протокол, описывает интерфейс взаимодействия с AB-тестированием 
+
+6. UserCredentials 
+SDKUserCredentialsFeatureAppDelegate - делегат для уведомления фиче-приложения об изменении userId/userToken
+SDKUserCredentialsDelegate - делегат для уведомления sdk об изменении userId/userToken
+SDKUserCredentialsMediator - посредник для уведомления об изменении userId/userToken между фиче-приложением и sdk, а так же в самом sdk 

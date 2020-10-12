@@ -37,6 +37,10 @@
 		96224CA725349108002C1988 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CA625349108002C1988 /* Weak.swift */; };
 		96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CAA2534942E002C1988 /* ABTestsError.swift */; };
 		96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CAE253495FE002C1988 /* ABTestsManagerMock.swift */; };
+		96224CC42534B4AC002C1988 /* SDKUserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CC32534B4AC002C1988 /* SDKUserCredentials.swift */; };
+		96224CC92534B56E002C1988 /* SDKUserCredentialsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CC82534B56E002C1988 /* SDKUserCredentialsMediator.swift */; };
+		96224CD22534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CD12534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift */; };
+		96224CD82534B9B7002C1988 /* SDKUserCredentialsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CD72534B9B7002C1988 /* SDKUserCredentialsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		96224CA625349108002C1988 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		96224CAA2534942E002C1988 /* ABTestsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestsError.swift; sourceTree = "<group>"; };
 		96224CAE253495FE002C1988 /* ABTestsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestsManagerMock.swift; sourceTree = "<group>"; };
+		96224CC32534B4AC002C1988 /* SDKUserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentials.swift; sourceTree = "<group>"; };
+		96224CC82534B56E002C1988 /* SDKUserCredentialsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsMediator.swift; sourceTree = "<group>"; };
+		96224CD12534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsFeatureAppDelegate.swift; sourceTree = "<group>"; };
+		96224CD72534B9B7002C1988 /* SDKUserCredentialsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsDelegate.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +131,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				96224CC12534B48A002C1988 /* UserCredentials */,
 				96224C7725347F5F002C1988 /* ABTests */,
 				96224C0A252FBAF9002C1988 /* Settings */,
 				96224BAB252F3005002C1988 /* Network */,
@@ -258,6 +267,41 @@
 				96224C9A25348D35002C1988 /* ABTestsResponse.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		96224CC12534B48A002C1988 /* UserCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				96224CD02534B91D002C1988 /* Delegates */,
+				96224CC72534B4F2002C1988 /* Mediator */,
+				96224CC22534B49B002C1988 /* Models */,
+			);
+			path = UserCredentials;
+			sourceTree = "<group>";
+		};
+		96224CC22534B49B002C1988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96224CC32534B4AC002C1988 /* SDKUserCredentials.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96224CC72534B4F2002C1988 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96224CC82534B56E002C1988 /* SDKUserCredentialsMediator.swift */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		96224CD02534B91D002C1988 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				96224CD12534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift */,
+				96224CD72534B9B7002C1988 /* SDKUserCredentialsDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
@@ -461,9 +505,13 @@
 				96224B99252F2C4C002C1988 /* IAPProduct.swift in Sources */,
 				96224C8F25348BFF002C1988 /* ABTestsRequest.swift in Sources */,
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
+				96224CC92534B56E002C1988 /* SDKUserCredentialsMediator.swift in Sources */,
+				96224CC42534B4AC002C1988 /* SDKUserCredentials.swift in Sources */,
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
 				96224CA725349108002C1988 /* Weak.swift in Sources */,
+				96224CD22534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift in Sources */,
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
+				96224CD82534B9B7002C1988 /* SDKUserCredentialsDelegate.swift in Sources */,
 				96224C8825348B3F002C1988 /* ABTestsManager.swift in Sources */,
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */,

@@ -26,6 +26,9 @@ public final class SDKStorage {
     public var iapManager: IAPManager {
         isTest ? IAPManagerMock() : IAPManagerCore()
     }
+    public var userCredentialsMediator: SDKUserCredentialsMediator {
+        SDKUserCredentialsMediator.shared
+    }
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()
     }
