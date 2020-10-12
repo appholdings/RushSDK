@@ -13,6 +13,20 @@
 		96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE4252CE39B002C1988 /* AppDelegate.swift */; };
 		96224AEE252CE39C002C1988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96224AED252CE39C002C1988 /* Assets.xcassets */; };
 		96224AF1252CE39C002C1988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96224AEF252CE39C002C1988 /* LaunchScreen.storyboard */; };
+		96224B99252F2C4C002C1988 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224B98252F2C4C002C1988 /* IAPProduct.swift */; };
+		96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BA4252F2DBB002C1988 /* IAPError.swift */; };
+		96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BAC252F303F002C1988 /* APIRequestBody.swift */; };
+		96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BCE252F34E6002C1988 /* RestAPITransport.swift */; };
+		96224BD5252F3518002C1988 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BD4252F3518002C1988 /* NetworkError.swift */; };
+		96224BD9252F5D7E002C1988 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BD8252F5D7E002C1988 /* IAPManager.swift */; };
+		96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BE6252F628F002C1988 /* IAPManagerCore.swift */; };
+		96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BEA252F63E1002C1988 /* IAPActionResult.swift */; };
+		96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BEE252F7199002C1988 /* IAPErrorHelper.swift */; };
+		96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224BF4252F7BF7002C1988 /* IAPManagerMock.swift */; };
+		96224C1C252FC088002C1988 /* Routines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C1B252FC088002C1988 /* Routines.swift */; };
+		96224C22252FC32B002C1988 /* SDKSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C21252FC32B002C1988 /* SDKSettings.swift */; };
+		96224C2A252FC668002C1988 /* SDKProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C29252FC668002C1988 /* SDKProvider.swift */; };
+		96224C3025306773002C1988 /* SDKStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224C2F25306773002C1988 /* SDKStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +42,20 @@
 		96224AED252CE39C002C1988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96224AF0252CE39C002C1988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96224AF2252CE39C002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96224B98252F2C4C002C1988 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
+		96224BA4252F2DBB002C1988 /* IAPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPError.swift; sourceTree = "<group>"; };
+		96224BAC252F303F002C1988 /* APIRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBody.swift; sourceTree = "<group>"; };
+		96224BCE252F34E6002C1988 /* RestAPITransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPITransport.swift; sourceTree = "<group>"; };
+		96224BD4252F3518002C1988 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		96224BD8252F5D7E002C1988 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		96224BE6252F628F002C1988 /* IAPManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManagerCore.swift; sourceTree = "<group>"; };
+		96224BEA252F63E1002C1988 /* IAPActionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPActionResult.swift; sourceTree = "<group>"; };
+		96224BEE252F7199002C1988 /* IAPErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPErrorHelper.swift; sourceTree = "<group>"; };
+		96224BF4252F7BF7002C1988 /* IAPManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManagerMock.swift; sourceTree = "<group>"; };
+		96224C1B252FC088002C1988 /* Routines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routines.swift; sourceTree = "<group>"; };
+		96224C21252FC32B002C1988 /* SDKSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKSettings.swift; sourceTree = "<group>"; };
+		96224C29252FC668002C1988 /* SDKProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKProvider.swift; sourceTree = "<group>"; };
+		96224C2F25306773002C1988 /* SDKStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKStorage.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,8 +103,12 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				96224C0A252FBAF9002C1988 /* Settings */,
+				96224BAB252F3005002C1988 /* Network */,
+				96224B96252F2C30002C1988 /* IAP */,
 				96224AD1252CA8E4002C1988 /* RushSDK.h */,
 				96224AD2252CA8E4002C1988 /* Info.plist */,
+				96224C1B252FC088002C1988 /* Routines.swift */,
 			);
 			path = RushSDK;
 			sourceTree = "<group>";
@@ -90,6 +122,80 @@
 				96224AF2252CE39C002C1988 /* Info.plist */,
 			);
 			path = RushSDKSample;
+			sourceTree = "<group>";
+		};
+		96224B96252F2C30002C1988 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				96224BAA252F2FA3002C1988 /* Manager */,
+				96224BA3252F2D9F002C1988 /* Errors */,
+				96224B97252F2C39002C1988 /* Models */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
+		96224B97252F2C39002C1988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96224B98252F2C4C002C1988 /* IAPProduct.swift */,
+				96224BEA252F63E1002C1988 /* IAPActionResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96224BA3252F2D9F002C1988 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				96224BA4252F2DBB002C1988 /* IAPError.swift */,
+				96224BEE252F7199002C1988 /* IAPErrorHelper.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		96224BAA252F2FA3002C1988 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96224BD8252F5D7E002C1988 /* IAPManager.swift */,
+				96224BE6252F628F002C1988 /* IAPManagerCore.swift */,
+				96224BF4252F7BF7002C1988 /* IAPManagerMock.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		96224BAB252F3005002C1988 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				96224BAC252F303F002C1988 /* APIRequestBody.swift */,
+				96224BCE252F34E6002C1988 /* RestAPITransport.swift */,
+				96224BD4252F3518002C1988 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		96224C0A252FBAF9002C1988 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				96224C28252FC657002C1988 /* Provider */,
+				96224C25252FC32E002C1988 /* Models */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		96224C25252FC32E002C1988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96224C21252FC32B002C1988 /* SDKSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96224C28252FC657002C1988 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				96224C29252FC668002C1988 /* SDKProvider.swift */,
+				96224C2F25306773002C1988 /* SDKStorage.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
@@ -289,6 +395,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96224BD9252F5D7E002C1988 /* IAPManager.swift in Sources */,
+				96224B99252F2C4C002C1988 /* IAPProduct.swift in Sources */,
+				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
+				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
+				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
+				96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */,
+				96224C2A252FC668002C1988 /* SDKProvider.swift in Sources */,
+				96224C22252FC32B002C1988 /* SDKSettings.swift in Sources */,
+				96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */,
+				96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */,
+				96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */,
+				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
+				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
+				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
