@@ -50,6 +50,8 @@
 		96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DAD2535E149002C1988 /* SDKPurchaseMediator.swift */; };
 		96224DB52535E374002C1988 /* SDKIAPMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DB42535E374002C1988 /* SDKIAPMediator.swift */; };
 		96224DB92535E38B002C1988 /* SDKIAPMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DB82535E38B002C1988 /* SDKIAPMediatorDelegate.swift */; };
+		96224DCC2535EE8D002C1988 /* UserCredentialsMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DCB2535EE8D002C1988 /* UserCredentialsMediatorDelegate.swift */; };
+		96224DD02535EF53002C1988 /* SDKUserCredentialsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DCF2535EF53002C1988 /* SDKUserCredentialsMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		96224DAD2535E149002C1988 /* SDKPurchaseMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKPurchaseMediator.swift; sourceTree = "<group>"; };
 		96224DB42535E374002C1988 /* SDKIAPMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKIAPMediator.swift; sourceTree = "<group>"; };
 		96224DB82535E38B002C1988 /* SDKIAPMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKIAPMediatorDelegate.swift; sourceTree = "<group>"; };
+		96224DCB2535EE8D002C1988 /* UserCredentialsMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsMediatorDelegate.swift; sourceTree = "<group>"; };
+		96224DCF2535EF53002C1988 /* SDKUserCredentialsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsMediator.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +230,7 @@
 		96224C0A252FBAF9002C1988 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				96224DC82535ED9A002C1988 /* UserCredentials */,
 				96224C28252FC657002C1988 /* Provider */,
 				96224C25252FC32E002C1988 /* Models */,
 			);
@@ -383,6 +388,31 @@
 			isa = PBXGroup;
 			children = (
 				96224DB42535E374002C1988 /* SDKIAPMediator.swift */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		96224DC82535ED9A002C1988 /* UserCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				96224DCA2535EDA8002C1988 /* Mediator */,
+				96224DC92535EDA2002C1988 /* Delegates */,
+			);
+			path = UserCredentials;
+			sourceTree = "<group>";
+		};
+		96224DC92535EDA2002C1988 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				96224DCB2535EE8D002C1988 /* UserCredentialsMediatorDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		96224DCA2535EDA8002C1988 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96224DCF2535EF53002C1988 /* SDKUserCredentialsMediator.swift */,
 			);
 			path = Mediator;
 			sourceTree = "<group>";
@@ -589,6 +619,7 @@
 				96224DB92535E38B002C1988 /* SDKIAPMediatorDelegate.swift in Sources */,
 				96224C8F25348BFF002C1988 /* ABTestsRequest.swift in Sources */,
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
+				96224DD02535EF53002C1988 /* SDKUserCredentialsMediator.swift in Sources */,
 				96224D092535A1F7002C1988 /* PurchaseInteractorCore.swift in Sources */,
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
 				96224DA12535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift in Sources */,
@@ -617,6 +648,7 @@
 				96224CFC253511AC002C1988 /* PurchaseError.swift in Sources */,
 				96224CA325348F9B002C1988 /* ABTestsManagerCore.swift in Sources */,
 				96224C9B25348D35002C1988 /* ABTestsResponse.swift in Sources */,
+				96224DCC2535EE8D002C1988 /* UserCredentialsMediatorDelegate.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
 				96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */,

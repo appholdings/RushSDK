@@ -20,6 +20,6 @@ final class ReceiptValidateResponseMapper {
 }
 
 public struct ReceiptValidateResponse: Decodable {
-    public let userId: String
+    public let userId: Int
     public let userToken: String
 }

@@ -35,6 +35,9 @@ public final class SDKStorage {
     public var purchaseMediator: SDKPurchaseMediator {
         SDKPurchaseMediator.shared
     }
+    public var userCredentialsMediator: SDKUserCredentialsMediator {
+        SDKUserCredentialsMediator.shared
+    }
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()
     }
