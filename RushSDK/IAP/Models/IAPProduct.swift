@@ -8,5 +8,5 @@
 import StoreKit
 
 public struct IAPProduct {
-    let product: SKProduct
+    public let product: SKProduct
 }

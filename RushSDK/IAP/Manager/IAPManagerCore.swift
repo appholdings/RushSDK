@@ -11,7 +11,6 @@ import SwiftyStoreKit
 final class IAPManagerCore: IAPManager {}
 
 // MARK: IAPManager(initialize)
-
 extension IAPManagerCore {
     static func initialize() {
         SwiftyStoreKit.completeTransactions { purchases in
@@ -26,7 +25,6 @@ extension IAPManagerCore {
 }
 
 // MARK: IAPManager(obtain)
-
 extension IAPManagerCore {
     func obtainProducts(ids: [String]) -> Single<[IAPProduct]> {
         Single<[IAPProduct]>
@@ -43,9 +41,50 @@ extension IAPManagerCore {
 }
 
 // MARK: IAPManager(actions)
-
 extension IAPManagerCore {
     func buyProduct(with id: String) -> Single<IAPActionResult> {
+        executeBuyProduct(with: id)
+            .do(onSuccess: { result in
+                SDKStorage.shared.iapMediator.notifyAboutBiedProduct(with: result)
+            })
+    }
+    
+    func restorePurchases() -> Completable {
+        executeRestorePurchases()
+            .do(onCompleted: {
+                SDKStorage.shared.iapMediator.notifyAboutRestoredPurchases()
+            })
+    }
+}
+
+// MARK: IAPManager(receipt)
+extension IAPManagerCore {
+    func retrieveReceipt(forceUpdate: Bool) -> Single<String?> {
+        Single<String?>
+            .create { event in
+                if forceUpdate {
+                    SwiftyStoreKit.fetchReceipt(forceRefresh: true) { result in
+                        switch result {
+                        case .success(let receiptData):
+                            let base64Receipt = receiptData.base64EncodedString()
+                            event(.success(base64Receipt))
+                        case .error:
+                            event(.success(nil))
+                        }
+                    }
+                } else {
+                    let base64Receipt = SwiftyStoreKit.localReceiptData?.base64EncodedString()
+                    event(.success(base64Receipt))
+                }
+                
+                return Disposables.create()
+            }
+    }
+}
+
+// MARK: Private
+private extension IAPManagerCore {
+    func executeBuyProduct(with id: String) -> Single<IAPActionResult> {
         guard SwiftyStoreKit.canMakePayments else {
             return .error(IAPError(.paymentsDisabled))
         }
@@ -73,7 +112,7 @@ extension IAPManagerCore {
             }
     }
     
-    func restorePurchases() -> Completable {
+    func executeRestorePurchases() -> Completable {
         Completable
             .create { event in
                 SwiftyStoreKit.restorePurchases { result in
@@ -82,32 +121,6 @@ extension IAPManagerCore {
                     } else {
                         event(.completed)
                     }
-                }
-                
-                return Disposables.create()
-            }
-    }
-}
-
-// MARK: IAPManager(receipt)
-
-extension IAPManagerCore {
-    func retrieveReceipt(forceUpdate: Bool) -> Single<String?> {
-        Single<String?>
-            .create { event in
-                if forceUpdate {
-                    SwiftyStoreKit.fetchReceipt(forceRefresh: true) { result in
-                        switch result {
-                        case .success(let receiptData):
-                            let base64Receipt = receiptData.base64EncodedString()
-                            event(.success(base64Receipt))
-                        case .error:
-                            event(.success(nil))
-                        }
-                    }
-                } else {
-                    let base64Receipt = SwiftyStoreKit.localReceiptData?.base64EncodedString()
-                    event(.success(base64Receipt))
                 }
                 
                 return Disposables.create()

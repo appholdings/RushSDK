@@ -37,10 +37,19 @@
 		96224CA725349108002C1988 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CA625349108002C1988 /* Weak.swift */; };
 		96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CAA2534942E002C1988 /* ABTestsError.swift */; };
 		96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CAE253495FE002C1988 /* ABTestsManagerMock.swift */; };
-		96224CC42534B4AC002C1988 /* SDKUserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CC32534B4AC002C1988 /* SDKUserCredentials.swift */; };
-		96224CC92534B56E002C1988 /* SDKUserCredentialsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CC82534B56E002C1988 /* SDKUserCredentialsMediator.swift */; };
-		96224CD22534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CD12534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift */; };
-		96224CD82534B9B7002C1988 /* SDKUserCredentialsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CD72534B9B7002C1988 /* SDKUserCredentialsDelegate.swift */; };
+		96224CE2253505A5002C1988 /* ReceiptValidateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CE1253505A5002C1988 /* ReceiptValidateRequest.swift */; };
+		96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CE525350909002C1988 /* ReceiptValidateResponse.swift */; };
+		96224CEB25350C35002C1988 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CEA25350C35002C1988 /* PurchaseManager.swift */; };
+		96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CF025350F43002C1988 /* PurchaseManagerCore.swift */; };
+		96224CFC253511AC002C1988 /* PurchaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CFB253511AC002C1988 /* PurchaseError.swift */; };
+		96224D0025351372002C1988 /* PurchaseManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CFF25351372002C1988 /* PurchaseManagerMock.swift */; };
+		96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224D042535141D002C1988 /* PurchaseInteractor.swift */; };
+		96224D092535A1F7002C1988 /* PurchaseInteractorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224D082535A1F6002C1988 /* PurchaseInteractorCore.swift */; };
+		96224D0D2535A334002C1988 /* PurchaseActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224D0C2535A334002C1988 /* PurchaseActionResult.swift */; };
+		96224DA12535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DA02535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift */; };
+		96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DAD2535E149002C1988 /* SDKPurchaseMediator.swift */; };
+		96224DB52535E374002C1988 /* SDKIAPMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DB42535E374002C1988 /* SDKIAPMediator.swift */; };
+		96224DB92535E38B002C1988 /* SDKIAPMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DB82535E38B002C1988 /* SDKIAPMediatorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,10 +89,19 @@
 		96224CA625349108002C1988 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		96224CAA2534942E002C1988 /* ABTestsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestsError.swift; sourceTree = "<group>"; };
 		96224CAE253495FE002C1988 /* ABTestsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestsManagerMock.swift; sourceTree = "<group>"; };
-		96224CC32534B4AC002C1988 /* SDKUserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentials.swift; sourceTree = "<group>"; };
-		96224CC82534B56E002C1988 /* SDKUserCredentialsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsMediator.swift; sourceTree = "<group>"; };
-		96224CD12534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsFeatureAppDelegate.swift; sourceTree = "<group>"; };
-		96224CD72534B9B7002C1988 /* SDKUserCredentialsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserCredentialsDelegate.swift; sourceTree = "<group>"; };
+		96224CE1253505A5002C1988 /* ReceiptValidateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptValidateRequest.swift; sourceTree = "<group>"; };
+		96224CE525350909002C1988 /* ReceiptValidateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptValidateResponse.swift; sourceTree = "<group>"; };
+		96224CEA25350C35002C1988 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		96224CF025350F43002C1988 /* PurchaseManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManagerCore.swift; sourceTree = "<group>"; };
+		96224CFB253511AC002C1988 /* PurchaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseError.swift; sourceTree = "<group>"; };
+		96224CFF25351372002C1988 /* PurchaseManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManagerMock.swift; sourceTree = "<group>"; };
+		96224D042535141D002C1988 /* PurchaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInteractor.swift; sourceTree = "<group>"; };
+		96224D082535A1F6002C1988 /* PurchaseInteractorCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInteractorCore.swift; sourceTree = "<group>"; };
+		96224D0C2535A334002C1988 /* PurchaseActionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseActionResult.swift; sourceTree = "<group>"; };
+		96224DA02535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKPurchaseMediatorDelegate.swift; sourceTree = "<group>"; };
+		96224DAD2535E149002C1988 /* SDKPurchaseMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKPurchaseMediator.swift; sourceTree = "<group>"; };
+		96224DB42535E374002C1988 /* SDKIAPMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKIAPMediator.swift; sourceTree = "<group>"; };
+		96224DB82535E38B002C1988 /* SDKIAPMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKIAPMediatorDelegate.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,7 +149,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
-				96224CC12534B48A002C1988 /* UserCredentials */,
+				96224CDF2535056B002C1988 /* Purchase */,
 				96224C7725347F5F002C1988 /* ABTests */,
 				96224C0A252FBAF9002C1988 /* Settings */,
 				96224BAB252F3005002C1988 /* Network */,
@@ -159,6 +177,7 @@
 		96224B96252F2C30002C1988 /* IAP */ = {
 			isa = PBXGroup;
 			children = (
+				96224DB12535E351002C1988 /* Mediator */,
 				96224BAA252F2FA3002C1988 /* Manager */,
 				96224BA3252F2D9F002C1988 /* Errors */,
 				96224B97252F2C39002C1988 /* Models */,
@@ -269,39 +288,103 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		96224CC12534B48A002C1988 /* UserCredentials */ = {
+		96224CDF2535056B002C1988 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				96224CD02534B91D002C1988 /* Delegates */,
-				96224CC72534B4F2002C1988 /* Mediator */,
-				96224CC22534B49B002C1988 /* Models */,
+				96224D9D2535D9FC002C1988 /* Mediator */,
+				96224D032535140C002C1988 /* Interactor */,
+				96224CFA2535119C002C1988 /* Models */,
+				96224CE925350BDF002C1988 /* Manager */,
+				96224CE02535057B002C1988 /* Request */,
 			);
-			path = UserCredentials;
+			path = Purchase;
 			sourceTree = "<group>";
 		};
-		96224CC22534B49B002C1988 /* Models */ = {
+		96224CE02535057B002C1988 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				96224CC32534B4AC002C1988 /* SDKUserCredentials.swift */,
+				96224CE1253505A5002C1988 /* ReceiptValidateRequest.swift */,
+				96224CE525350909002C1988 /* ReceiptValidateResponse.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		96224CE925350BDF002C1988 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96224CEA25350C35002C1988 /* PurchaseManager.swift */,
+				96224CF025350F43002C1988 /* PurchaseManagerCore.swift */,
+				96224CFF25351372002C1988 /* PurchaseManagerMock.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		96224CFA2535119C002C1988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96224CFB253511AC002C1988 /* PurchaseError.swift */,
+				96224D0C2535A334002C1988 /* PurchaseActionResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		96224CC72534B4F2002C1988 /* Mediator */ = {
+		96224D032535140C002C1988 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				96224CC82534B56E002C1988 /* SDKUserCredentialsMediator.swift */,
+				96224D042535141D002C1988 /* PurchaseInteractor.swift */,
+				96224D082535A1F6002C1988 /* PurchaseInteractorCore.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		96224D9D2535D9FC002C1988 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96224DA42535E03E002C1988 /* Mediator */,
+				96224D9F2535DA1A002C1988 /* Delegates */,
 			);
 			path = Mediator;
 			sourceTree = "<group>";
 		};
-		96224CD02534B91D002C1988 /* Delegates */ = {
+		96224D9F2535DA1A002C1988 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				96224CD12534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift */,
-				96224CD72534B9B7002C1988 /* SDKUserCredentialsDelegate.swift */,
+				96224DA02535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		96224DA42535E03E002C1988 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96224DAD2535E149002C1988 /* SDKPurchaseMediator.swift */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		96224DB12535E351002C1988 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96224DB32535E363002C1988 /* Mediator */,
+				96224DB22535E35E002C1988 /* Delegates */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		96224DB22535E35E002C1988 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				96224DB82535E38B002C1988 /* SDKIAPMediatorDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		96224DB32535E363002C1988 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96224DB42535E374002C1988 /* SDKIAPMediator.swift */,
+			);
+			path = Mediator;
 			sourceTree = "<group>";
 		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
@@ -503,21 +586,26 @@
 			files = (
 				96224BD9252F5D7E002C1988 /* IAPManager.swift in Sources */,
 				96224B99252F2C4C002C1988 /* IAPProduct.swift in Sources */,
+				96224DB92535E38B002C1988 /* SDKIAPMediatorDelegate.swift in Sources */,
 				96224C8F25348BFF002C1988 /* ABTestsRequest.swift in Sources */,
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
-				96224CC92534B56E002C1988 /* SDKUserCredentialsMediator.swift in Sources */,
-				96224CC42534B4AC002C1988 /* SDKUserCredentials.swift in Sources */,
+				96224D092535A1F7002C1988 /* PurchaseInteractorCore.swift in Sources */,
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
+				96224DA12535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift in Sources */,
 				96224CA725349108002C1988 /* Weak.swift in Sources */,
-				96224CD22534B933002C1988 /* SDKUserCredentialsFeatureAppDelegate.swift in Sources */,
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
-				96224CD82534B9B7002C1988 /* SDKUserCredentialsDelegate.swift in Sources */,
+				96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */,
 				96224C8825348B3F002C1988 /* ABTestsManager.swift in Sources */,
+				96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */,
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */,
 				96224C2A252FC668002C1988 /* SDKProvider.swift in Sources */,
 				96224C22252FC32B002C1988 /* SDKSettings.swift in Sources */,
+				96224CE2253505A5002C1988 /* ReceiptValidateRequest.swift in Sources */,
+				96224D0D2535A334002C1988 /* PurchaseActionResult.swift in Sources */,
+				96224D0025351372002C1988 /* PurchaseManagerMock.swift in Sources */,
 				96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */,
+				96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */,
 				96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */,
 				96224C6525346A56002C1988 /* ApplicationAnonymousID.swift in Sources */,
 				96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */,
@@ -525,10 +613,14 @@
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
 				96224C7A25348576002C1988 /* ABTestsOutput.swift in Sources */,
+				96224DB52535E374002C1988 /* SDKIAPMediator.swift in Sources */,
+				96224CFC253511AC002C1988 /* PurchaseError.swift in Sources */,
 				96224CA325348F9B002C1988 /* ABTestsManagerCore.swift in Sources */,
 				96224C9B25348D35002C1988 /* ABTestsResponse.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
+				96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */,
+				96224CEB25350C35002C1988 /* PurchaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
