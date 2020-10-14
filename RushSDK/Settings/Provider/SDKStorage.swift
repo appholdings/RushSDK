@@ -46,6 +46,9 @@ public final class SDKStorage {
     var facebookManager: FacebookManager {
         FacebookManagerCore.shared
     }
+    var branchManager: BranchManager {
+        BranchManagerCore.shared
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {

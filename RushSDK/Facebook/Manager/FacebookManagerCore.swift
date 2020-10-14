@@ -30,6 +30,8 @@ extension FacebookManagerCore {
         
         AppEvents.activateApp()
         
+        setupInputSDKParams()
+        
         return true
     }
     
@@ -108,5 +110,11 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
 extension FacebookManagerCore {
     func isActivate() -> Bool {
         SDKStorage.shared.facebookActive
+    }
+    
+    func setupInputSDKParams() {
+        if let userId = SDKStorage.shared.userId {
+            AppEvents.userID = String(userId)
+        }
     }
 }

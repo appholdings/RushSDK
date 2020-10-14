@@ -5,7 +5,7 @@
 //  Created by Andrey Chernyshev on 13.10.2020.
 //
 
-// Вызывать ТОЛЬКО в фиче-приложении для уведомления SDK о получении/обновлении данных и в SDKInitializator для уведомления триггеров о входных параметрах в sdk
+// Вызывать ТОЛЬКО в фиче-приложении для уведомления SDK о получении/обновлении данных
 public final class FeatureAppMediator {
     static let shared = FeatureAppMediator()
     
@@ -16,8 +16,7 @@ public final class FeatureAppMediator {
 
 // MARK: API
 extension FeatureAppMediator {
-    // Обычно это требуется, когда в фиче-приложении авторизация происходит не через проверку чека (через емайл, например).
-    // SDKInitializator вызывает метод, дергая триггеры с входными параметрами в sdk
+    // Обычно это требуется, когда в фиче-приложении авторизация происходит не через проверку чека (через емайл, например)
     public func notifyAboutUpdate(userId: Int, userToken: String) {
         DispatchQueue.main.async {
             SDKStorage.shared.userId = userId
