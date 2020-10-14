@@ -9,12 +9,14 @@ import UIKit
 
 // MARK: Точка входа в SDK
 
-public final class SDKProvider {}
+public final class SDKProvider {
+    private let sdkInitializator = SDKInitializator()
+}
 
 // MARK: Инициализация SDK
 
 public extension SDKProvider {
-    func initialize(settings: SDKSettings) {
+    func initialize(settings: SDKSettings, completion: ((Bool) -> Void)? = nil) {
         let storage = SDKStorage.shared
         
         storage.backendBaseUrl = settings.backendBaseUrl
@@ -26,6 +28,8 @@ public extension SDKProvider {
         storage.userToken = settings.userToken
         storage.userId = settings.userId
         storage.isTest = settings.isTest
+        
+        sdkInitializator.initialize(completion: completion)
     }
 }
 
@@ -33,11 +37,11 @@ public extension SDKProvider {
 
 public extension SDKProvider {
     func application(_ app: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        
+        SDKStorage.shared.facebookManager.application(app, didFinishLaunchingWithOptions: launchOptions)
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) {
-        
+        SDKStorage.shared.facebookManager.application(app, open: url, options: options)
     }
     
     func application(_ app: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) {

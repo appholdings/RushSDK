@@ -54,6 +54,7 @@
 		96224DD02535EF53002C1988 /* FeatureAppMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DCF2535EF53002C1988 /* FeatureAppMediator.swift */; };
 		96224DE0253651E4002C1988 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DDF253651E4002C1988 /* FacebookManager.swift */; };
 		96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DE725370DE1002C1988 /* FacebookManagerCore.swift */; };
+		96224DF825374161002C1988 /* SDKInitializator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DF725374161002C1988 /* SDKInitializator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		96224DCF2535EF53002C1988 /* FeatureAppMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppMediator.swift; sourceTree = "<group>"; };
 		96224DDF253651E4002C1988 /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		96224DE725370DE1002C1988 /* FacebookManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManagerCore.swift; sourceTree = "<group>"; };
+		96224DF725374161002C1988 /* SDKInitializator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKInitializator.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 				96224DC82535ED9A002C1988 /* FeatureApp */,
 				96224C28252FC657002C1988 /* Provider */,
 				96224C25252FC32E002C1988 /* Models */,
+				96224DF725374161002C1988 /* SDKInitializator.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				96224CE2253505A5002C1988 /* ReceiptValidateRequest.swift in Sources */,
 				96224D0D2535A334002C1988 /* PurchaseActionResult.swift in Sources */,
 				96224D0025351372002C1988 /* PurchaseManagerMock.swift in Sources */,
+				96224DF825374161002C1988 /* SDKInitializator.swift in Sources */,
 				96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */,
 				96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */,
 				96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */,

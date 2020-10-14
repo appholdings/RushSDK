@@ -24,6 +24,10 @@ extension FacebookManagerCore {
             return false
         }
         
+        SDKStorage.shared.purchaseMediator.add(delegate: self)
+        SDKStorage.shared.featureAppMediator.add(delegate: self)
+        SDKStorage.shared.iapMediator.add(delegate: self)
+        
         AppEvents.activateApp()
         
         return true
@@ -90,7 +94,7 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                 }
                 
                 let price = product.price.doubleValue * 0.7
-                let currency = product.priceLocale.currencyCode
+                let currency = product.priceLocale.currencyCode ?? "unknown"
                 
                 AppEvents.logPurchase(price, currency: currency)
                 

@@ -43,6 +43,9 @@ public final class SDKStorage {
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()
     }
+    var facebookManager: FacebookManager {
+        FacebookManagerCore.shared
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {
