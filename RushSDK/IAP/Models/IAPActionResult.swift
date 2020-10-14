@@ -7,5 +7,5 @@
 
 public enum IAPActionResult {
     case cancelled
-    case completed
+    case completed(String)
 }

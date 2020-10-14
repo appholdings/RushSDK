@@ -20,6 +20,8 @@ public extension SDKProvider {
         storage.backendBaseUrl = settings.backendBaseUrl
         storage.backendApiKey = settings.backendApiKey
         storage.amplitudeApiKey = settings.amplitudeApiKey
+        storage.facebookActive = settings.facebookActive
+        storage.branchActive = settings.branchActive
         storage.applicationTag = settings.applicationTag
         storage.userToken = settings.userToken
         storage.userId = settings.userId
@@ -30,15 +32,15 @@ public extension SDKProvider {
 // MARK: Триггеры из AppDelegate
 
 public extension SDKProvider {
-    func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    func application(_ app: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         
     }
     
-    func application(open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) {
         
     }
     
-    func application(continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) {
+    func application(_ app: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) {
         
     }
 }

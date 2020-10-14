@@ -14,6 +14,8 @@ public final class SDKStorage {
     var backendBaseUrl: String?
     var backendApiKey: String?
     var amplitudeApiKey: String?
+    var facebookActive: Bool = false
+    var branchActive: Bool = false 
     var applicationTag: String?
     var userToken: String?
     var userId: Int?
@@ -35,8 +37,8 @@ public final class SDKStorage {
     public var purchaseMediator: SDKPurchaseMediator {
         SDKPurchaseMediator.shared
     }
-    public var userCredentialsMediator: SDKUserCredentialsMediator {
-        SDKUserCredentialsMediator.shared
+    public var featureAppMediator: FeatureAppMediator {
+        FeatureAppMediator.shared
     }
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()

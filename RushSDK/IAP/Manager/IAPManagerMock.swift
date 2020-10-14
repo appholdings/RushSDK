@@ -56,7 +56,7 @@ extension IAPManagerMock {
         
         return Single<IAPActionResult>
             .create { event in
-                event(.success(.completed))
+                event(.success(.completed(id)))
                 
                 return Disposables.create()
             }

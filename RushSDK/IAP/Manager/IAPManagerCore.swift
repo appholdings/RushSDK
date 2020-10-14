@@ -95,13 +95,13 @@ private extension IAPManagerCore {
                     switch result {
                     case .success(let purchase):
                         if purchase.productId == id {
-                            event(.success(.completed))
+                            event(.success(.completed(id)))
                         }
                     case .error(let error):
                         if IAPErrorHelper.treatErrorAsCancellation(error) {
                             event(.success(.cancelled))
                         } else if IAPErrorHelper.treatErrorAsSuccess(error) {
-                            event(.success(.completed))
+                            event(.success(.completed(id)))
                         } else {
                             event(.error(IAPError(.paymentFailed, underlyingError: error)))
                         }

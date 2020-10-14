@@ -10,6 +10,8 @@ public struct SDKSettings {
     let backendApiKey: String?
     
     let amplitudeApiKey: String?
+    let facebookActive: Bool
+    let branchActive: Bool
     
     let applicationTag: String?
     
@@ -21,6 +23,8 @@ public struct SDKSettings {
     public init(backendBaseUrl: String? = nil,
          backendApiKey: String? = nil,
          amplitudeApiKey: String? = nil,
+         facebookActive: Bool = false,
+         branchActive: Bool = false,
          applicationTag: String? = nil,
          userToken: String? = nil,
          userId: Int? = nil,
@@ -28,6 +32,8 @@ public struct SDKSettings {
         self.backendBaseUrl = backendBaseUrl
         self.backendApiKey = backendApiKey
         self.amplitudeApiKey = amplitudeApiKey
+        self.facebookActive = facebookActive
+        self.branchActive = branchActive
         self.applicationTag = applicationTag
         self.userToken = userToken
         self.userId = userId
