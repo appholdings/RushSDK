@@ -86,7 +86,7 @@ private extension BranchManagerCore {
     
     func setupInputSDKParams() {
         if let userId = SDKStorage.shared.userId {
-            Branch.getInstance().setIdentity(userId)
+            Branch.getInstance().setIdentity(String(userId))
         }
     }
 }

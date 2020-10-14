@@ -49,6 +49,9 @@ public final class SDKStorage {
     var branchManager: BranchManager {
         BranchManagerCore.shared
     }
+    var adAttributionDetails: ADAttributionDetails {
+        ADAttributionDetails()
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {

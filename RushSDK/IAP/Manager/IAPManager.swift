@@ -8,7 +8,7 @@
 import RxSwift
 
 public protocol IAPManager: class {
-    static func initialize()
+    func initialize()
     
     func obtainProducts(ids: [String]) -> Single<[IAPProduct]>
     

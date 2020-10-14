@@ -12,7 +12,7 @@ final class IAPManagerCore: IAPManager {}
 
 // MARK: IAPManager(initialize)
 extension IAPManagerCore {
-    static func initialize() {
+    func initialize() {
         SwiftyStoreKit.completeTransactions { purchases in
             for purchase in purchases {
                 let state = purchase.transaction.transactionState

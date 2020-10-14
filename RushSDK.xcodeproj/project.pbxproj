@@ -57,6 +57,7 @@
 		96224DF825374161002C1988 /* SDKInitializator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DF725374161002C1988 /* SDKInitializator.swift */; };
 		96224DFE25374969002C1988 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DFD25374969002C1988 /* BranchManager.swift */; };
 		96224E0225374AD2002C1988 /* BranchManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E0125374AD2002C1988 /* BranchManagerCore.swift */; };
+		96224E1125375FFA002C1988 /* ADAttributionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1025375FFA002C1988 /* ADAttributionDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		96224DF725374161002C1988 /* SDKInitializator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKInitializator.swift; sourceTree = "<group>"; };
 		96224DFD25374969002C1988 /* BranchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		96224E0125374AD2002C1988 /* BranchManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchManagerCore.swift; sourceTree = "<group>"; };
+		96224E1025375FFA002C1988 /* ADAttributionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionDetails.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 				96224C1B252FC088002C1988 /* Routines.swift */,
 				96224C6425346A56002C1988 /* ApplicationAnonymousID.swift */,
 				96224CA625349108002C1988 /* Weak.swift */,
+				96224E1025375FFA002C1988 /* ADAttributionDetails.swift */,
 			);
 			path = RushSDK;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
 				96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */,
 				96224C2A252FC668002C1988 /* SDKProvider.swift in Sources */,
+				96224E1125375FFA002C1988 /* ADAttributionDetails.swift in Sources */,
 				96224C22252FC32B002C1988 /* SDKSettings.swift in Sources */,
 				96224CE2253505A5002C1988 /* ReceiptValidateRequest.swift in Sources */,
 				96224D0D2535A334002C1988 /* PurchaseActionResult.swift in Sources */,

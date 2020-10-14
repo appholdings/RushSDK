@@ -7,6 +7,8 @@
 
 final class SDKInitializator {
     func initialize(completion: ((Bool) -> Void)?) {
+        SDKStorage.shared.iapManager.initialize()
+        
         let facebookActivate = SDKStorage.shared.facebookManager.initialize()
         let branchActivate = SDKStorage.shared.branchManager.initialize()
         
@@ -15,4 +17,10 @@ final class SDKInitializator {
         
         completion?(isSuccess)
     }
+}
+
+// MARK: Private
+private extension SDKInitializator {
+    // ab tests
+    // web view
 }

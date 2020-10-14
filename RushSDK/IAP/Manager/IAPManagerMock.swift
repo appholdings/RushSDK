@@ -14,7 +14,7 @@ final class IAPManagerMock: IAPManager {}
 // MARK: IAPManager(initialize)
 
 extension IAPManagerMock {
-    static func initialize() {
+    func initialize() {
         SwiftyStoreKit.completeTransactions { purchases in
             for purchase in purchases {
                 let state = purchase.transaction.transactionState

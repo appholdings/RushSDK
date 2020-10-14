@@ -29,17 +29,14 @@ extension PurchaseInteractorCore {
 // MARK: Private
 private extension PurchaseInteractorCore {
     func executeMakeActiveSubscriptionByBuy(productId: String) -> Single<PurchaseActionResult> {
-        let iapManager = SDKStorage.shared.iapManager
-        let purchaseManager = SDKStorage.shared.purchaseManager
-        
-        return iapManager
+        SDKStorage.shared.iapManager
             .buyProduct(with: productId)
             .flatMap { result in
                 switch result {
                 case .cancelled:
                     return .just(PurchaseActionResult.cancelled)
                 case .completed:
-                    return purchaseManager
+                    return SDKStorage.shared.purchaseManager
                         .validateReceipt()
                         .map { PurchaseActionResult.completed($0) }
                 }
@@ -47,12 +44,9 @@ private extension PurchaseInteractorCore {
     }
     
     func executeMakeActiveSubscriptionByRestore() -> Single<PurchaseActionResult> {
-        let iapManager = SDKStorage.shared.iapManager
-        let purchaseManager = SDKStorage.shared.purchaseManager
-        
-        return iapManager
+        SDKStorage.shared.iapManager
             .restorePurchases()
-            .andThen(purchaseManager.validateReceipt())
+            .andThen(SDKStorage.shared.purchaseManager.validateReceipt())
             .map { PurchaseActionResult.completed($0) }
     }
 }
