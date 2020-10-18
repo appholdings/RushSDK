@@ -40,6 +40,9 @@ public final class SDKStorage {
     public var featureAppMediator: FeatureAppMediator {
         FeatureAppMediator.shared
     }
+    public var amplitudeManager: AmplitudeManager {
+        AmplitudeManagerCore.shared
+    }
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()
     }
@@ -59,5 +62,8 @@ public final class SDKStorage {
     }
     public var abTestsOutput: ABTestsOutput? {
         abTestsManager.getCachedTests()
+    }
+    var isFirstLaunch: Bool {
+        SDKNumberLaunches().isFirstLaunch()
     }
 }

@@ -6,14 +6,18 @@
 //
 
 final class SDKInitializator {
+    private let iapManager = SDKStorage.shared.iapManager
+    
     func initialize(completion: ((Bool) -> Void)?) {
-        SDKStorage.shared.iapManager.initialize()
+        iapManager.initialize()
         
         let facebookActivate = SDKStorage.shared.facebookManager.initialize()
         let branchActivate = SDKStorage.shared.branchManager.initialize()
+        let amplitudeActivate = SDKStorage.shared.amplitudeManager.initialize()
         
         let isSuccess = facebookActivate
             && branchActivate
+            && amplitudeActivate
         
         completion?(isSuccess)
     }

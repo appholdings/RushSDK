@@ -58,6 +58,10 @@
 		96224DFE25374969002C1988 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224DFD25374969002C1988 /* BranchManager.swift */; };
 		96224E0225374AD2002C1988 /* BranchManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E0125374AD2002C1988 /* BranchManagerCore.swift */; };
 		96224E1125375FFA002C1988 /* ADAttributionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1025375FFA002C1988 /* ADAttributionDetails.swift */; };
+		96224E1925376340002C1988 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1825376340002C1988 /* AmplitudeManager.swift */; };
+		96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */; };
+		96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E2225383B37002C1988 /* DictionaryExtension.swift */; };
+		96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E26253855EC002C1988 /* SDKNumberLaunches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +122,10 @@
 		96224DFD25374969002C1988 /* BranchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		96224E0125374AD2002C1988 /* BranchManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchManagerCore.swift; sourceTree = "<group>"; };
 		96224E1025375FFA002C1988 /* ADAttributionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionDetails.swift; sourceTree = "<group>"; };
+		96224E1825376340002C1988 /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
+		96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManagerCore.swift; sourceTree = "<group>"; };
+		96224E2225383B37002C1988 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		96224E26253855EC002C1988 /* SDKNumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKNumberLaunches.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +173,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				96224E1625376317002C1988 /* Amplitude */,
 				96224DFB25374933002C1988 /* Branch */,
 				96224DDD253651A1002C1988 /* Facebook */,
 				96224CDF2535056B002C1988 /* Purchase */,
@@ -178,6 +187,7 @@
 				96224C6425346A56002C1988 /* ApplicationAnonymousID.swift */,
 				96224CA625349108002C1988 /* Weak.swift */,
 				96224E1025375FFA002C1988 /* ADAttributionDetails.swift */,
+				96224E2225383B37002C1988 /* DictionaryExtension.swift */,
 			);
 			path = RushSDK;
 			sourceTree = "<group>";
@@ -249,6 +259,7 @@
 				96224C28252FC657002C1988 /* Provider */,
 				96224C25252FC32E002C1988 /* Models */,
 				96224DF725374161002C1988 /* SDKInitializator.swift */,
+				96224E26253855EC002C1988 /* SDKNumberLaunches.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -467,6 +478,23 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		96224E1625376317002C1988 /* Amplitude */ = {
+			isa = PBXGroup;
+			children = (
+				96224E1725376330002C1988 /* Manager */,
+			);
+			path = Amplitude;
+			sourceTree = "<group>";
+		};
+		96224E1725376330002C1988 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96224E1825376340002C1988 /* AmplitudeManager.swift */,
+				96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,6 +695,7 @@
 				96224BD9252F5D7E002C1988 /* IAPManager.swift in Sources */,
 				96224B99252F2C4C002C1988 /* IAPProduct.swift in Sources */,
 				96224DB92535E38B002C1988 /* SDKIAPMediatorDelegate.swift in Sources */,
+				96224E1925376340002C1988 /* AmplitudeManager.swift in Sources */,
 				96224C8F25348BFF002C1988 /* ABTestsRequest.swift in Sources */,
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
 				96224DD02535EF53002C1988 /* FeatureAppMediator.swift in Sources */,
@@ -692,6 +721,7 @@
 				96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */,
 				96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */,
 				96224C6525346A56002C1988 /* ApplicationAnonymousID.swift in Sources */,
+				96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */,
 				96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */,
 				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
@@ -702,8 +732,10 @@
 				96224DFE25374969002C1988 /* BranchManager.swift in Sources */,
 				96224CFC253511AC002C1988 /* PurchaseError.swift in Sources */,
 				96224CA325348F9B002C1988 /* ABTestsManagerCore.swift in Sources */,
+				96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */,
 				96224C9B25348D35002C1988 /* ABTestsResponse.swift in Sources */,
 				96224DCC2535EE8D002C1988 /* FeatureAppMediatorDelegate.swift in Sources */,
+				96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
 				96224DE0253651E4002C1988 /* FacebookManager.swift in Sources */,
