@@ -55,6 +55,9 @@ public final class SDKStorage {
     var adAttributionDetails: ADAttributionDetails {
         ADAttributionDetails()
     }
+    var adAttributionsManager: ADAttributionsManager {
+        ADAttributionsManagerCore.shared
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {

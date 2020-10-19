@@ -62,6 +62,11 @@
 		96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */; };
 		96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E2225383B37002C1988 /* DictionaryExtension.swift */; };
 		96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E26253855EC002C1988 /* SDKNumberLaunches.swift */; };
+		967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446C6253C84B200E32205 /* ADAttributionsManager.swift */; };
+		967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */; };
+		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
+		967446D7253C862F00E32205 /* SetADAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */; };
+		967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +131,11 @@
 		96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManagerCore.swift; sourceTree = "<group>"; };
 		96224E2225383B37002C1988 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		96224E26253855EC002C1988 /* SDKNumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKNumberLaunches.swift; sourceTree = "<group>"; };
+		967446C6253C84B200E32205 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
+		967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManagerCore.swift; sourceTree = "<group>"; };
+		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
+		967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetADAttributionsRequest.swift; sourceTree = "<group>"; };
+		967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetADLinkAttributionsRequest.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,6 +183,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				967446BE253C848000E32205 /* ADAttributions */,
 				96224E1625376317002C1988 /* Amplitude */,
 				96224DFB25374933002C1988 /* Branch */,
 				96224DDD253651A1002C1988 /* Facebook */,
@@ -186,7 +197,6 @@
 				96224C1B252FC088002C1988 /* Routines.swift */,
 				96224C6425346A56002C1988 /* ApplicationAnonymousID.swift */,
 				96224CA625349108002C1988 /* Weak.swift */,
-				96224E1025375FFA002C1988 /* ADAttributionDetails.swift */,
 				96224E2225383B37002C1988 /* DictionaryExtension.swift */,
 			);
 			path = RushSDK;
@@ -495,6 +505,43 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		967446BE253C848000E32205 /* ADAttributions */ = {
+			isa = PBXGroup;
+			children = (
+				967446D5253C861D00E32205 /* Request */,
+				967446CE253C85F000E32205 /* Models */,
+				967446C1253C849B00E32205 /* Manager */,
+				96224E1025375FFA002C1988 /* ADAttributionDetails.swift */,
+			);
+			path = ADAttributions;
+			sourceTree = "<group>";
+		};
+		967446C1253C849B00E32205 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				967446C6253C84B200E32205 /* ADAttributionsManager.swift */,
+				967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		967446CE253C85F000E32205 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				967446CF253C85FA00E32205 /* ADLinkAttributions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		967446D5253C861D00E32205 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */,
+				967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +745,7 @@
 				96224E1925376340002C1988 /* AmplitudeManager.swift in Sources */,
 				96224C8F25348BFF002C1988 /* ABTestsRequest.swift in Sources */,
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
+				967446D7253C862F00E32205 /* SetADAttributionsRequest.swift in Sources */,
 				96224DD02535EF53002C1988 /* FeatureAppMediator.swift in Sources */,
 				96224D092535A1F7002C1988 /* PurchaseInteractorCore.swift in Sources */,
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
@@ -706,6 +754,7 @@
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
 				96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */,
 				96224C8825348B3F002C1988 /* ABTestsManager.swift in Sources */,
+				967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */,
 				96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */,
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
@@ -724,6 +773,7 @@
 				96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */,
 				96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */,
 				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
+				967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */,
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
 				96224C7A25348576002C1988 /* ABTestsOutput.swift in Sources */,
@@ -735,10 +785,12 @@
 				96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */,
 				96224C9B25348D35002C1988 /* ABTestsResponse.swift in Sources */,
 				96224DCC2535EE8D002C1988 /* FeatureAppMediatorDelegate.swift in Sources */,
+				967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */,
 				96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
 				96224DE0253651E4002C1988 /* FacebookManager.swift in Sources */,
+				967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */,
 				96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */,
 				96224CEB25350C35002C1988 /* PurchaseManager.swift in Sources */,
 			);

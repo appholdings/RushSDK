@@ -12,10 +12,7 @@ final class AmplitudeManagerCore: AmplitudeManager {
     
     struct Constants {
         static let userIdListKey = "amplitude_manager_core_user_id_list_key"
-        static let userAttributionsInstalledKey = "amplitude_manager_core_user_attributions_installed_key"
     }
-    
-    private let adAttributionDetails = ADAttributionDetails()
     
     private init() {}
 }
@@ -31,7 +28,6 @@ extension AmplitudeManagerCore {
         Amplitude.instance()?.initializeApiKey(amplitudeApiKey)
         
         setupInputSDKParams()
-        installUserAttributionsIfNeeded()
         installFirstLaunchIfNeeded()
         
         FeatureAppMediator.shared.add(delegate: self)
@@ -103,22 +99,6 @@ private extension AmplitudeManagerCore {
             
             UserDefaults.standard.set(userIdList, forKey: Constants.userIdListKey)
         }
-    }
-    
-    func installUserAttributionsIfNeeded() {
-        guard !UserDefaults.standard.bool(forKey: Constants.userAttributionsInstalledKey) else {
-            return
-        }
-        
-        adAttributionDetails.request { [weak self] attributionsDetails in
-            guard let this = self, !this.adAttributionDetails.isTest(attributionsDetails: attributionsDetails) else {
-                return
-            }
-            
-            Amplitude.instance()?.setUserProperties(attributionsDetails)
-        }
-        
-        UserDefaults.standard.set(true, forKey: Constants.userAttributionsInstalledKey)
     }
     
     func installFirstLaunchIfNeeded() {

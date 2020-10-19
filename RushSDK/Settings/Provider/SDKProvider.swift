@@ -38,14 +38,17 @@ public extension SDKProvider {
     func application(_ app: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         SDKStorage.shared.facebookManager.application(app, didFinishLaunchingWithOptions: launchOptions)
         SDKStorage.shared.branchManager.application(didFinishLaunchingWithOptions: launchOptions)
+        SDKStorage.shared.adAttributionsManager.application(didFinishLaunchingWithOptions: launchOptions)
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) {
         SDKStorage.shared.facebookManager.application(app, open: url, options: options)
         SDKStorage.shared.branchManager.application(app, open: url, options: options)
+        SDKStorage.shared.adAttributionsManager.application(with: url, options: options)
     }
     
     func application(_ app: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) {
         SDKStorage.shared.branchManager.application(continue: userActivity)
+        SDKStorage.shared.adAttributionsManager.application(with: userActivity)
     }
 }
