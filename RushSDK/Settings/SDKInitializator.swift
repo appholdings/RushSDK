@@ -12,6 +12,7 @@ final class SDKInitializator {
     private let abTestsTrigger = PublishRelay<Bool>()
     private let registerInstallTrigger = PublishRelay<Bool>()
     private let validateReceiptTrigger = PublishRelay<Bool>()
+    private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
     
     private let iapManager = SDKStorage.shared.iapManager
     
@@ -23,6 +24,22 @@ final class SDKInitializator {
         SDKStorage.shared.facebookManager.initialize()
         SDKStorage.shared.branchManager.initialize()
         SDKStorage.shared.amplitudeManager.initialize()
+        
+        SDKStorage.shared.userManager.initialize()
+        
+        initializeABTests()
+        initializeRegisterInstall()
+        
+        Observable
+            .zip([
+                registerInstallTrigger,
+                validateReceiptTrigger,
+                userUpdateMetaDataTrigger
+            ])
+            .subscribe(onNext: { _ in
+                completion?()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -63,5 +80,22 @@ private extension SDKInitializator {
             .register { [weak self] result in
                 self?.registerInstallTrigger.accept(result)
             }
+    }
+    
+    func initializeUserUpdateMetaData() {
+        abTestsTrigger
+            .flatMap { success in
+                SDKStorage.shared
+                    .userManager
+                    .rxUpdateMetaData()
+                    .map { _ in true }
+                    .catchErrorJustReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                self?.userUpdateMetaDataTrigger.accept(success)
+            }, onError: { [weak self] _ in
+                self?.userUpdateMetaDataTrigger.accept(false)
+            })
+            .disposed(by: disposeBag)
     }
 }

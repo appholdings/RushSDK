@@ -64,6 +64,10 @@
 		96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E26253855EC002C1988 /* SDKNumberLaunches.swift */; };
 		965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */; };
 		965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */; };
+		965E05F3253DC91A006F8A24 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05F2253DC91A006F8A24 /* UserManager.swift */; };
+		965E05F7253DC961006F8A24 /* UserManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05F6253DC961006F8A24 /* UserManagerCore.swift */; };
+		965E05FC253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */; };
+		965E0603253DCC8E006F8A24 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E0602253DCC8E006F8A24 /* UserError.swift */; };
 		967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446C6253C84B200E32205 /* ADAttributionsManager.swift */; };
 		967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */; };
 		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
@@ -135,6 +139,10 @@
 		96224E26253855EC002C1988 /* SDKNumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKNumberLaunches.swift; sourceTree = "<group>"; };
 		965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallManager.swift; sourceTree = "<group>"; };
 		965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallManagerCore.swift; sourceTree = "<group>"; };
+		965E05F2253DC91A006F8A24 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		965E05F6253DC961006F8A24 /* UserManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerCore.swift; sourceTree = "<group>"; };
+		965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserMetaDataRequest.swift; sourceTree = "<group>"; };
+		965E0602253DCC8E006F8A24 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		967446C6253C84B200E32205 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
 		967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManagerCore.swift; sourceTree = "<group>"; };
 		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				965E05F0253DC906006F8A24 /* User */,
 				965E05E7253D9C29006F8A24 /* RegisterInstall */,
 				967446BE253C848000E32205 /* ADAttributions */,
 				96224E1625376317002C1988 /* Amplitude */,
@@ -519,6 +528,41 @@
 			path = RegisterInstall;
 			sourceTree = "<group>";
 		};
+		965E05F0253DC906006F8A24 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				965E0601253DCC81006F8A24 /* Models */,
+				965E05FA253DCAD8006F8A24 /* Request */,
+				965E05F1253DC90C006F8A24 /* Manager */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		965E05F1253DC90C006F8A24 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				965E05F2253DC91A006F8A24 /* UserManager.swift */,
+				965E05F6253DC961006F8A24 /* UserManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		965E05FA253DCAD8006F8A24 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		965E0601253DCC81006F8A24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				965E0602253DCC8E006F8A24 /* UserError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		967446BE253C848000E32205 /* ADAttributions */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,10 +814,13 @@
 				965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */,
 				96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */,
 				96224C8825348B3F002C1988 /* ABTestsManager.swift in Sources */,
+				965E05F7253DC961006F8A24 /* UserManagerCore.swift in Sources */,
 				967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */,
 				96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */,
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
+				965E05F3253DC91A006F8A24 /* UserManager.swift in Sources */,
+				965E0603253DCC8E006F8A24 /* UserError.swift in Sources */,
 				96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */,
 				96224C2A252FC668002C1988 /* SDKProvider.swift in Sources */,
 				96224E1125375FFA002C1988 /* ADAttributionDetails.swift in Sources */,
@@ -805,6 +852,7 @@
 				96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
+				965E05FC253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift in Sources */,
 				96224DE0253651E4002C1988 /* FacebookManager.swift in Sources */,
 				967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */,
 				96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */,

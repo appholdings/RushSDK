@@ -67,6 +67,9 @@ public final class SDKStorage {
     var registerInstallManager: RegisterInstallManager {
         RegisterInstallManagerCore()
     }
+    var userManager: UserManager {
+        UserManagerCore.shared
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {
