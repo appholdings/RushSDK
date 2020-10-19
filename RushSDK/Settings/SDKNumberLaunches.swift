@@ -23,7 +23,8 @@ final class SDKNumberLaunches {
         return self
     }
     
+    // Именно 1. Потому что счетчик запусков инкрементируется до инициализации SDK и вызова триггеров AppDelegate, где учитывается первый запуск. 
     func isFirstLaunch() -> Bool {
-        UserDefaults.standard.integer(forKey: Constants.countLaunchKey) == 0
+        UserDefaults.standard.integer(forKey: Constants.countLaunchKey) == 1
     }
 }

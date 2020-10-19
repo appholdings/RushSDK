@@ -62,6 +62,8 @@
 		96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */; };
 		96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E2225383B37002C1988 /* DictionaryExtension.swift */; };
 		96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E26253855EC002C1988 /* SDKNumberLaunches.swift */; };
+		965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */; };
+		965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */; };
 		967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446C6253C84B200E32205 /* ADAttributionsManager.swift */; };
 		967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */; };
 		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
@@ -131,6 +133,8 @@
 		96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManagerCore.swift; sourceTree = "<group>"; };
 		96224E2225383B37002C1988 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		96224E26253855EC002C1988 /* SDKNumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKNumberLaunches.swift; sourceTree = "<group>"; };
+		965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallManager.swift; sourceTree = "<group>"; };
+		965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallManagerCore.swift; sourceTree = "<group>"; };
 		967446C6253C84B200E32205 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
 		967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManagerCore.swift; sourceTree = "<group>"; };
 		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				965E05E7253D9C29006F8A24 /* RegisterInstall */,
 				967446BE253C848000E32205 /* ADAttributions */,
 				96224E1625376317002C1988 /* Amplitude */,
 				96224DFB25374933002C1988 /* Branch */,
@@ -505,6 +510,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		965E05E7253D9C29006F8A24 /* RegisterInstall */ = {
+			isa = PBXGroup;
+			children = (
+				965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */,
+				965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */,
+			);
+			path = RegisterInstall;
+			sourceTree = "<group>";
+		};
 		967446BE253C848000E32205 /* ADAttributions */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,7 +765,9 @@
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
 				96224DA12535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift in Sources */,
 				96224CA725349108002C1988 /* Weak.swift in Sources */,
+				965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */,
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
+				965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */,
 				96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */,
 				96224C8825348B3F002C1988 /* ABTestsManager.swift in Sources */,
 				967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */,

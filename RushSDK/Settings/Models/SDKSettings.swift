@@ -5,6 +5,8 @@
 //  Created by Andrey Chernyshev on 09.10.2020.
 //
 
+import UIKit
+
 public struct SDKSettings {
     let backendBaseUrl: String?
     let backendApiKey: String?
@@ -18,6 +20,8 @@ public struct SDKSettings {
     let userToken: String?
     let userId: Int?
     
+    let view: Weak<UIView>?
+    
     let isTest: Bool
     
     public init(backendBaseUrl: String? = nil,
@@ -28,6 +32,7 @@ public struct SDKSettings {
          applicationTag: String? = nil,
          userToken: String? = nil,
          userId: Int? = nil,
+         view: UIView? = nil,
          isTest: Bool = false) {
         self.backendBaseUrl = backendBaseUrl
         self.backendApiKey = backendApiKey
@@ -38,5 +43,8 @@ public struct SDKSettings {
         self.userToken = userToken
         self.userId = userId
         self.isTest = isTest
+        
+        let viewAsAny = view as AnyObject
+        self.view = Weak<UIView>(viewAsAny)
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Andrey Chernyshev on 09.10.2020.
 //
 
+import UIKit
+
 public final class SDKStorage {
     public static let shared = SDKStorage()
     
@@ -19,6 +21,7 @@ public final class SDKStorage {
     var applicationTag: String?
     var userToken: String?
     var userId: Int?
+    var view: Weak<UIView>?
     var isTest: Bool = false
     
     // MARK: Dependencies
@@ -57,6 +60,9 @@ public final class SDKStorage {
     }
     var adAttributionsManager: ADAttributionsManager {
         ADAttributionsManagerCore.shared
+    }
+    var registerInstallManager: RegisterInstallManager {
+        RegisterInstallManagerCore()
     }
     
     // MARK: Computed

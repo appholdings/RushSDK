@@ -25,6 +25,7 @@ public extension SDKProvider {
         storage.applicationTag = settings.applicationTag
         storage.userToken = settings.userToken
         storage.userId = settings.userId
+        storage.view = settings.view
         storage.isTest = settings.isTest
         
         SDKNumberLaunches().launch()

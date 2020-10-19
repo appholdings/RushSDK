@@ -9,17 +9,19 @@ import RxSwift
 import RxCocoa
 
 final class SDKInitializator {
-    private let analyticstTrigger = PublishRelay<Bool>()
     private let abTestsTrigger = PublishRelay<Bool>()
+    private let registerInstallTrigger = PublishRelay<Bool>()
     
     private let iapManager = SDKStorage.shared.iapManager
     
     private let disposeBag = DisposeBag()
     
-    func initialize(completion: ((Bool) -> Void)?) {
+    func initialize(completion: (() -> Void)?) {
         iapManager.initialize()
         
-        
+        SDKStorage.shared.facebookManager.initialize()
+        SDKStorage.shared.branchManager.initialize()
+        SDKStorage.shared.amplitudeManager.initialize()
     }
 }
 
@@ -37,16 +39,11 @@ private extension SDKInitializator {
             .disposed(by: disposeBag)
     }
     
-    func initializeAnalytics() -> Single<Bool> {
-        Single<Bool>
-            .create { event in
-                let isSuccess = SDKStorage.shared.facebookManager.initialize()
-                    && SDKStorage.shared.branchManager.initialize()
-                    && SDKStorage.shared.amplitudeManager.initialize()
-                
-                event(.success(isSuccess))
-                
-                return Disposables.create()
+    func initializeRegisterInstall() {
+        SDKStorage.shared
+            .registerInstallManager
+            .register { [weak self] result in
+                self?.registerInstallTrigger.accept(result)
             }
     }
 }
