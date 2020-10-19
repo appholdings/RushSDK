@@ -14,7 +14,7 @@ public final class SDKProvider {
 
 // MARK: Инициализация SDK
 public extension SDKProvider {
-    func initialize(settings: SDKSettings, completion: ((Bool) -> Void)? = nil) {
+    func initialize(settings: SDKSettings, completion: (() -> Void)? = nil) {
         let storage = SDKStorage.shared
         
         storage.backendBaseUrl = settings.backendBaseUrl

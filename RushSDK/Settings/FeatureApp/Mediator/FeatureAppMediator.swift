@@ -19,9 +19,6 @@ extension FeatureAppMediator {
     // Обычно это требуется, когда в фиче-приложении авторизация происходит не через проверку чека (через емайл, например)
     public func notifyAboutUpdate(userId: Int, userToken: String) {
         DispatchQueue.main.async {
-            SDKStorage.shared.userId = userId
-            SDKStorage.shared.userToken = userToken
-            
             FeatureAppMediator.shared.delegates.forEach { $0.weak?.featureAppMediatorDidUpdate(userId: userId, userToken: userToken) }
         }
     }

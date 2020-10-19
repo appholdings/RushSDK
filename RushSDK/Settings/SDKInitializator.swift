@@ -11,6 +11,7 @@ import RxCocoa
 final class SDKInitializator {
     private let abTestsTrigger = PublishRelay<Bool>()
     private let registerInstallTrigger = PublishRelay<Bool>()
+    private let validateReceiptTrigger = PublishRelay<Bool>()
     
     private let iapManager = SDKStorage.shared.iapManager
     
@@ -35,6 +36,23 @@ private extension SDKInitializator {
                 self?.abTestsTrigger.accept(true)
             }, onError: { [weak self] _ in
                 self?.abTestsTrigger.accept(false)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func validateReceipt() {
+        abTestsTrigger
+            .flatMap { success in
+                SDKStorage.shared
+                    .purchaseManager
+                    .validateReceipt()
+                    .map { _ in true }
+                    .catchErrorJustReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                self?.validateReceiptTrigger.accept(success)
+            }, onError: { [weak self] _ in
+                self?.validateReceiptTrigger.accept(false)
             })
             .disposed(by: disposeBag)
     }

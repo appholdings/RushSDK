@@ -10,7 +10,10 @@ import UIKit
 public final class SDKStorage {
     public static let shared = SDKStorage()
     
-    private init() {}
+    private init() {
+        purchaseMediator.add(delegate: self)
+        featureAppMediator.add(delegate: self)
+    }
     
     // MARK: Variables
     var backendBaseUrl: String?
@@ -74,5 +77,25 @@ public final class SDKStorage {
     }
     var isFirstLaunch: Bool {
         SDKNumberLaunches().isFirstLaunch()
+    }
+}
+
+// MARK: SDKPurchaseMediatorDelegate
+extension SDKStorage: SDKPurchaseMediatorDelegate {
+    public func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
+        guard let userId = response?.userId, let userToken = response?.userToken else {
+            return
+        }
+        
+        self.userId = userId
+        self.userToken = userToken
+    }
+}
+
+// MARK: FeatureAppMediatorDelegate
+extension SDKStorage: FeatureAppMediatorDelegate {
+    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
+        self.userId = userId
+        self.userToken = userToken
     }
 }
