@@ -88,7 +88,9 @@ private extension UserManagerCore {
                                                                   currency: Locale.current.currencyCode ?? "USD",
                                                                   country: (Locale.current as NSLocale).countryCode ?? "",
                                                                   locale: locale ?? "en"))
-            .subscribe()
+            .subscribe(onSuccess: { response in
+                log(text: "userManager did updated meta data with result: \(response)")
+            })
             .disposed(by: disposeBag)
     }
     

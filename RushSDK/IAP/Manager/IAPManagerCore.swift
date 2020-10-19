@@ -46,6 +46,8 @@ extension IAPManagerCore {
         executeBuyProduct(with: id)
             .do(onSuccess: { result in
                 SDKStorage.shared.iapMediator.notifyAboutBiedProduct(with: result)
+                
+                log(text: "iapManager buid product with result: \(result)")
             })
     }
     
@@ -53,6 +55,8 @@ extension IAPManagerCore {
         executeRestorePurchases()
             .do(onCompleted: {
                 SDKStorage.shared.iapMediator.notifyAboutRestoredPurchases()
+                
+                log(text: "iapManager restored purchases")
             })
     }
 }

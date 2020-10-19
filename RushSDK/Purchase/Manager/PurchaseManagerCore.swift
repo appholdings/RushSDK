@@ -15,6 +15,8 @@ extension PurchaseManagerCore {
         executeValidateReceipt()
             .do(onSuccess: { response in
                 SDKStorage.shared.purchaseMediator.notifyAboutValidateReceiptCompleted(with: response)
+                
+                log(text: "purchaseManager did validate receipt with response: \(response as Any)")
             })
     }
 }

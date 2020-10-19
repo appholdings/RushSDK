@@ -22,6 +22,8 @@ extension AmplitudeManagerCore {
     @discardableResult
     func initialize() -> Bool {
         guard isActivate(), let amplitudeApiKey = SDKStorage.shared.amplitudeApiKey else {
+            log(text: "amplitude not activate")
+            
             return false
         }
         
@@ -45,6 +47,8 @@ extension AmplitudeManagerCore {
         dictionary["anonymous_id"] = SDKStorage.shared.applicationAnonymousID
         
         Amplitude.instance()?.logEvent(name, withEventProperties: dictionary)
+        
+        log(text: "amplitude log event with name: \(name), parameters: \(parameters)")
     }
 }
 
@@ -87,6 +91,8 @@ private extension AmplitudeManagerCore {
         let logTag = String(format: "%@_%i", applicationTag, userId)
         
         Amplitude.instance()?.setUserId(logTag)
+        
+        log(text: "amplitude set userId: \(logTag)")
     }
     
     func syncedUserIdIfNeeded(_ userId: Int) {

@@ -18,6 +18,8 @@ extension BranchManagerCore {
     @discardableResult
     func initialize() -> Bool {
         guard isActivate() else {
+            log(text: "branch not activate")
+            
             return false
         }
         
@@ -66,6 +68,8 @@ extension BranchManagerCore {
 extension BranchManagerCore: FeatureAppMediatorDelegate {
     func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
         Branch.getInstance().setIdentity(String(userId))
+        
+        log(text: "branch set userId: \(userId) in featureAppMediatorDidUpdate")
     }
 }
 
@@ -74,6 +78,8 @@ extension BranchManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
             Branch.getInstance().setIdentity(String(userId))
+            
+            log(text: "branch set userId: \(userId) in purchaseMediatorDidValidateReceipt")
         }
     }
 }
@@ -87,6 +93,8 @@ private extension BranchManagerCore {
     func setupInputSDKParams() {
         if let userId = SDKStorage.shared.userId {
             Branch.getInstance().setIdentity(String(userId))
+            
+            log(text: "branch set userId: \(userId) in setupInputSDKParams")
         }
     }
 }

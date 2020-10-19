@@ -68,6 +68,7 @@
 		965E05F7253DC961006F8A24 /* UserManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05F6253DC961006F8A24 /* UserManagerCore.swift */; };
 		965E05FC253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */; };
 		965E0603253DCC8E006F8A24 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E0602253DCC8E006F8A24 /* UserError.swift */; };
+		965E0609253DE537006F8A24 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E0608253DE537006F8A24 /* Logger.swift */; };
 		967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446C6253C84B200E32205 /* ADAttributionsManager.swift */; };
 		967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */; };
 		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
@@ -143,6 +144,7 @@
 		965E05F6253DC961006F8A24 /* UserManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerCore.swift; sourceTree = "<group>"; };
 		965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserMetaDataRequest.swift; sourceTree = "<group>"; };
 		965E0602253DCC8E006F8A24 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		965E0608253DE537006F8A24 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		967446C6253C84B200E32205 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
 		967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManagerCore.swift; sourceTree = "<group>"; };
 		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				96224C6425346A56002C1988 /* ApplicationAnonymousID.swift */,
 				96224CA625349108002C1988 /* Weak.swift */,
 				96224E2225383B37002C1988 /* DictionaryExtension.swift */,
+				965E0608253DE537006F8A24 /* Logger.swift */,
 			);
 			path = RushSDK;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
 				967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */,
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
+				965E0609253DE537006F8A24 /* Logger.swift in Sources */,
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
 				96224C7A25348576002C1988 /* ABTestsOutput.swift in Sources */,
 				96224E0225374AD2002C1988 /* BranchManagerCore.swift in Sources */,

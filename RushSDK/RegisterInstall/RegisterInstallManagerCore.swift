@@ -25,6 +25,7 @@ final class RegisterInstallManagerCore: NSObject, RegisterInstallManager {
 extension RegisterInstallManagerCore {
     func register(completion: ((Bool) -> Void)?) {
         guard let containerView = SDKStorage.shared.view?.weak else {
+            log(text: "register install manager not activate")
             return
         }
         
@@ -35,6 +36,8 @@ extension RegisterInstallManagerCore {
             let request = try? URLRequest(url: url, method: .get)
         else {
             completion?(false)
+            
+            log(text: "register install manager not activate")
             
             return
         }
@@ -51,9 +54,13 @@ extension RegisterInstallManagerCore {
 extension RegisterInstallManagerCore: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         completion?(true)
+        
+        log(text: "register install manager complete success")
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         completion?(false)
+        
+        log(text: "register install manager complete failure")
     }
 }

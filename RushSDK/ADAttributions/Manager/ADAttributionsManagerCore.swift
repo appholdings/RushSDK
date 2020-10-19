@@ -211,6 +211,8 @@ private extension ADAttributionsManagerCore {
             "feature": attributions.feature as Any
         ]
         SDKStorage.shared.amplitudeManager.logEvent(name: "Install Attribution", parameters: parameters)
+        
+        log(text: "adAttributionsManager set link attributes: \(attributions)")
     }
     
     func retrieveADAttributions(handler: @escaping (([String: Any]?) -> Void)) {
@@ -245,6 +247,8 @@ private extension ADAttributionsManagerCore {
             "feature": attributions["iad-keyword"] as? String ?? "",
         ]
         SDKStorage.shared.amplitudeManager.logEvent(name: "Install Attribution", parameters: parameters)
+        
+        log(text: "adAttributionsManager set attributes: \(attributions)")
     }
     
     func isEmpty(attributions: ADLinkAttributions) -> Bool {

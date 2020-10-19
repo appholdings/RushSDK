@@ -22,6 +22,8 @@ final class ABTestsManagerCore: ABTestsManager {
 extension ABTestsManagerCore {
     func clearCache() {
         UserDefaults.standard.removeObject(forKey: Constants.cachedTestsKey)
+        
+        log(text: "abTestsManager clear cache")
     }
     
     func getCachedTests() -> ABTestsOutput? {
@@ -105,5 +107,7 @@ private extension ABTestsManagerCore {
         didUpdatedTestsTrigger.accept(tests)
         
         delegates.forEach { $0.weak?.abTestsManagerDidUpdated(tests: tests) }
+        
+        log(text: "abTestsManager stored tests: \(tests)")
     }
 }

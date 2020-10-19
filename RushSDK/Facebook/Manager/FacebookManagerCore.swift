@@ -21,6 +21,7 @@ extension FacebookManagerCore {
     @discardableResult
     func initialize() -> Bool {
         guard isActivate() else {
+            log(text: "facebook not activate")
             return false
         }
         
@@ -31,6 +32,8 @@ extension FacebookManagerCore {
         AppEvents.activateApp()
         
         setupInputSDKParams()
+        
+        log(text: "facebook activate")
         
         return true
     }
@@ -69,6 +72,8 @@ extension FacebookManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
             AppEvents.userID = String(userId)
+            
+            log(text: "facebook set userId: \(userId) in purchaseMediatorDidValidateReceipt")
         }
     }
 }
@@ -77,6 +82,8 @@ extension FacebookManagerCore: SDKPurchaseMediatorDelegate {
 extension FacebookManagerCore: FeatureAppMediatorDelegate {
     func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
         AppEvents.userID = String(userId)
+        
+        log(text: "facebook set userId: \(userId) in featureAppMediatorDidUpdate")
     }
 }
 
@@ -101,6 +108,8 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                 AppEvents.logPurchase(price, currency: currency)
                 
                 AppEvents.logEvent(AppEvents.Name("fb_mobile_purchase"))
+                
+                log(text: "faceboook log purchase with price: \(price), currency: \(currency)")
             })
             .disposed(by: disposeBag)
     }
@@ -115,6 +124,8 @@ extension FacebookManagerCore {
     func setupInputSDKParams() {
         if let userId = SDKStorage.shared.userId {
             AppEvents.userID = String(userId)
+            
+            log(text: "facebook set userId: \(userId) in setupInputSDKParams")
         }
     }
 }
