@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.license      = "MIT"
   spec.author             = { "Andrey Chernyshev" => "akonst17@gmail.com" }
   spec.platform     = :ios, "10.0"
-  spec.source       = { :git => "https://github.com/AgentChe/RushSDK.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/AgentChe/RushSDK.git", :branch => "master", :tag => "#{spec.version}" }
   spec.source_files  = "RushSDK/**/*.{h,m,swift}"
   spec.public_header_files = "RushSDK/**/*.h"
   
