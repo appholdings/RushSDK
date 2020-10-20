@@ -25,6 +25,7 @@ public final class SDKStorage {
     var userToken: String?
     var userId: Int?
     var view: Weak<UIView>?
+    var shouldAddStorePayment: Bool = false 
     var isTest: Bool = false
     
     // MARK: Dependencies

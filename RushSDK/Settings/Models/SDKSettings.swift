@@ -22,6 +22,8 @@ public struct SDKSettings {
     
     let view: Weak<UIView>?
     
+    let shouldAddStorePayment: Bool
+    
     let isTest: Bool
     
     public init(backendBaseUrl: String? = nil,
@@ -33,6 +35,7 @@ public struct SDKSettings {
          userToken: String? = nil,
          userId: Int? = nil,
          view: UIView? = nil,
+         shouldAddStorePayment: Bool = false,
          isTest: Bool = false) {
         self.backendBaseUrl = backendBaseUrl
         self.backendApiKey = backendApiKey
@@ -42,6 +45,7 @@ public struct SDKSettings {
         self.applicationTag = applicationTag
         self.userToken = userToken
         self.userId = userId
+        self.shouldAddStorePayment = shouldAddStorePayment
         self.isTest = isTest
         
         let viewAsAny = view as AnyObject

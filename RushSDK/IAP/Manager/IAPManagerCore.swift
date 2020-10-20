@@ -21,6 +21,10 @@ extension IAPManagerCore {
                 }
             }
         }
+        
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { _, _ in
+            SDKStorage.shared.shouldAddStorePayment
+        }
     }
 }
 
