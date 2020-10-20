@@ -10,12 +10,12 @@ import Alamofire
 struct ReceiptValidateRequest: APIRequestBody {
     private let domain: String
     private let apiKey: String
-    private let receipt: String?
+    private let receipt: String
     private let abTestsValues: [String: Any]?
     
     init(domain: String,
          apiKey: String,
-         receipt: String?,
+         receipt: String,
          abTestsValues: [String: Any]?) {
         self.domain = domain
         self.apiKey = apiKey
@@ -35,10 +35,7 @@ struct ReceiptValidateRequest: APIRequestBody {
         var params = abTestsValues ?? [:]
         
         params["_api_key"] = apiKey
-        
-        if let receipt = self.receipt {
-            params["receipt"] = receipt
-        }
+        params["receipt"] = receipt
         
         return params
     }

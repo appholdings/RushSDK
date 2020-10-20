@@ -40,14 +40,19 @@ private extension PurchaseManagerCore {
         
         return Single
             .zip(receipt, abTestsValues)
-            .map { ReceiptValidateRequest(domain: domain,
-                                          apiKey: apiKey,
-                                          receipt: $0,
-                                          abTestsValues: $1) }
             .flatMap {
-                SDKStorage.shared
+                guard let receipt = $0 else {
+                    return Single<ReceiptValidateResponse?>.just(nil)
+                }
+                
+                let request = ReceiptValidateRequest(domain: domain,
+                                                     apiKey: apiKey,
+                                                     receipt: receipt,
+                                                     abTestsValues: $1)
+                
+                return SDKStorage.shared
                     .restApiTransport
-                    .callServerApi(requestBody: $0)
+                    .callServerApi(requestBody: request)
                     .map { ReceiptValidateResponseMapper.map(from: $0) }
             }
     }
