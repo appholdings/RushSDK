@@ -10,6 +10,8 @@ import UIKit
 // MARK: Точка входа в SDK
 public final class SDKProvider {
     private let sdkInitializator = SDKInitializator()
+    
+    public init() {}
 }
 
 // MARK: Инициализация SDK
