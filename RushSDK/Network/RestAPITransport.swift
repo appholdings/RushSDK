@@ -9,7 +9,7 @@ import RxSwift
 import Alamofire
 
 public final class RestAPITransport {
-    func callServerApi(requestBody: APIRequestBody) -> Single<Any> {
+    public func callServerApi(requestBody: APIRequestBody) -> Single<Any> {
         Single.create { single in
             let manager = Alamofire.Session.default
             manager.session.configuration.timeoutIntervalForRequest = 30
