@@ -22,4 +22,19 @@ final class ReceiptValidateResponseMapper {
 public struct ReceiptValidateResponse: Decodable {
     public let userId: Int
     public let userToken: String
+    
+    private enum Keys: String, CodingKey {
+        case data = "_data"
+        case userId = "user_id"
+        case userToken = "user_token"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: Keys.self)
+        
+        let data = try container.nestedContainer(keyedBy: Keys.self, forKey: .data)
+        
+        userId = try data.decode(Int.self, forKey: .userId)
+        userToken = try data.decode(String.self, forKey: .userToken)
+    }
 }
