@@ -44,6 +44,7 @@ public extension SDKProvider {
         SDKStorage.shared.facebookManager.application(app, didFinishLaunchingWithOptions: launchOptions)
         SDKStorage.shared.branchManager.application(didFinishLaunchingWithOptions: launchOptions)
         SDKStorage.shared.adAttributionsManager.application(didFinishLaunchingWithOptions: launchOptions)
+        SDKStorage.shared.pushNotificationsManager.application(didFinishLaunchingWithOptions: launchOptions)
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) {
@@ -55,5 +56,17 @@ public extension SDKProvider {
     func application(_ app: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) {
         SDKStorage.shared.branchManager.application(continue: userActivity)
         SDKStorage.shared.adAttributionsManager.application(with: userActivity)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        SDKStorage.shared.pushNotificationsManager.application(didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        SDKStorage.shared.pushNotificationsManager.application(didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        SDKStorage.shared.pushNotificationsManager.application(didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     }
 }

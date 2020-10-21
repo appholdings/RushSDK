@@ -76,6 +76,14 @@
 		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
 		967446D7253C862F00E32205 /* SetADAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */; };
 		967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */; };
+		968E40DA2540E61A006F3CFC /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E40D92540E61A006F3CFC /* PushNotificationsManager.swift */; };
+		968E40DE2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E40DD2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift */; };
+		968E40E22540E806006F3CFC /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E40E12540E806006F3CFC /* PushNotificationsModel.swift */; };
+		968E41022540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E41012540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift */; };
+		968E41062540EC77006F3CFC /* PushNotificationsManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E41052540EC77006F3CFC /* PushNotificationsManagerCore.swift */; };
+		968E410B2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */; };
+		968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */; };
+		968E41142540F333006F3CFC /* PushNotificationsTokenUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +162,14 @@
 		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
 		967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetADAttributionsRequest.swift; sourceTree = "<group>"; };
 		967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetADLinkAttributionsRequest.swift; sourceTree = "<group>"; };
+		968E40D92540E61A006F3CFC /* PushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
+		968E40DD2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
+		968E40E12540E806006F3CFC /* PushNotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
+		968E41012540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManagerDelegate.swift; sourceTree = "<group>"; };
+		968E41052540EC77006F3CFC /* PushNotificationsManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManagerCore.swift; sourceTree = "<group>"; };
+		968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendUserPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
+		968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAnonymousPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
+		968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsTokenUpdater.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -201,6 +217,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				968E40D42540E2EF006F3CFC /* PushNotifications */,
 				965E07BB25406252006F8A24 /* Firebase */,
 				965E05F0253DC906006F8A24 /* User */,
 				965E05E7253D9C29006F8A24 /* RegisterInstall */,
@@ -625,6 +642,53 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		968E40D42540E2EF006F3CFC /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				968E41122540F31C006F3CFC /* Updater */,
+				968E41092540F0D5006F3CFC /* Request */,
+				968E40D82540E354006F3CFC /* Models */,
+				968E40D72540E34A006F3CFC /* Manager */,
+			);
+			path = PushNotifications;
+			sourceTree = "<group>";
+		};
+		968E40D72540E34A006F3CFC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				968E40D92540E61A006F3CFC /* PushNotificationsManager.swift */,
+				968E41012540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift */,
+				968E41052540EC77006F3CFC /* PushNotificationsManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		968E40D82540E354006F3CFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				968E40DD2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift */,
+				968E40E12540E806006F3CFC /* PushNotificationsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		968E41092540F0D5006F3CFC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */,
+				968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		968E41122540F31C006F3CFC /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,8 +908,11 @@
 				96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */,
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
+				968E40DE2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				968E41022540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift in Sources */,
 				965E05F3253DC91A006F8A24 /* UserManager.swift in Sources */,
 				965E0603253DCC8E006F8A24 /* UserError.swift in Sources */,
+				968E410B2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift in Sources */,
 				96224BEF252F7199002C1988 /* IAPErrorHelper.swift in Sources */,
 				96224C2A252FC668002C1988 /* SDKProvider.swift in Sources */,
 				96224E1125375FFA002C1988 /* ADAttributionDetails.swift in Sources */,
@@ -863,11 +930,14 @@
 				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
 				965E07C2254062D1006F8A24 /* FirebaseManagerCore.swift in Sources */,
 				967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */,
+				968E41142540F333006F3CFC /* PushNotificationsTokenUpdater.swift in Sources */,
 				965E07BE25406275006F8A24 /* FirebaseManager.swift in Sources */,
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
+				968E40E22540E806006F3CFC /* PushNotificationsModel.swift in Sources */,
 				965E0609253DE537006F8A24 /* Logger.swift in Sources */,
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
 				96224C7A25348576002C1988 /* ABTestsOutput.swift in Sources */,
+				968E40DA2540E61A006F3CFC /* PushNotificationsManager.swift in Sources */,
 				96224E0225374AD2002C1988 /* BranchManagerCore.swift in Sources */,
 				96224DB52535E374002C1988 /* SDKIAPMediator.swift in Sources */,
 				96224DFE25374969002C1988 /* BranchManager.swift in Sources */,
@@ -879,12 +949,14 @@
 				967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */,
 				96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
+				968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
 				965E05FC253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift in Sources */,
 				96224DE0253651E4002C1988 /* FacebookManager.swift in Sources */,
 				967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */,
 				96224DAE2535E149002C1988 /* SDKPurchaseMediator.swift in Sources */,
 				96224CEB25350C35002C1988 /* PurchaseManager.swift in Sources */,
+				968E41062540EC77006F3CFC /* PushNotificationsManagerCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,7 +1123,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1081,7 +1153,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

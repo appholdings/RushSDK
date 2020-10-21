@@ -54,6 +54,9 @@ public final class SDKStorage {
     public var amplitudeManager: AmplitudeManager {
         AmplitudeManagerCore.shared
     }
+    public var pushNotificationsManager: PushNotificationsManager {
+        PushNotificationsManagerCore.shared
+    }
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()
     }
@@ -77,6 +80,9 @@ public final class SDKStorage {
     }
     var userManager: UserManager {
         UserManagerCore.shared
+    }
+    var pushNotificationsUpdater: PushNotificationsTokenUpdater {
+        PushNotificationsTokenUpdater.shared
     }
     
     // MARK: Computed

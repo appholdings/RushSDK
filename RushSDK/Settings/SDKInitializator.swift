@@ -41,6 +41,9 @@ final class SDKInitializator {
         SDKStorage.shared.amplitudeManager.initialize()
         SDKStorage.shared.firebaseManager.initialize()
         
+        SDKStorage.shared.pushNotificationsManager.initialize()
+        SDKStorage.shared.pushNotificationsUpdater.initialize()
+        
         userManager.initialize()
         
         validateReceipt()
