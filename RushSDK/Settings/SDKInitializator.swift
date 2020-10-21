@@ -14,7 +14,11 @@ final class SDKInitializator {
     private let validateReceiptTrigger = PublishRelay<Bool>()
     private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
     
+    private let abTestsManager = SDKStorage.shared.abTestsManager
     private let iapManager = SDKStorage.shared.iapManager
+    private let purchaseManager = SDKStorage.shared.purchaseManager
+    private let registerInstallManager = SDKStorage.shared.registerInstallManager
+    private let userManager = SDKStorage.shared.userManager
     
     private let disposeBag = DisposeBag()
     
@@ -25,7 +29,7 @@ final class SDKInitializator {
         SDKStorage.shared.branchManager.initialize()
         SDKStorage.shared.amplitudeManager.initialize()
         
-        SDKStorage.shared.userManager.initialize()
+        userManager.initialize()
         
         initializeABTests()
         initializeRegisterInstall()
@@ -46,8 +50,7 @@ final class SDKInitializator {
 // MARK: Private
 private extension SDKInitializator {
     func initializeABTests() {
-        SDKStorage.shared
-            .abTestsManager
+        abTestsManager
             .rxObtainTests()
             .subscribe(onSuccess: { [weak self] _ in
                 self?.abTestsTrigger.accept(true)
@@ -59,9 +62,8 @@ private extension SDKInitializator {
     
     func validateReceipt() {
         abTestsTrigger
-            .flatMap { success in
-                SDKStorage.shared
-                    .purchaseManager
+            .flatMap { [purchaseManager] success in
+                purchaseManager
                     .validateReceipt()
                     .map { _ in true }
                     .catchErrorJustReturn(false)
@@ -75,8 +77,7 @@ private extension SDKInitializator {
     }
     
     func initializeRegisterInstall() {
-        SDKStorage.shared
-            .registerInstallManager
+        registerInstallManager
             .register { [weak self] result in
                 self?.registerInstallTrigger.accept(result)
             }
@@ -84,9 +85,8 @@ private extension SDKInitializator {
     
     func initializeUserUpdateMetaData() {
         abTestsTrigger
-            .flatMap { success in
-                SDKStorage.shared
-                    .userManager
+            .flatMap { [userManager] success in
+                userManager
                     .rxUpdateMetaData()
                     .map { _ in true }
                     .catchErrorJustReturn(false)
