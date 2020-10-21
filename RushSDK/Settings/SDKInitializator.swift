@@ -23,6 +23,17 @@ final class SDKInitializator {
     private let disposeBag = DisposeBag()
     
     func initialize(completion: (() -> Void)?) {
+        Observable
+            .zip([
+                registerInstallTrigger,
+                validateReceiptTrigger,
+                userUpdateMetaDataTrigger
+            ])
+            .subscribe(onNext: { _ in
+                completion?()
+            })
+            .disposed(by: disposeBag)
+        
         iapManager.initialize()
         
         SDKStorage.shared.facebookManager.initialize()
@@ -36,17 +47,6 @@ final class SDKInitializator {
         
         initializeABTests()
         initializeRegisterInstall()
-        
-        Observable
-            .zip([
-                registerInstallTrigger,
-                validateReceiptTrigger,
-                userUpdateMetaDataTrigger
-            ])
-            .subscribe(onNext: { _ in
-                completion?()
-            })
-            .disposed(by: disposeBag)
     }
 }
 
