@@ -29,6 +29,11 @@ public struct ReceiptValidateResponse: Decodable {
         case userToken = "user_token"
     }
     
+    init(userId: Int, userToken: String) {
+        self.userId = userId
+        self.userToken = userToken
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
         
