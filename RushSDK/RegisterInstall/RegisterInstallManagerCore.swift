@@ -25,7 +25,10 @@ final class RegisterInstallManagerCore: NSObject, RegisterInstallManager {
 extension RegisterInstallManagerCore {
     func register(completion: ((Bool) -> Void)?) {
         guard let containerView = SDKStorage.shared.view?.weak else {
+            completion?(false)
+            
             log(text: "register install manager not activate")
+            
             return
         }
         

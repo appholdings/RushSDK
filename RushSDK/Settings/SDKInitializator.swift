@@ -31,6 +31,9 @@ final class SDKInitializator {
         
         userManager.initialize()
         
+        validateReceipt()
+        initializeUserUpdateMetaData()
+        
         initializeABTests()
         initializeRegisterInstall()
         
