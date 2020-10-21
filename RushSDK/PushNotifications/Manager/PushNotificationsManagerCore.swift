@@ -47,6 +47,8 @@ extension PushNotificationsManagerCore {
                     result = .denied
                 }
                 
+                log(text: "push notifications received authorization status: \(result)")
+                
                 handler?(result)
                 self?.delegates.forEach { $0.weak?.pushNotificationsManagerDidReceive(authorizationStatus: result) }
             }
@@ -59,6 +61,8 @@ extension PushNotificationsManagerCore {
                 if granted {
                     UIApplication.shared.registerForRemoteNotifications()
                 } else {
+                    log(text: "push notifications not granted")
+                    
                     self.delegates.forEach { $0.weak?.pushNotificationsManagerDidReceive(token: nil) }
                 }
             }
@@ -107,8 +111,12 @@ private extension PushNotificationsManagerCore {
         
         DispatchQueue.main.async { [weak self] in
             if error == nil, let token = Messaging.messaging().fcmToken {
+                log(text: "push notifications received pushToken: \(token)")
+                
                 self?.delegates.forEach { $0.weak?.pushNotificationsManagerDidReceive(token: token) }
             } else {
+                log(text: "push notifications received error")
+                
                 self?.delegates.forEach { $0.weak?.pushNotificationsManagerDidReceive(token: nil) }
             }
         }
@@ -116,6 +124,8 @@ private extension PushNotificationsManagerCore {
     
     func received(userInfo: [AnyHashable : Any]) {
         let model = PushNotificationsModel(userInfo: userInfo)
+        
+        log(text: "push notifications received userInfo: \(userInfo)")
         
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach { $0.weak?.pushNotificationsManagerDidReceive(model: model) }
