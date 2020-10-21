@@ -24,6 +24,7 @@ public extension SDKProvider {
         storage.amplitudeApiKey = settings.amplitudeApiKey
         storage.facebookActive = settings.facebookActive
         storage.branchActive = settings.branchActive
+        storage.firebaseActive = settings.firebaseActive
         storage.applicationTag = settings.applicationTag
         storage.userToken = settings.userToken
         storage.userId = settings.userId

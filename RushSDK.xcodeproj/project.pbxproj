@@ -69,6 +69,8 @@
 		965E05FC253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */; };
 		965E0603253DCC8E006F8A24 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E0602253DCC8E006F8A24 /* UserError.swift */; };
 		965E0609253DE537006F8A24 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E0608253DE537006F8A24 /* Logger.swift */; };
+		965E07BE25406275006F8A24 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E07BD25406275006F8A24 /* FirebaseManager.swift */; };
+		965E07C2254062D1006F8A24 /* FirebaseManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E07C1254062D1006F8A24 /* FirebaseManagerCore.swift */; };
 		967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446C6253C84B200E32205 /* ADAttributionsManager.swift */; };
 		967446CB253C856000E32205 /* ADAttributionsManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */; };
 		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
@@ -145,6 +147,8 @@
 		965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserMetaDataRequest.swift; sourceTree = "<group>"; };
 		965E0602253DCC8E006F8A24 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		965E0608253DE537006F8A24 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		965E07BD25406275006F8A24 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		965E07C1254062D1006F8A24 /* FirebaseManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManagerCore.swift; sourceTree = "<group>"; };
 		967446C6253C84B200E32205 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
 		967446CA253C856000E32205 /* ADAttributionsManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManagerCore.swift; sourceTree = "<group>"; };
 		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				965E07BB25406252006F8A24 /* Firebase */,
 				965E05F0253DC906006F8A24 /* User */,
 				965E05E7253D9C29006F8A24 /* RegisterInstall */,
 				967446BE253C848000E32205 /* ADAttributions */,
@@ -566,6 +571,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		965E07BB25406252006F8A24 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				965E07BC2540625E006F8A24 /* Manager */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		965E07BC2540625E006F8A24 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				965E07BD25406275006F8A24 /* FirebaseManager.swift */,
+				965E07C1254062D1006F8A24 /* FirebaseManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		967446BE253C848000E32205 /* ADAttributions */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,7 +861,9 @@
 				96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */,
 				96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */,
 				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
+				965E07C2254062D1006F8A24 /* FirebaseManagerCore.swift in Sources */,
 				967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */,
+				965E07BE25406275006F8A24 /* FirebaseManager.swift in Sources */,
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
 				965E0609253DE537006F8A24 /* Logger.swift in Sources */,
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
@@ -1027,7 +1051,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.13;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1057,7 +1081,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.13;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1076,7 +1100,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDD4QZUY96;
 				INFOPLIST_FILE = RushSDKSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1097,7 +1121,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDD4QZUY96;
 				INFOPLIST_FILE = RushSDKSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

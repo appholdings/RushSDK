@@ -39,6 +39,7 @@ final class SDKInitializator {
         SDKStorage.shared.facebookManager.initialize()
         SDKStorage.shared.branchManager.initialize()
         SDKStorage.shared.amplitudeManager.initialize()
+        SDKStorage.shared.firebaseManager.initialize()
         
         userManager.initialize()
         

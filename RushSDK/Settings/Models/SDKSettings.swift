@@ -14,6 +14,7 @@ public struct SDKSettings {
     let amplitudeApiKey: String?
     let facebookActive: Bool
     let branchActive: Bool
+    let firebaseActive: Bool
     
     let applicationTag: String?
     
@@ -31,6 +32,7 @@ public struct SDKSettings {
          amplitudeApiKey: String? = nil,
          facebookActive: Bool = false,
          branchActive: Bool = false,
+         firebaseActive: Bool = false,
          applicationTag: String? = nil,
          userToken: String? = nil,
          userId: Int? = nil,
@@ -42,6 +44,7 @@ public struct SDKSettings {
         self.amplitudeApiKey = amplitudeApiKey
         self.facebookActive = facebookActive
         self.branchActive = branchActive
+        self.firebaseActive = firebaseActive
         self.applicationTag = applicationTag
         self.userToken = userToken
         self.userId = userId

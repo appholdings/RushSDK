@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "RushSDK"
-  spec.version      = "1.2.13"
+  spec.version      = "1.3.1"
   spec.summary      = "SDK for analytics in Rush apps"
   spec.description  = "SDK for analytics in Rush apps"
   spec.homepage     = "https://github.com/AgentChe/"
@@ -12,6 +12,8 @@ Pod::Spec.new do |spec|
   spec.source_files  = "RushSDK/**/*.{h,m,swift}"
   spec.public_header_files = "RushSDK/**/*.h"
   
+  spec.static_framework = true
+  
   spec.frameworks = 'UIKit', 'StoreKit'
   spec.dependency 'Alamofire'
   spec.dependency 'RxSwift'
@@ -20,4 +22,5 @@ Pod::Spec.new do |spec|
   spec.dependency 'FacebookSDK'
   spec.dependency 'Amplitude-iOS'
   spec.dependency 'Branch'
+  spec.dependency 'Firebase/Analytics'
 end

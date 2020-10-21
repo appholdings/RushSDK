@@ -20,7 +20,8 @@ public final class SDKStorage {
     var backendApiKey: String?
     var amplitudeApiKey: String?
     var facebookActive: Bool = false
-    var branchActive: Bool = false 
+    var branchActive: Bool = false
+    var firebaseActive: Bool = false 
     var applicationTag: String?
     var userToken: String?
     var userId: Int?
@@ -58,6 +59,9 @@ public final class SDKStorage {
     }
     var branchManager: BranchManager {
         BranchManagerCore.shared
+    }
+    var firebaseManager: FirebaseManager {
+        FirebaseManagerCore.shared
     }
     var adAttributionDetails: ADAttributionDetails {
         ADAttributionDetails()

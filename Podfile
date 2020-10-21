@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
-platform :ios, '10.0'
+platform :ios, '11.0'
 inhibit_all_warnings!
 
 target 'RushSDKSample' do
@@ -19,4 +19,5 @@ target 'RushSDK' do
   pod 'FacebookSDK'
   pod 'Amplitude-iOS'
   pod 'Branch'
+  pod 'Firebase/Analytics'
 end
