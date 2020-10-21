@@ -24,6 +24,14 @@ final class RegisterInstallManagerCore: NSObject, RegisterInstallManager {
 // MARK: RegisterInstallManager
 extension RegisterInstallManagerCore {
     func register(completion: ((Bool) -> Void)?) {
+        guard SDKStorage.shared.isFirstLaunch else {
+            completion?(false)
+            
+            log(text: "register install manager not active because is not first launch")
+            
+            return
+        }
+        
         guard let containerView = SDKStorage.shared.view?.weak else {
             completion?(false)
             
