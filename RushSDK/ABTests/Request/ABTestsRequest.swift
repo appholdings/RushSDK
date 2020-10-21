@@ -28,7 +28,8 @@ struct ABTestsRequest: APIRequestBody {
     
     var parameters: Parameters? {
         [
-            "_api_key": apiKey
+            "_api_key": apiKey,
+            "ab_parameters": dictionary as Any
         ]
     }
 }
