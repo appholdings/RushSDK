@@ -11,6 +11,8 @@ final class ABTestsResponse {
             return nil
         }
         
-        return ABTestsOutput(dictionary: json)
+        let abTests = json["_data"] as? [String: Any] ?? [:]
+        
+        return ABTestsOutput(dictionary: abTests)
     }
 }
