@@ -48,7 +48,7 @@ extension AmplitudeManagerCore {
         
         Amplitude.instance()?.logEvent(name, withEventProperties: dictionary)
         
-        log(text: "amplitude log event with name: \(name), parameters: \(parameters)")
+        log(text: "amplitude log event with name: \(name), parameters: \(dictionary)")
     }
 }
 
