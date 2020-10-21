@@ -45,6 +45,9 @@ public final class SDKStorage {
     public var purchaseMediator: SDKPurchaseMediator {
         SDKPurchaseMediator.shared
     }
+    public var purchaseInteractor: PurchaseInteractor {
+        PurchaseInteractorCore()
+    }
     public var featureAppMediator: FeatureAppMediator {
         FeatureAppMediator.shared
     }

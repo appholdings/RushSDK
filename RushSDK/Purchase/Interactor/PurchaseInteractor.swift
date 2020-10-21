@@ -7,7 +7,7 @@
 
 import RxSwift
 
-protocol PurchaseInteractor: class {
+public protocol PurchaseInteractor: class {
     func makeActiveSubscriptionByBuy(productId: String) -> Single<PurchaseActionResult>
     func makeActiveSubscriptionByRestore() -> Single<PurchaseActionResult>
 }
