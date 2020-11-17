@@ -46,6 +46,10 @@ extension AmplitudeManagerCore {
         var dictionary = parameters
         dictionary["anonymous_id"] = SDKStorage.shared.applicationAnonymousID
         
+        if let applicationTag = SDKStorage.shared.applicationTag {
+            dictionary["app"] = applicationTag
+        }
+        
         Amplitude.instance()?.logEvent(name, withEventProperties: dictionary)
         
         log(text: "amplitude log event with name: \(name), parameters: \(dictionary)")
