@@ -12,15 +12,18 @@ struct ReceiptValidateRequest: APIRequestBody {
     private let apiKey: String
     private let receipt: String
     private let abTestsValues: [String: Any]?
+    private let applicationAnonymousID: String
     
     init(domain: String,
          apiKey: String,
          receipt: String,
-         abTestsValues: [String: Any]?) {
+         abTestsValues: [String: Any]?,
+         applicationAnonymousID: String) {
         self.domain = domain
         self.apiKey = apiKey
         self.receipt = receipt
         self.abTestsValues = abTestsValues
+        self.applicationAnonymousID = applicationAnonymousID
     }
     
     var method: HTTPMethod {
@@ -36,6 +39,7 @@ struct ReceiptValidateRequest: APIRequestBody {
         
         params["_api_key"] = apiKey
         params["receipt"] = receipt
+        params["anonymous_id"] = applicationAnonymousID
         
         return params
     }

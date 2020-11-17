@@ -12,15 +12,18 @@ struct SendUserPushNotificationsTokenRequest: APIRequestBody {
     private let apiKey: String
     private let pushDeviceToken: String
     private let userToken: String
+    private let applicationAnonymousID: String
     
     init(domain: String,
          apiKey: String,
          pushDeviceToken: String,
-         userToken: String) {
+         userToken: String,
+         applicationAnonymousID: String) {
         self.domain = domain
         self.apiKey = apiKey
         self.pushDeviceToken = pushDeviceToken
         self.userToken = userToken
+        self.applicationAnonymousID = applicationAnonymousID
     }
     
     var method: HTTPMethod {
@@ -33,6 +36,7 @@ struct SendUserPushNotificationsTokenRequest: APIRequestBody {
     
     var parameters: Parameters? {
         [
+            "anonymous_id": applicationAnonymousID,
             "_api_key": apiKey,
             "_user_token": userToken,
             "notification_key": pushDeviceToken

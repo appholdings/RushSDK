@@ -43,7 +43,7 @@ struct SetADLinkAttributionsRequest: APIRequestBody {
     var parameters: Parameters? {
         var params: Parameters = [
             "_api_key": apiKey,
-            "anonymous_id": apiKey
+            "anonymous_id": anonymousID
         ]
         
         if let channel = channel {
