@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B0B89C955D809F6214FDC96 /* Pods_RushSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */; };
 		8BDB76EC1450EAD44912637B /* Pods_RushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */; };
+		9618386F2563FE8B001424AC /* InfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618386E2563FE8B001424AC /* InfoHelper.swift */; };
 		96224AD3252CA8E4002C1988 /* RushSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 96224AD1252CA8E4002C1988 /* RushSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE4252CE39B002C1988 /* AppDelegate.swift */; };
 		96224AEE252CE39C002C1988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96224AED252CE39C002C1988 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		2810A490E4FFBE4E427D7C91 /* Pods-RushSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDK.release.xcconfig"; path = "Target Support Files/Pods-RushSDK/Pods-RushSDK.release.xcconfig"; sourceTree = "<group>"; };
 		48704A6EA165B99A5D78DA28 /* Pods-RushSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-RushSDKSample/Pods-RushSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
 		9425EFACF97695F8CE13EDC1 /* Pods-RushSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDKSample.release.xcconfig"; path = "Target Support Files/Pods-RushSDKSample/Pods-RushSDKSample.release.xcconfig"; sourceTree = "<group>"; };
+		9618386E2563FE8B001424AC /* InfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHelper.swift; sourceTree = "<group>"; };
 		96224ACE252CA8E4002C1988 /* RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96224AD1252CA8E4002C1988 /* RushSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RushSDK.h; sourceTree = "<group>"; };
 		96224AD2252CA8E4002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				96224CA625349108002C1988 /* Weak.swift */,
 				96224E2225383B37002C1988 /* DictionaryExtension.swift */,
 				965E0608253DE537006F8A24 /* Logger.swift */,
+				9618386E2563FE8B001424AC /* InfoHelper.swift */,
 			);
 			path = RushSDK;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */,
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
 				965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */,
+				9618386F2563FE8B001424AC /* InfoHelper.swift in Sources */,
 				96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */,
 				96224C8825348B3F002C1988 /* ABTestsManager.swift in Sources */,
 				965E05F7253DC961006F8A24 /* UserManagerCore.swift in Sources */,
@@ -1123,7 +1127,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1153,7 +1157,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

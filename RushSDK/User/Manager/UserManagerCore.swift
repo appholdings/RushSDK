@@ -43,9 +43,9 @@ extension UserManagerCore {
                                                                   apiKey: apiKey,
                                                                   userToken: userToken,
                                                                   abParameters: SDKStorage.shared.abTestsManager.getCachedTests()?.dictionary ?? [:],
-                                                                  currency: Locale.current.currencyCode ?? "USD",
-                                                                  country: (Locale.current as NSLocale).countryCode ?? "",
-                                                                  locale: locale ?? "en"))
+                                                                  currency: InfoHelper.currencyCode ?? "USD",
+                                                                  country: InfoHelper.countryCode ?? "",
+                                                                  locale: InfoHelper.locale ?? "en"))
             .map { _ in true }
             .catchErrorJustReturn(false)
     }
@@ -85,20 +85,12 @@ private extension UserManagerCore {
                                                                   apiKey: apiKey,
                                                                   userToken: userToken,
                                                                   abParameters: SDKStorage.shared.abTestsManager.getCachedTests()?.dictionary ?? [:],
-                                                                  currency: Locale.current.currencyCode ?? "USD",
-                                                                  country: (Locale.current as NSLocale).countryCode ?? "",
-                                                                  locale: locale ?? "en"))
+                                                                  currency: InfoHelper.currencyCode ?? "USD",
+                                                                  country: InfoHelper.countryCode ?? "",
+                                                                  locale: InfoHelper.locale ?? "en"))
             .subscribe(onSuccess: { response in
                 log(text: "userManager did updated meta data with result: \(response)")
             })
             .disposed(by: disposeBag)
-    }
-    
-    var locale: String? {
-        guard let mainPreferredLanguage = Locale.preferredLanguages.first else {
-            return nil
-        }
-        
-        return Locale(identifier: mainPreferredLanguage).languageCode
     }
 }
