@@ -61,7 +61,8 @@ extension ABTestsManagerCore {
         
         let request = ABTestsRequest(domain: domain,
                                      apiKey: apiKey,
-                                     dictionary: lastABTests)
+                                     dictionary: lastABTests,
+                                     applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
         
         return SDKStorage.shared
             .restApiTransport

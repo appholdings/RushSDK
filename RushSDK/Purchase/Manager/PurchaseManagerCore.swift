@@ -48,7 +48,8 @@ private extension PurchaseManagerCore {
                 let request = ReceiptValidateRequest(domain: domain,
                                                      apiKey: apiKey,
                                                      receipt: receipt,
-                                                     abTestsValues: $1)
+                                                     abTestsValues: $1,
+                                                     applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
                 
                 return SDKStorage.shared
                     .restApiTransport

@@ -39,7 +39,8 @@ extension PushNotificationsTokenUpdater: PushNotificationsManagerDelegate {
             request = SendUserPushNotificationsTokenRequest(domain: domain,
                                                             apiKey: apiKey,
                                                             pushDeviceToken: pushDeviceToken,
-                                                            userToken: userToken)
+                                                            userToken: userToken,
+                                                            applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
             
             log(text: "send push token at /user")
         } else {

@@ -45,7 +45,8 @@ extension UserManagerCore {
                                                                   abParameters: SDKStorage.shared.abTestsManager.getCachedTests()?.dictionary ?? [:],
                                                                   currency: InfoHelper.currencyCode ?? "USD",
                                                                   country: InfoHelper.countryCode ?? "",
-                                                                  locale: InfoHelper.locale ?? "en"))
+                                                                  locale: InfoHelper.locale ?? "en",
+                                                                  applicationAnonymousID: SDKStorage.shared.applicationAnonymousID))
             .map { _ in true }
             .catchErrorJustReturn(false)
     }
@@ -87,7 +88,8 @@ private extension UserManagerCore {
                                                                   abParameters: SDKStorage.shared.abTestsManager.getCachedTests()?.dictionary ?? [:],
                                                                   currency: InfoHelper.currencyCode ?? "USD",
                                                                   country: InfoHelper.countryCode ?? "",
-                                                                  locale: InfoHelper.locale ?? "en"))
+                                                                  locale: InfoHelper.locale ?? "en",
+                                                                  applicationAnonymousID: SDKStorage.shared.applicationAnonymousID))
             .subscribe(onSuccess: { response in
                 log(text: "userManager did updated meta data with result: \(response)")
             })
