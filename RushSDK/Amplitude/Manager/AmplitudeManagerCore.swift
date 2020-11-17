@@ -31,6 +31,7 @@ extension AmplitudeManagerCore {
         
         setupInputSDKParams()
         installFirstLaunchIfNeeded()
+        installAppIdentifyIfNeeded()
         
         FeatureAppMediator.shared.add(delegate: self)
         SDKPurchaseMediator.shared.add(delegate: self)
@@ -117,5 +118,16 @@ private extension AmplitudeManagerCore {
         }
         
         logEvent(name: "First Launch")
+    }
+    
+    func installAppIdentifyIfNeeded() {
+        guard SDKStorage.shared.isFirstLaunch else {
+            return
+        }
+        
+        if let applicationTag = SDKStorage.shared.applicationTag {
+            let appIdentify = AMPIdentify().set("app", value: applicationTag as NSObject)
+            Amplitude.instance()?.identify(appIdentify)
+        }
     }
 }
