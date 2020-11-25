@@ -5,38 +5,65 @@
 //  Created by Andrey Chernyshev on 13.10.2020.
 //
 
+import RxCocoa
+
 public final class SDKPurchaseMediator {
     static let shared = SDKPurchaseMediator()
     
     private var delegates = [Weak<SDKPurchaseMediatorDelegate>]()
     
     private init() {}
+    
+    private let purchaseMediatorDidValidateReceiptTrigger = PublishRelay<ReceiptValidateResponse?>()
+    private let purchaseMediatorDidMakedActiveSubscriptionByBuyTrigger = PublishRelay<PurchaseActionResult>()
+    private let purchaseMediatorDidMakedActiveSubscriptionByRestoreTrigger = PublishRelay<PurchaseActionResult>()
 }
 
 // MARK: API
 extension SDKPurchaseMediator {
     func notifyAboutValidateReceiptCompleted(with response: ReceiptValidateResponse?) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             SDKPurchaseMediator.shared.delegates.forEach {
                 $0.weak?.purchaseMediatorDidValidateReceipt(response: response)
             }
+            
+            self?.purchaseMediatorDidValidateReceiptTrigger.accept(response)
         }
     }
     
     func notifyAboutMakedActiveSubscriptionByBuy(with result: PurchaseActionResult) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             SDKPurchaseMediator.shared.delegates.forEach {
                 $0.weak?.purchaseMediatorDidMakedActiveSubscriptionByBuy(result: result)
             }
+            
+            self?.purchaseMediatorDidMakedActiveSubscriptionByBuyTrigger.accept(result)
         }
     }
     
     func notifyAboutMakedActiveSubscriptionByRestore(with result: PurchaseActionResult) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             SDKPurchaseMediator.shared.delegates.forEach {
                 $0.weak?.purchaseMediatorDidMakedActiveSubscriptionByRestore(result: result)
             }
+            
+            self?.purchaseMediatorDidMakedActiveSubscriptionByRestoreTrigger.accept(result)
         }
+    }
+}
+
+// MARK: Triggers(Rx)
+extension SDKPurchaseMediator {
+    var rxPurchaseMediatorDidValidateReceipt: Signal<ReceiptValidateResponse?> {
+        purchaseMediatorDidValidateReceiptTrigger.asSignal()
+    }
+    
+    var rxPurchaseMediatorDidMakedActiveSubscriptionByBuy: Signal<PurchaseActionResult> {
+        purchaseMediatorDidMakedActiveSubscriptionByBuyTrigger.asSignal()
+    }
+    
+    var rxPurchaseMediatorDidMakedActiveSubscriptionByRestore: Signal<PurchaseActionResult> {
+        purchaseMediatorDidMakedActiveSubscriptionByRestoreTrigger.asSignal()
     }
 }
 
