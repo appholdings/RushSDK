@@ -54,15 +54,15 @@ extension SDKPurchaseMediator {
 
 // MARK: Triggers(Rx)
 extension SDKPurchaseMediator {
-    var rxPurchaseMediatorDidValidateReceipt: Signal<ReceiptValidateResponse?> {
+    public var rxPurchaseMediatorDidValidateReceipt: Signal<ReceiptValidateResponse?> {
         purchaseMediatorDidValidateReceiptTrigger.asSignal()
     }
     
-    var rxPurchaseMediatorDidMakedActiveSubscriptionByBuy: Signal<PurchaseActionResult> {
+    public var rxPurchaseMediatorDidMakedActiveSubscriptionByBuy: Signal<PurchaseActionResult> {
         purchaseMediatorDidMakedActiveSubscriptionByBuyTrigger.asSignal()
     }
     
-    var rxPurchaseMediatorDidMakedActiveSubscriptionByRestore: Signal<PurchaseActionResult> {
+    public var rxPurchaseMediatorDidMakedActiveSubscriptionByRestore: Signal<PurchaseActionResult> {
         purchaseMediatorDidMakedActiveSubscriptionByRestoreTrigger.asSignal()
     }
 }
