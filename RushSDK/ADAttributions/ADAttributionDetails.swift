@@ -17,9 +17,8 @@ final class ADAttributionDetails {
     }
     
     func isTest(attributionsDetails: [String: Any]) -> Bool {
-        let iadAttribution = attributionsDetails["iad-attribution"] as? String ?? "false"
         let iadCampaignId = attributionsDetails["iad-campaign-id"] as? String ?? "1234567890"
         
-        return (iadAttribution == "false") || (iadCampaignId == "1234567890")
+        return (iadCampaignId == "1234567890")
     }
 }
