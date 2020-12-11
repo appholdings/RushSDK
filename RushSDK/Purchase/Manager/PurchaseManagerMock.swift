@@ -20,7 +20,10 @@ extension PurchaseManagerMock {
         }
         
         return .deferred {
-            let response = ReceiptValidateResponse(userId: -1, userToken: "userToken", activeSubscription: false)
+            let response = ReceiptValidateResponse(userId: -1,
+                                                   userToken: "userToken",
+                                                   activeSubscription: false,
+                                                   onTrial: false)
             return .just(response)
         }
     }

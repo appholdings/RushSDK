@@ -25,6 +25,7 @@ public final class SDKStorage {
     var applicationTag: String?
     var userToken: String?
     var userId: Int?
+    var userOnTrial: Bool = false
     var view: Weak<UIView>?
     var shouldAddStorePayment: Bool = false 
     var isTest: Bool = false
@@ -106,6 +107,7 @@ extension SDKStorage: SDKPurchaseMediatorDelegate {
         
         self.userId = userId
         self.userToken = userToken
+        self.userOnTrial = response?.onTrial ?? false 
     }
 }
 

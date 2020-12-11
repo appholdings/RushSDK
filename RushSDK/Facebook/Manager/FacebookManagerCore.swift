@@ -102,7 +102,9 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                     return
                 }
                 
-                let price = product.price.doubleValue * 0.7
+                let factor = SDKStorage.shared.userOnTrial ? 0 : 0.7
+                
+                let price = product.price.doubleValue * factor
                 let currency = product.priceLocale.currencyCode ?? "unknown"
                 
                 AppEvents.logPurchase(price, currency: currency)
