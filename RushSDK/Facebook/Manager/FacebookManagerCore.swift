@@ -109,8 +109,6 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                 
                 AppEvents.logPurchase(price, currency: currency)
                 
-                AppEvents.logEvent(AppEvents.Name("fb_mobile_purchase"))
-                
                 log(text: "faceboook log purchase with price: \(price), currency: \(currency)")
             })
             .disposed(by: disposeBag)
