@@ -7,6 +7,7 @@
 
 import RxSwift
 import SwiftyStoreKit
+import StoreKit
 
 final class IAPManagerCore: IAPManager {}
 
@@ -87,6 +88,13 @@ extension IAPManagerCore {
                 
                 return Disposables.create()
             }
+    }
+}
+
+// MARK: IAPManager(check)
+extension IAPManagerCore {
+    func isSubscription(product: SKProduct) -> Bool {
+        product.subscriptionPeriod != nil
     }
 }
 

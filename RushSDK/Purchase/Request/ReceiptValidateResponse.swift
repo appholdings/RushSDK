@@ -23,21 +23,18 @@ public struct ReceiptValidateResponse: Decodable {
     public let userId: Int
     public let userToken: String
     public let activeSubscription: Bool
-    public let onTrial: Bool
     
     private enum Keys: String, CodingKey {
         case data = "_data"
         case userId = "user_id"
         case userToken = "user_token"
         case activeSubscription = "active_subscription"
-        case onTrial = "on_trial"
     }
     
     init(userId: Int, userToken: String, activeSubscription: Bool, onTrial: Bool) {
         self.userId = userId
         self.userToken = userToken
         self.activeSubscription = activeSubscription
-        self.onTrial = onTrial
     }
     
     public init(from decoder: Decoder) throws {
@@ -48,6 +45,5 @@ public struct ReceiptValidateResponse: Decodable {
         userId = try data.decode(Int.self, forKey: .userId)
         userToken = try data.decode(String.self, forKey: .userToken)
         activeSubscription = try data.decode(Bool.self, forKey: .activeSubscription)
-        onTrial = try data.decode(Bool.self, forKey: .onTrial)
     }
 }

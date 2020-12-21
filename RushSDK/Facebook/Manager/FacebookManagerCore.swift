@@ -102,7 +102,9 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                     return
                 }
                 
-                let factor = SDKStorage.shared.userOnTrial ? 0 : 0.7
+                let isSubscription = SDKStorage.shared.iapManager.isSubscription(product: product)
+                
+                let factor = isSubscription ? 0 : 0.7
                 
                 let price = product.price.doubleValue * factor
                 let currency = product.priceLocale.currencyCode ?? "unknown"

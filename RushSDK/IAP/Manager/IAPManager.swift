@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import StoreKit
 
 public protocol IAPManager: class {
     func initialize()
@@ -16,4 +17,6 @@ public protocol IAPManager: class {
     func restorePurchases() -> Completable
     
     func retrieveReceipt(forceUpdate: Bool) -> Single<String?>
+    
+    func isSubscription(product: SKProduct) -> Bool
 }

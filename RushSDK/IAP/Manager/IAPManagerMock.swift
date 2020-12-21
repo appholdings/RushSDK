@@ -12,7 +12,6 @@ import StoreKit
 final class IAPManagerMock: IAPManager {}
 
 // MARK: IAPManager(initialize)
-
 extension IAPManagerMock {
     func initialize() {
         SwiftyStoreKit.completeTransactions { purchases in
@@ -27,7 +26,6 @@ extension IAPManagerMock {
 }
 
 // MARK: IAPManager(obtain)
-
 extension IAPManagerMock {
     // Мокер возвращает фейковые продукты, не применимые к использованию c Core менеджерами.
     func obtainProducts(ids: [String]) -> Single<[IAPProduct]> {
@@ -47,7 +45,6 @@ extension IAPManagerMock {
 }
 
 // MARK: IAPManager(actions)
-
 extension IAPManagerMock {
     func buyProduct(with id: String) -> Single<IAPActionResult> {
         guard SwiftyStoreKit.canMakePayments else {
@@ -75,12 +72,18 @@ extension IAPManagerMock {
 }
 
 // MARK: IAPManager(receipt)
-
 extension IAPManagerMock {
     // forceUpdate игнорируется в мокере
     func retrieveReceipt(forceUpdate: Bool) -> Single<String?> {
         .deferred {
             .just("12dsf32ferggnj213d34hfb")
         }
+    }
+}
+
+// MARK: IAPManager(check)
+extension IAPManagerMock {
+    func isSubscription(product: SKProduct) -> Bool {
+        product.subscriptionPeriod != nil
     }
 }
