@@ -46,7 +46,8 @@ extension UserManagerCore {
                                                                   currency: InfoHelper.currencyCode ?? "USD",
                                                                   country: InfoHelper.countryCode ?? "",
                                                                   locale: InfoHelper.locale ?? "en",
-                                                                  applicationAnonymousID: SDKStorage.shared.applicationAnonymousID))
+                                                                  applicationAnonymousID: SDKStorage.shared.applicationAnonymousID,
+                                                                  idfa: SDKStorage.shared.idfaManager.getIDFA()))
             .map { _ in true }
             .catchErrorJustReturn(false)
     }
@@ -89,7 +90,8 @@ private extension UserManagerCore {
                                                                   currency: InfoHelper.currencyCode ?? "USD",
                                                                   country: InfoHelper.countryCode ?? "",
                                                                   locale: InfoHelper.locale ?? "en",
-                                                                  applicationAnonymousID: SDKStorage.shared.applicationAnonymousID))
+                                                                  applicationAnonymousID: SDKStorage.shared.applicationAnonymousID,
+                                                                  idfa: SDKStorage.shared.idfaManager.getIDFA()))
             .subscribe(onSuccess: { response in
                 log(text: "userManager did updated meta data with result: \(response)")
             })

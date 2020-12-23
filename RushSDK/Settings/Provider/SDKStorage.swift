@@ -84,6 +84,9 @@ public final class SDKStorage {
     var pushNotificationsUpdater: PushNotificationsTokenUpdater {
         PushNotificationsTokenUpdater.shared
     }
+    var idfaManager: IDFAManager {
+        IDFAManagerCore.shared
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {
