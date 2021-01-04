@@ -49,7 +49,7 @@ extension UserManagerCore {
                                                                   applicationAnonymousID: SDKStorage.shared.applicationAnonymousID,
                                                                   idfa: SDKStorage.shared.idfaManager.getIDFA()))
             .map { _ in true }
-            .catchErrorJustReturn(false)
+            .catchAndReturn(false)
     }
 }
 

@@ -119,7 +119,7 @@ private extension IAPManagerCore {
                         } else if IAPErrorHelper.treatErrorAsSuccess(error) {
                             event(.success(.completed(id)))
                         } else {
-                            event(.error(IAPError(.paymentFailed, underlyingError: error)))
+                            event(.failure(IAPError(.paymentFailed, underlyingError: error)))
                         }
                     }
                 }

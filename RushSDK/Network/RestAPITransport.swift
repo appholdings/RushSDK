@@ -27,7 +27,7 @@ public final class RestAPITransport {
                     case .success(let json):
                         single(.success(json))
                     case .failure(let error):
-                        single(.error(NetworkError(.serverNotAvailable, underlyingError: error)))
+                        single(.failure(NetworkError(.serverNotAvailable, underlyingError: error)))
                     }
                 })
             

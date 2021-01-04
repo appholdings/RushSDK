@@ -65,7 +65,7 @@ private extension SDKInitializator {
             .rxObtainTests()
             .subscribe(onSuccess: { [weak self] _ in
                 self?.abTestsTrigger.accept(true)
-            }, onError: { [weak self] _ in
+            }, onFailure: { [weak self] _ in
                 self?.abTestsTrigger.accept(false)
             })
             .disposed(by: disposeBag)
@@ -77,7 +77,7 @@ private extension SDKInitializator {
                 purchaseManager
                     .validateReceipt()
                     .map { _ in true }
-                    .catchErrorJustReturn(false)
+                    .catchAndReturn(false)
             }
             .subscribe(onNext: { [weak self] success in
                 self?.validateReceiptTrigger.accept(success)
@@ -100,7 +100,7 @@ private extension SDKInitializator {
                 userManager
                     .rxUpdateMetaData()
                     .map { _ in true }
-                    .catchErrorJustReturn(false)
+                    .catchAndReturn(false)
             }
             .subscribe(onNext: { [weak self] success in
                 self?.userUpdateMetaDataTrigger.accept(success)
@@ -115,7 +115,7 @@ private extension SDKInitializator {
             .rxObtainConfiguration()
             .subscribe(onSuccess: { [weak self] config in
                 self?.configurationTrigger.accept(true)
-            }, onError: { [weak self] error in
+            }, onFailure: { [weak self] error in
                 self?.configurationTrigger.accept(false)
             })
             .disposed(by: disposeBag)
