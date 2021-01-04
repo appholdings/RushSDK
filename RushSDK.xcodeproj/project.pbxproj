@@ -10,6 +10,12 @@
 		0B0B89C955D809F6214FDC96 /* Pods_RushSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */; };
 		8BDB76EC1450EAD44912637B /* Pods_RushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */; };
 		9618386F2563FE8B001424AC /* InfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618386E2563FE8B001424AC /* InfoHelper.swift */; };
+		9619CA6625A323D800C0D03C /* GetConfigurationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CA6525A323D800C0D03C /* GetConfigurationRequest.swift */; };
+		9619CA6B25A3254000C0D03C /* SDKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CA6A25A3254000C0D03C /* SDKConfiguration.swift */; };
+		9619CA6F25A325F500C0D03C /* GetConfigurationResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CA6E25A325F500C0D03C /* GetConfigurationResponseMapper.swift */; };
+		9619CA7425A3277D00C0D03C /* SDKConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CA7325A3277D00C0D03C /* SDKConfigurationManager.swift */; };
+		9619CA7825A32A6300C0D03C /* SDKConfigurationManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CA7725A32A6300C0D03C /* SDKConfigurationManagerCore.swift */; };
+		9619CA7C25A32CE300C0D03C /* SDKConfigurationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CA7B25A32CE300C0D03C /* SDKConfigurationError.swift */; };
 		96224AD3252CA8E4002C1988 /* RushSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 96224AD1252CA8E4002C1988 /* RushSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96224AE5252CE39B002C1988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224AE4252CE39B002C1988 /* AppDelegate.swift */; };
 		96224AEE252CE39C002C1988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96224AED252CE39C002C1988 /* Assets.xcassets */; };
@@ -95,6 +101,12 @@
 		48704A6EA165B99A5D78DA28 /* Pods-RushSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-RushSDKSample/Pods-RushSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
 		9425EFACF97695F8CE13EDC1 /* Pods-RushSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushSDKSample.release.xcconfig"; path = "Target Support Files/Pods-RushSDKSample/Pods-RushSDKSample.release.xcconfig"; sourceTree = "<group>"; };
 		9618386E2563FE8B001424AC /* InfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHelper.swift; sourceTree = "<group>"; };
+		9619CA6525A323D800C0D03C /* GetConfigurationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConfigurationRequest.swift; sourceTree = "<group>"; };
+		9619CA6A25A3254000C0D03C /* SDKConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConfiguration.swift; sourceTree = "<group>"; };
+		9619CA6E25A325F500C0D03C /* GetConfigurationResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConfigurationResponseMapper.swift; sourceTree = "<group>"; };
+		9619CA7325A3277D00C0D03C /* SDKConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConfigurationManager.swift; sourceTree = "<group>"; };
+		9619CA7725A32A6300C0D03C /* SDKConfigurationManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConfigurationManagerCore.swift; sourceTree = "<group>"; };
+		9619CA7B25A32CE300C0D03C /* SDKConfigurationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConfigurationError.swift; sourceTree = "<group>"; };
 		96224ACE252CA8E4002C1988 /* RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96224AD1252CA8E4002C1988 /* RushSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RushSDK.h; sourceTree = "<group>"; };
 		96224AD2252CA8E4002C1988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +212,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9619CA6325A3233200C0D03C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				9619CA7225A3276D00C0D03C /* Manager */,
+				9619CA6925A3253100C0D03C /* Models */,
+				9619CA6425A3234000C0D03C /* Requests */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		9619CA6425A3234000C0D03C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				9619CA6525A323D800C0D03C /* GetConfigurationRequest.swift */,
+				9619CA6E25A325F500C0D03C /* GetConfigurationResponseMapper.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9619CA6925A3253100C0D03C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9619CA6A25A3254000C0D03C /* SDKConfiguration.swift */,
+				9619CA7B25A32CE300C0D03C /* SDKConfigurationError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9619CA7225A3276D00C0D03C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9619CA7325A3277D00C0D03C /* SDKConfigurationManager.swift */,
+				9619CA7725A32A6300C0D03C /* SDKConfigurationManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		96224AC4252CA8E4002C1988 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +272,7 @@
 		96224AD0252CA8E4002C1988 /* RushSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9619CA6325A3233200C0D03C /* Configuration */,
 				9656D49625937E4F006755EC /* IDFA */,
 				968E40D42540E2EF006F3CFC /* PushNotifications */,
 				965E07BB25406252006F8A24 /* Firebase */,
@@ -924,6 +974,7 @@
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
 				96224DA12535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift in Sources */,
 				96224CA725349108002C1988 /* Weak.swift in Sources */,
+				9619CA6F25A325F500C0D03C /* GetConfigurationResponseMapper.swift in Sources */,
 				965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */,
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
 				9656D49925937E67006755EC /* IDFAManager.swift in Sources */,
@@ -936,6 +987,7 @@
 				96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */,
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
+				9619CA7C25A32CE300C0D03C /* SDKConfigurationError.swift in Sources */,
 				968E40DE2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				968E41022540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift in Sources */,
 				965E05F3253DC91A006F8A24 /* UserManager.swift in Sources */,
@@ -966,6 +1018,7 @@
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
 				96224C7A25348576002C1988 /* ABTestsOutput.swift in Sources */,
 				968E40DA2540E61A006F3CFC /* PushNotificationsManager.swift in Sources */,
+				9619CA6B25A3254000C0D03C /* SDKConfiguration.swift in Sources */,
 				96224E0225374AD2002C1988 /* BranchManagerCore.swift in Sources */,
 				96224DB52535E374002C1988 /* SDKIAPMediator.swift in Sources */,
 				96224DFE25374969002C1988 /* BranchManager.swift in Sources */,
@@ -976,9 +1029,12 @@
 				96224DCC2535EE8D002C1988 /* FeatureAppMediatorDelegate.swift in Sources */,
 				967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */,
 				96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */,
+				9619CA7825A32A6300C0D03C /* SDKConfigurationManagerCore.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
+				9619CA6625A323D800C0D03C /* GetConfigurationRequest.swift in Sources */,
+				9619CA7425A3277D00C0D03C /* SDKConfigurationManager.swift in Sources */,
 				965E05FC253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift in Sources */,
 				96224DE0253651E4002C1988 /* FacebookManager.swift in Sources */,
 				967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */,
@@ -1151,7 +1207,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1181,7 +1237,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

@@ -87,6 +87,9 @@ public final class SDKStorage {
     var idfaManager: IDFAManager {
         IDFAManagerCore.shared
     }
+    var configurationManager: SDKConfigurationManager {
+        SDKConfigurationManagerCore()
+    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {

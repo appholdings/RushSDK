@@ -103,8 +103,9 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                 }
                 
                 let isSubscription = SDKStorage.shared.iapManager.isSubscription(product: product)
+                let config = SDKStorage.shared.configurationManager.getCachedConfiguration()
                 
-                let factor = isSubscription ? 0 : 0.7
+                let factor = isSubscription ? 0 : (config?.revenueCoef ?? 0)
                 
                 let price = product.price.doubleValue * factor
                 let currency = product.priceLocale.currencyCode ?? "unknown"

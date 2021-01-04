@@ -13,12 +13,14 @@ final class SDKInitializator {
     private let registerInstallTrigger = PublishRelay<Bool>()
     private let validateReceiptTrigger = PublishRelay<Bool>()
     private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
+    private let configurationTrigger = PublishRelay<Bool>()
     
     private let abTestsManager = SDKStorage.shared.abTestsManager
     private let iapManager = SDKStorage.shared.iapManager
     private let purchaseManager = SDKStorage.shared.purchaseManager
     private let registerInstallManager = SDKStorage.shared.registerInstallManager
     private let userManager = SDKStorage.shared.userManager
+    private let configurationManager = SDKStorage.shared.configurationManager
     
     private let disposeBag = DisposeBag()
     
@@ -27,7 +29,8 @@ final class SDKInitializator {
             .zip([
                 registerInstallTrigger,
                 validateReceiptTrigger,
-                userUpdateMetaDataTrigger
+                userUpdateMetaDataTrigger,
+                configurationTrigger
             ])
             .subscribe(onNext: { _ in
                 completion?()
@@ -51,6 +54,7 @@ final class SDKInitializator {
         
         initializeABTests()
         initializeRegisterInstall()
+        initializeConfiguration()
     }
 }
 
@@ -102,6 +106,17 @@ private extension SDKInitializator {
                 self?.userUpdateMetaDataTrigger.accept(success)
             }, onError: { [weak self] _ in
                 self?.userUpdateMetaDataTrigger.accept(false)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func initializeConfiguration() {
+        configurationManager
+            .rxObtainConfiguration()
+            .subscribe(onSuccess: { [weak self] config in
+                self?.configurationTrigger.accept(true)
+            }, onError: { [weak self] error in
+                self?.configurationTrigger.accept(false)
             })
             .disposed(by: disposeBag)
     }
