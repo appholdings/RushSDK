@@ -12,4 +12,7 @@ protocol UserManager: class {
     func initialize() -> Bool
     
     func rxUpdateMetaData() -> Single<Bool>
+    
+    func rxNewFeatureAppUser() -> Single<String?>
+    func rxFeatureAppLoginUser(with userToken: String) -> Single<Bool>
 }

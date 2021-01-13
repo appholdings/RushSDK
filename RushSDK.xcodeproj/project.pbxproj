@@ -93,6 +93,12 @@
 		968E410B2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */; };
 		968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */; };
 		968E41142540F333006F3CFC /* PushNotificationsTokenUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */; };
+		96D38A4725AF2F5600EADC9A /* FeatureAppNewUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */; };
+		96D38A4D25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */; };
+		96D38A5225AF306F00EADC9A /* FeatureAppLoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */; };
+		96D38A5A25AF310000EADC9A /* FeatureAppSyncTokensRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5925AF310000EADC9A /* FeatureAppSyncTokensRequest.swift */; };
+		96D38A5F25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5E25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift */; };
+		96D38A6525AF3DFA00EADC9A /* SDKUserManagerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A6425AF3DFA00EADC9A /* SDKUserManagerMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +194,12 @@
 		968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendUserPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
 		968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAnonymousPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
 		968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsTokenUpdater.swift; sourceTree = "<group>"; };
+		96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppNewUserRequest.swift; sourceTree = "<group>"; };
+		96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppNewUserResponseMapper.swift; sourceTree = "<group>"; };
+		96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppLoginUserRequest.swift; sourceTree = "<group>"; };
+		96D38A5925AF310000EADC9A /* FeatureAppSyncTokensRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppSyncTokensRequest.swift; sourceTree = "<group>"; };
+		96D38A5E25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserManagerMediatorDelegate.swift; sourceTree = "<group>"; };
+		96D38A6425AF3DFA00EADC9A /* SDKUserManagerMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserManagerMediator.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -631,6 +643,7 @@
 		965E05F0253DC906006F8A24 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				96D38A5D25AF3D3900EADC9A /* Mediator */,
 				965E0601253DCC81006F8A24 /* Models */,
 				965E05FA253DCAD8006F8A24 /* Request */,
 				965E05F1253DC90C006F8A24 /* Manager */,
@@ -650,7 +663,10 @@
 		965E05FA253DCAD8006F8A24 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				96D38A4525AF2F3900EADC9A /* FeatureAppNewUser */,
 				965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */,
+				96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */,
+				96D38A5925AF310000EADC9A /* FeatureAppSyncTokensRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -762,6 +778,24 @@
 				968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */,
 			);
 			path = Updater;
+			sourceTree = "<group>";
+		};
+		96D38A4525AF2F3900EADC9A /* FeatureAppNewUser */ = {
+			isa = PBXGroup;
+			children = (
+				96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */,
+				96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */,
+			);
+			path = FeatureAppNewUser;
+			sourceTree = "<group>";
+		};
+		96D38A5D25AF3D3900EADC9A /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96D38A5E25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift */,
+				96D38A6425AF3DFA00EADC9A /* SDKUserManagerMediator.swift */,
+			);
+			path = Mediator;
 			sourceTree = "<group>";
 		};
 		AC18086969F08593E8470DD1 /* Pods */ = {
@@ -965,6 +999,7 @@
 				96224B99252F2C4C002C1988 /* IAPProduct.swift in Sources */,
 				96224DB92535E38B002C1988 /* SDKIAPMediatorDelegate.swift in Sources */,
 				96224E1925376340002C1988 /* AmplitudeManager.swift in Sources */,
+				96D38A6525AF3DFA00EADC9A /* SDKUserManagerMediator.swift in Sources */,
 				96224C8F25348BFF002C1988 /* ABTestsRequest.swift in Sources */,
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
 				967446D7253C862F00E32205 /* SetADAttributionsRequest.swift in Sources */,
@@ -989,7 +1024,9 @@
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
 				9619CA7C25A32CE300C0D03C /* SDKConfigurationError.swift in Sources */,
 				968E40DE2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				96D38A4D25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift in Sources */,
 				968E41022540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift in Sources */,
+				96D38A5225AF306F00EADC9A /* FeatureAppLoginUserRequest.swift in Sources */,
 				965E05F3253DC91A006F8A24 /* UserManager.swift in Sources */,
 				965E0603253DCC8E006F8A24 /* UserError.swift in Sources */,
 				968E410B2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift in Sources */,
@@ -1003,15 +1040,18 @@
 				96224DF825374161002C1988 /* SDKInitializator.swift in Sources */,
 				96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */,
 				96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */,
+				96D38A4725AF2F5600EADC9A /* FeatureAppNewUserRequest.swift in Sources */,
 				96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */,
 				96224C6525346A56002C1988 /* ApplicationAnonymousID.swift in Sources */,
 				96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */,
 				96224BE7252F628F002C1988 /* IAPManagerCore.swift in Sources */,
+				96D38A5A25AF310000EADC9A /* FeatureAppSyncTokensRequest.swift in Sources */,
 				96224BD5252F3518002C1988 /* NetworkError.swift in Sources */,
 				965E07C2254062D1006F8A24 /* FirebaseManagerCore.swift in Sources */,
 				967446C7253C84B200E32205 /* ADAttributionsManager.swift in Sources */,
 				968E41142540F333006F3CFC /* PushNotificationsTokenUpdater.swift in Sources */,
 				965E07BE25406275006F8A24 /* FirebaseManager.swift in Sources */,
+				96D38A5F25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift in Sources */,
 				96224CAB2534942E002C1988 /* ABTestsError.swift in Sources */,
 				968E40E22540E806006F3CFC /* PushNotificationsModel.swift in Sources */,
 				965E0609253DE537006F8A24 /* Logger.swift in Sources */,
@@ -1207,7 +1247,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.1;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1237,7 +1277,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.1;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

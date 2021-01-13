@@ -11,9 +11,10 @@ import RxCocoa
 final class SDKInitializator {
     private let abTestsTrigger = PublishRelay<Bool>()
     private let registerInstallTrigger = PublishRelay<Bool>()
-    private let validateReceiptTrigger = PublishRelay<Bool>()
+    private let validateReceiptTrigger = PublishRelay<ReceiptValidateResponse?>()
     private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
     private let configurationTrigger = PublishRelay<Bool>()
+    private let featureAppUserTrigger = PublishRelay<Bool>()
     
     private let abTestsManager = SDKStorage.shared.abTestsManager
     private let iapManager = SDKStorage.shared.iapManager
@@ -28,7 +29,7 @@ final class SDKInitializator {
         Observable
             .zip([
                 registerInstallTrigger,
-                validateReceiptTrigger,
+                featureAppUserTrigger,
                 userUpdateMetaDataTrigger,
                 configurationTrigger
             ])
@@ -49,6 +50,7 @@ final class SDKInitializator {
         
         userManager.initialize()
         
+        initializeFeatureAppTrigger()
         validateReceipt()
         initializeUserUpdateMetaData()
         
@@ -76,13 +78,12 @@ private extension SDKInitializator {
             .flatMap { [purchaseManager] success in
                 purchaseManager
                     .validateReceipt()
-                    .map { _ in true }
-                    .catchAndReturn(false)
+                    .catchAndReturn(nil)
             }
-            .subscribe(onNext: { [weak self] success in
-                self?.validateReceiptTrigger.accept(success)
+            .subscribe(onNext: { [weak self] receipt in
+                self?.validateReceiptTrigger.accept(receipt)
             }, onError: { [weak self] _ in
-                self?.validateReceiptTrigger.accept(false)
+                self?.validateReceiptTrigger.accept(nil)
             })
             .disposed(by: disposeBag)
     }
@@ -117,6 +118,31 @@ private extension SDKInitializator {
                 self?.configurationTrigger.accept(true)
             }, onFailure: { [weak self] error in
                 self?.configurationTrigger.accept(false)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func initializeFeatureAppTrigger() {
+        validateReceiptTrigger
+            .flatMap { [weak self] receipt -> Completable in
+                guard let this = self else {
+                    return .empty()
+                }
+                
+                guard let userToken = receipt?.userToken else {
+                    return this.userManager
+                        .rxNewFeatureAppUser()
+                        .catchAndReturn(nil)
+                        .asCompletable()
+                }
+                
+                return this.userManager
+                    .rxFeatureAppLoginUser(with: userToken)
+                    .catchAndReturn(false)
+                    .asCompletable()
+            }
+            .subscribe(onCompleted: { [weak self] in
+                self?.featureAppUserTrigger.accept(true)
             })
             .disposed(by: disposeBag)
     }

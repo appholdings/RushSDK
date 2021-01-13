@@ -25,17 +25,23 @@ public struct SDKSettings {
     
     let shouldAddStorePayment: Bool
     
-    public init(backendBaseUrl: String? = nil,
-         backendApiKey: String? = nil,
-         amplitudeApiKey: String? = nil,
-         facebookActive: Bool = false,
-         branchActive: Bool = false,
-         firebaseActive: Bool = false,
-         applicationTag: String? = nil,
-         userToken: String? = nil,
-         userId: Int? = nil,
-         view: UIView? = nil,
-         shouldAddStorePayment: Bool = false) {
+    let featureAppBackendUrl: String?
+    let featureAppBackendApiKey: String?
+    
+    public init(
+        backendBaseUrl: String? = nil,
+        backendApiKey: String? = nil,
+        amplitudeApiKey: String? = nil,
+        facebookActive: Bool = false,
+        branchActive: Bool = false,
+        firebaseActive: Bool = false,
+        applicationTag: String? = nil,
+        userToken: String? = nil,
+        userId: Int? = nil,
+        view: UIView? = nil,
+        shouldAddStorePayment: Bool = false,
+        featureAppBackendUrl: String? = nil,
+        featureAppBackendApiKey: String? = nil) {
         self.backendBaseUrl = backendBaseUrl
         self.backendApiKey = backendApiKey
         self.amplitudeApiKey = amplitudeApiKey
@@ -46,6 +52,8 @@ public struct SDKSettings {
         self.userToken = userToken
         self.userId = userId
         self.shouldAddStorePayment = shouldAddStorePayment
+        self.featureAppBackendUrl = featureAppBackendUrl
+        self.featureAppBackendApiKey = featureAppBackendApiKey
         
         let viewAsAny = view as AnyObject
         self.view = Weak<UIView>(viewAsAny)

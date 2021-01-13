@@ -13,6 +13,7 @@ public final class SDKStorage {
     private init() {
         purchaseMediator.add(delegate: self)
         featureAppMediator.add(delegate: self)
+        userManagerMediator.add(delegate: self)
     }
     
     // MARK: Variables
@@ -28,6 +29,8 @@ public final class SDKStorage {
     var view: Weak<UIView>?
     var shouldAddStorePayment: Bool = false 
     var isTest: Bool = false
+    var featureAppBackendUrl: String?
+    var featureAppBackendApiKey: String?
     
     // MARK: Dependencies
     public var restApiTransport: RestAPITransport {
@@ -56,6 +59,9 @@ public final class SDKStorage {
     }
     public var pushNotificationsManager: PushNotificationsManager {
         PushNotificationsManagerCore.shared
+    }
+    public var userManagerMediator: SDKUserManagerMediator {
+        SDKUserManagerMediator.shared
     }
     var abTestsManager: ABTestsManager {
         isTest ? ABTestsManagerMock() : ABTestsManagerCore()
@@ -119,6 +125,13 @@ extension SDKStorage: SDKPurchaseMediatorDelegate {
 extension SDKStorage: FeatureAppMediatorDelegate {
     func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
         self.userId = userId
+        self.userToken = userToken
+    }
+}
+
+// MARK: SDKUserManagerMediatorDelegate
+extension SDKStorage: SDKUserManagerMediatorDelegate {
+    public func userManagerMediatorDidReceivedFeatureApp(userToken: String) {
         self.userToken = userToken
     }
 }

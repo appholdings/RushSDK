@@ -12,6 +12,9 @@ final class UserManagerCore: UserManager {
     
     private let disposeBag = DisposeBag()
     
+    // Храним в менеджере токен, чтобы сверять его с новым полученным после валидации токеном. Напрямую из SDKStorage нельзя брать токен, потому что он обновляется сам после поукпкки и может быть рассинхронизация.
+    private var userToken: String?
+    
     private init() {}
 }
 
@@ -21,6 +24,8 @@ extension UserManagerCore {
     func initialize() -> Bool {
         SDKStorage.shared.purchaseMediator.add(delegate: self)
         SDKStorage.shared.featureAppMediator.add(delegate: self)
+        
+        userToken = SDKStorage.shared.userToken
         
         return true 
     }
@@ -51,6 +56,42 @@ extension UserManagerCore {
             .map { _ in true }
             .catchAndReturn(false)
     }
+    
+    func rxNewFeatureAppUser() -> Single<String?> {
+        guard
+            let domain = SDKStorage.shared.featureAppBackendUrl,
+            let apiKey = SDKStorage.shared.featureAppBackendApiKey
+        else {
+            return .error(UserError(code: .sdkNotInitialized))
+        }
+        
+        let request = FeatureAppNewUserRequest(domain: domain, apiKey: apiKey)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map(FeatureAppNewUserResponseMapper.map(from:))
+            .flatMap(flatMap(newFeatureAppUserToken:))
+    }
+    
+    func rxFeatureAppLoginUser(with userToken: String) -> Single<Bool> {
+        guard
+            let domain = SDKStorage.shared.featureAppBackendUrl,
+            let apiKey = SDKStorage.shared.featureAppBackendApiKey
+        else {
+            return .error(UserError(code: .sdkNotInitialized))
+        }
+        
+        let request = FeatureAppLoginUserRequest(domain: domain,
+                                                 apiKey: apiKey,
+                                                 userToken: userToken)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { _ in true }
+            .catchAndReturn(false)
+    }
 }
 
 // MARK: SDKPurchaseMediatorDelegate
@@ -61,6 +102,9 @@ extension UserManagerCore: SDKPurchaseMediatorDelegate {
         }
         
         updateMetaDataAfterReceive(userToken: userToken)
+        syncTokens(userToken: userToken)
+        
+        self.userToken = userToken
     }
 }
 
@@ -68,6 +112,9 @@ extension UserManagerCore: SDKPurchaseMediatorDelegate {
 extension UserManagerCore: FeatureAppMediatorDelegate {
     func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
         updateMetaDataAfterReceive(userToken: userToken)
+        syncTokens(userToken: userToken)
+        
+        self.userToken = userToken
     }
 }
 
@@ -96,5 +143,49 @@ private extension UserManagerCore {
                 log(text: "userManager did updated meta data with result: \(response)")
             })
             .disposed(by: disposeBag)
+    }
+    
+    func syncTokens(userToken: String) {
+        guard
+            let domain = SDKStorage.shared.featureAppBackendUrl,
+            let apiKey = SDKStorage.shared.featureAppBackendApiKey,
+            let oldToken = self.userToken
+        else {
+            return
+        }
+        
+        guard oldToken != userToken else {
+            return
+        }
+        
+        let request = FeatureAppSyncTokensRequest(domain: domain,
+                                                  apiKey: apiKey,
+                                                  oldToken: oldToken,
+                                                  newToken: userToken)
+        
+        SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .subscribe(onSuccess: { response in
+                log(text: "userManager did sync tokens; old: \(oldToken), new: \(userToken)")
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func flatMap(newFeatureAppUserToken: String?) -> Single<String?> {
+        guard let token = newFeatureAppUserToken else {
+            return .deferred { .just(newFeatureAppUserToken) }
+        }
+        
+        return Single<String?>
+            .create { [weak self] event in
+                self?.userToken = token
+                
+                SDKStorage.shared.userManagerMediator.notifyAboutReceivedFeatureApp(userToken: token)
+                
+                event(.success(newFeatureAppUserToken))
+                
+                return Disposables.create()
+            }
     }
 }
