@@ -124,25 +124,27 @@ private extension SDKInitializator {
     
     func initializeFeatureAppTrigger() {
         validateReceiptTrigger
-            .flatMap { [weak self] receipt -> Completable in
+            .flatMap { [weak self] receipt -> Single<Bool> in
                 guard let this = self else {
-                    return .empty()
+                    return .never()
                 }
                 
                 guard let userToken = receipt?.userToken else {
                     return this.userManager
                         .rxNewFeatureAppUser()
-                        .catchAndReturn(nil)
-                        .asCompletable()
+                        .map { _ in true }
+                        .catchAndReturn(false)
                 }
                 
                 return this.userManager
                     .rxFeatureAppLoginUser(with: userToken)
+                    .map { _ in true }
                     .catchAndReturn(false)
-                    .asCompletable()
             }
-            .subscribe(onCompleted: { [weak self] in
-                self?.featureAppUserTrigger.accept(true)
+            .subscribe(onNext: { [weak self] success in
+                self?.featureAppUserTrigger.accept(success)
+            }, onError: { [weak self] _ in
+                self?.featureAppUserTrigger.accept(false)
             })
             .disposed(by: disposeBag)
     }

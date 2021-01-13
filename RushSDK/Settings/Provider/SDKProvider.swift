@@ -30,6 +30,8 @@ public extension SDKProvider {
         storage.userId = settings.userId
         storage.view = settings.view
         storage.shouldAddStorePayment = settings.shouldAddStorePayment
+        storage.featureAppBackendUrl = settings.featureAppBackendUrl
+        storage.featureAppBackendApiKey = settings.featureAppBackendApiKey
         
         SDKNumberLaunches().launch()
         
