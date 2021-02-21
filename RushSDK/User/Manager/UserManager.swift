@@ -15,4 +15,6 @@ protocol UserManager: class {
     
     func rxNewFeatureAppUser() -> Single<String?>
     func rxFeatureAppLoginUser(with userToken: String) -> Single<Bool>
+    
+    func check(token: String) -> Single<Bool>
 }

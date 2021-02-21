@@ -92,6 +92,24 @@ extension UserManagerCore {
             .map { _ in true }
             .catchAndReturn(false)
     }
+    
+    func check(token: String) -> Single<Bool> {
+        guard
+            let domain = SDKStorage.shared.featureAppBackendUrl,
+            let apiKey = SDKStorage.shared.featureAppBackendApiKey
+        else {
+            return .error(UserError(code: .sdkNotInitialized))
+        }
+        
+        let request = CheckTokenRequest(domain: domain,
+                                        apiKey: apiKey,
+                                        token: token)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map(CheckTokenResponseMapper.isValideToken(in:))
+    }
 }
 
 // MARK: SDKPurchaseMediatorDelegate

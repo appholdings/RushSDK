@@ -85,6 +85,8 @@
 		967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446CF253C85FA00E32205 /* ADLinkAttributions.swift */; };
 		967446D7253C862F00E32205 /* SetADAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */; };
 		967446DD253C8C8100E32205 /* SetADLinkAttributionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */; };
+		9685642C25E2947F00238AEB /* CheckTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685642B25E2947F00238AEB /* CheckTokenRequest.swift */; };
+		9685643225E2DCF800238AEB /* CheckTokenResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685643125E2DCF800238AEB /* CheckTokenResponseMapper.swift */; };
 		968E40DA2540E61A006F3CFC /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E40D92540E61A006F3CFC /* PushNotificationsManager.swift */; };
 		968E40DE2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E40DD2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift */; };
 		968E40E22540E806006F3CFC /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E40E12540E806006F3CFC /* PushNotificationsModel.swift */; };
@@ -186,6 +188,8 @@
 		967446CF253C85FA00E32205 /* ADLinkAttributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLinkAttributions.swift; sourceTree = "<group>"; };
 		967446D6253C862F00E32205 /* SetADAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetADAttributionsRequest.swift; sourceTree = "<group>"; };
 		967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetADLinkAttributionsRequest.swift; sourceTree = "<group>"; };
+		9685642B25E2947F00238AEB /* CheckTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTokenRequest.swift; sourceTree = "<group>"; };
+		9685643125E2DCF800238AEB /* CheckTokenResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTokenResponseMapper.swift; sourceTree = "<group>"; };
 		968E40D92540E61A006F3CFC /* PushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
 		968E40DD2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
 		968E40E12540E806006F3CFC /* PushNotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
@@ -663,6 +667,7 @@
 		965E05FA253DCAD8006F8A24 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				9685642A25E2946900238AEB /* CheckToken */,
 				96D38A4525AF2F3900EADC9A /* FeatureAppNewUser */,
 				965E05FB253DCAF0006F8A24 /* UpdateUserMetaDataRequest.swift */,
 				96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */,
@@ -731,6 +736,15 @@
 				967446DC253C8C8100E32205 /* SetADLinkAttributionsRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		9685642A25E2946900238AEB /* CheckToken */ = {
+			isa = PBXGroup;
+			children = (
+				9685642B25E2947F00238AEB /* CheckTokenRequest.swift */,
+				9685643125E2DCF800238AEB /* CheckTokenResponseMapper.swift */,
+			);
+			path = CheckToken;
 			sourceTree = "<group>";
 		};
 		968E40D42540E2EF006F3CFC /* PushNotifications */ = {
@@ -1066,10 +1080,12 @@
 				96224CA325348F9B002C1988 /* ABTestsManagerCore.swift in Sources */,
 				96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */,
 				96224C9B25348D35002C1988 /* ABTestsResponse.swift in Sources */,
+				9685642C25E2947F00238AEB /* CheckTokenRequest.swift in Sources */,
 				96224DCC2535EE8D002C1988 /* FeatureAppMediatorDelegate.swift in Sources */,
 				967446D0253C85FA00E32205 /* ADLinkAttributions.swift in Sources */,
 				96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */,
 				9619CA7825A32A6300C0D03C /* SDKConfigurationManagerCore.swift in Sources */,
+				9685643225E2DCF800238AEB /* CheckTokenResponseMapper.swift in Sources */,
 				96224BEB252F63E1002C1988 /* IAPActionResult.swift in Sources */,
 				968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */,
 				96224C3025306773002C1988 /* SDKStorage.swift in Sources */,
@@ -1247,7 +1263,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1277,7 +1293,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

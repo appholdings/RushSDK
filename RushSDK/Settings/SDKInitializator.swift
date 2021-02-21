@@ -11,7 +11,6 @@ import RxCocoa
 final class SDKInitializator {
     private let abTestsTrigger = PublishRelay<Bool>()
     private let registerInstallTrigger = PublishRelay<Bool>()
-    private let validateReceiptTrigger = PublishRelay<ReceiptValidateResponse?>()
     private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
     private let configurationTrigger = PublishRelay<Bool>()
     private let featureAppUserTrigger = PublishRelay<Bool>()
@@ -50,8 +49,7 @@ final class SDKInitializator {
         
         userManager.initialize()
         
-        initializeFeatureAppTrigger()
-        validateReceipt()
+        initializeUserToken()
         initializeUserUpdateMetaData()
         
         initializeABTests()
@@ -69,21 +67,6 @@ private extension SDKInitializator {
                 self?.abTestsTrigger.accept(true)
             }, onFailure: { [weak self] _ in
                 self?.abTestsTrigger.accept(false)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func validateReceipt() {
-        abTestsTrigger
-            .flatMap { [purchaseManager] success in
-                purchaseManager
-                    .validateReceipt()
-                    .catchAndReturn(nil)
-            }
-            .subscribe(onNext: { [weak self] receipt in
-                self?.validateReceiptTrigger.accept(receipt)
-            }, onError: { [weak self] _ in
-                self?.validateReceiptTrigger.accept(nil)
             })
             .disposed(by: disposeBag)
     }
@@ -122,24 +105,34 @@ private extension SDKInitializator {
             .disposed(by: disposeBag)
     }
     
-    func initializeFeatureAppTrigger() {
-        validateReceiptTrigger
-            .flatMap { [weak self] receipt -> Single<Bool> in
+    func initializeUserToken() {
+        abTestsTrigger
+            .flatMapLatest { [userManager] success -> Single<Bool> in
+                guard let userToken = SDKStorage.shared.userToken else {
+                    return .deferred { .just(false) }
+                }
+                
+                return userManager
+                    .check(token: userToken)
+                    .catchAndReturn(false)
+            }
+            .flatMapLatest { [purchaseManager] tokenIsValidated -> Single<(ReceiptValidateResponse?, Bool)> in
+                purchaseManager
+                    .validateReceipt()
+                    .map { ($0, tokenIsValidated) }
+            }
+            .flatMap { [weak self] stub -> Single<Bool> in
                 guard let this = self else {
                     return .never()
                 }
                 
-                guard let userToken = receipt?.userToken else {
-                    return this.userManager
-                        .rxNewFeatureAppUser()
-                        .map { _ in true }
-                        .catchAndReturn(false)
+                let (receipt, tokenIsValidated) = stub
+                
+                guard tokenIsValidated, let storedUserToken = SDKStorage.shared.userToken else {
+                    return this.flatMapUserTokenIfTokenNil(receipt: receipt)
                 }
                 
-                return this.userManager
-                    .rxFeatureAppLoginUser(with: userToken)
-                    .map { _ in true }
-                    .catchAndReturn(false)
+                return this.flatMapUserTokenIfTokenNotNil(receipt: receipt, storedUserToken: storedUserToken)
             }
             .subscribe(onNext: { [weak self] success in
                 self?.featureAppUserTrigger.accept(success)
@@ -147,5 +140,40 @@ private extension SDKInitializator {
                 self?.featureAppUserTrigger.accept(false)
             })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: Private (utils)
+private extension SDKInitializator {
+    func flatMapUserTokenIfTokenNil(receipt: ReceiptValidateResponse?) -> Single<Bool> {
+        guard let userToken = receipt?.userToken else {
+            return userManager
+                .rxNewFeatureAppUser()
+                .map { _ in true }
+                .catchAndReturn(false)
+        }
+
+        return userManager
+            .rxFeatureAppLoginUser(with: userToken)
+            .map { _ in true }
+            .catchAndReturn(false)
+    }
+    
+    func flatMapUserTokenIfTokenNotNil(receipt: ReceiptValidateResponse?, storedUserToken: String) -> Single<Bool> {
+        guard let userToken = receipt?.userToken else {
+            return .deferred { .just(false) }
+        }
+        
+        guard userToken != storedUserToken else {
+            return .deferred { .just(true) }
+        }
+        
+        guard let core = (userManager as? UserManagerCore) else {
+            return .deferred { .just(false) }
+        }
+        
+        core.purchaseMediatorDidValidateReceipt(response: receipt)
+        
+        return .deferred { .just(true) }
     }
 }
