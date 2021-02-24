@@ -83,6 +83,9 @@ public final class SDKStorage {
     var adAttributionDetails: ADAttributionDetails {
         ADAttributionDetails()
     }
+    var adServiceToken: ADServiceToken {
+        ADServiceToken()
+    }
     var adAttributionsManager: ADAttributionsManager {
         ADAttributionsManagerCore.shared
     }

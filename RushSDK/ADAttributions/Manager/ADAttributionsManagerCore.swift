@@ -23,6 +23,8 @@ extension ADAttributionsManagerCore {
             return
         }
         
+        uploadADServiceToken()
+        
         if
             let userActivityDictionary = launchOptions?[UIApplication.LaunchOptionsKey.userActivityDictionary] as? [UIApplication.LaunchOptionsKey: Any],
             let userActivityId = userActivityDictionary[.userActivityType] as? String {
@@ -256,5 +258,26 @@ private extension ADAttributionsManagerCore {
             && attributions.campaign == nil
             && attributions.adgroup == nil
             && attributions.feature == nil
+    }
+    
+    func uploadADServiceToken() {
+        guard
+            let domain = SDKStorage.shared.backendBaseUrl,
+            let apiKey = SDKStorage.shared.backendApiKey,
+            let adServiceToken = SDKStorage.shared.adServiceToken.retrieve()
+        else {
+            return
+        }
+        
+        let request = SetADServiceTokenRequest(domain: domain,
+                                               apiKey: apiKey,
+                                               anonymousId: SDKStorage.shared.applicationAnonymousID,
+                                               adServiceToken: adServiceToken)
+        
+        SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
