@@ -21,4 +21,5 @@ target 'RushSDK' do
   pod 'Branch'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
+  pod 'AppsFlyerFramework'
 end

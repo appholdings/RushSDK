@@ -22,6 +22,7 @@ public extension SDKProvider {
         storage.backendBaseUrl = settings.backendBaseUrl
         storage.backendApiKey = settings.backendApiKey
         storage.amplitudeApiKey = settings.amplitudeApiKey
+        storage.appsFlyerApiKey = settings.appsFlyerApiKey
         storage.facebookActive = settings.facebookActive
         storage.branchActive = settings.branchActive
         storage.firebaseActive = settings.firebaseActive
@@ -32,6 +33,7 @@ public extension SDKProvider {
         storage.shouldAddStorePayment = settings.shouldAddStorePayment
         storage.featureAppBackendUrl = settings.featureAppBackendUrl
         storage.featureAppBackendApiKey = settings.featureAppBackendApiKey
+        storage.appleAppID = settings.appleAppID
         
         SDKNumberLaunches().launch()
         
@@ -57,6 +59,10 @@ public extension SDKProvider {
     func application(_ app: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) {
         SDKStorage.shared.branchManager.application(continue: userActivity)
         SDKStorage.shared.adAttributionsManager.application(with: userActivity)
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        SDKStorage.shared.appsFlyerManager.applicationDidBecomeActive(application)
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

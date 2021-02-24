@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.4.1)
   - Amplitude-iOS (4.10.0)
+  - AppsFlyerFramework (6.2.2):
+    - AppsFlyerFramework/Main (= 6.2.2)
+  - AppsFlyerFramework/Main (6.2.2)
   - Branch (0.36.0)
   - FacebookSDK (8.2.0):
     - FacebookSDK/CoreKit (= 8.2.0)
@@ -90,7 +93,7 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.12)
-  - RushSDK (1.6.1):
+  - RushSDK (2.2.1):
     - Alamofire
     - Amplitude-iOS
     - Branch
@@ -111,6 +114,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Amplitude-iOS
+  - AppsFlyerFramework
   - Branch
   - FacebookSDK
   - Firebase/Analytics
@@ -124,6 +128,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Amplitude-iOS
+    - AppsFlyerFramework
     - Branch
     - FacebookSDK
     - FBSDKCoreKit
@@ -151,6 +156,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
+  AppsFlyerFramework: a9921d6894f863bdcca436948fd0256e9d93ddf1
   Branch: 8aebcb7a6465f19f9f4d315acced369ae078d3f2
   FacebookSDK: 7aa80d5e6eaf235f492328ad40c36dbc16440e52
   FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
@@ -166,12 +172,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  RushSDK: 8209ecd31b3200884ea22ae980b3cd4621785528
+  RushSDK: 41d4d982c927607816b2c76ad06d4a6d322ceaf5
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 912d2df3b4d0e35c0eab5b83a593eaff8966bed8
+PODFILE CHECKSUM: 91e09d2782fdb485946684b5ccb9c8107526a1ad
 
-COCOAPODS: 1.10.0.rc.1
+COCOAPODS: 1.10.1

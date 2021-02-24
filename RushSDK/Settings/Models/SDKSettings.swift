@@ -12,6 +12,7 @@ public struct SDKSettings {
     let backendApiKey: String?
     
     let amplitudeApiKey: String?
+    let appsFlyerApiKey: String?
     let facebookActive: Bool
     let branchActive: Bool
     let firebaseActive: Bool
@@ -28,10 +29,13 @@ public struct SDKSettings {
     let featureAppBackendUrl: String?
     let featureAppBackendApiKey: String?
     
+    let appleAppID: String?
+    
     public init(
         backendBaseUrl: String? = nil,
         backendApiKey: String? = nil,
         amplitudeApiKey: String? = nil,
+        appsFlyerApiKey: String? = nil,
         facebookActive: Bool = false,
         branchActive: Bool = false,
         firebaseActive: Bool = false,
@@ -41,10 +45,12 @@ public struct SDKSettings {
         view: UIView? = nil,
         shouldAddStorePayment: Bool = false,
         featureAppBackendUrl: String? = nil,
-        featureAppBackendApiKey: String? = nil) {
+        featureAppBackendApiKey: String? = nil,
+        appleAppID: String? = nil) {
         self.backendBaseUrl = backendBaseUrl
         self.backendApiKey = backendApiKey
         self.amplitudeApiKey = amplitudeApiKey
+        self.appsFlyerApiKey = appsFlyerApiKey
         self.facebookActive = facebookActive
         self.branchActive = branchActive
         self.firebaseActive = firebaseActive
@@ -54,6 +60,7 @@ public struct SDKSettings {
         self.shouldAddStorePayment = shouldAddStorePayment
         self.featureAppBackendUrl = featureAppBackendUrl
         self.featureAppBackendApiKey = featureAppBackendApiKey
+        self.appleAppID = appleAppID
         
         let viewAsAny = view as AnyObject
         self.view = Weak<UIView>(viewAsAny)

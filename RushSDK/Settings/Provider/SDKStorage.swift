@@ -20,6 +20,7 @@ public final class SDKStorage {
     var backendBaseUrl: String?
     var backendApiKey: String?
     var amplitudeApiKey: String?
+    var appsFlyerApiKey: String?
     var facebookActive: Bool = false
     var branchActive: Bool = false
     var firebaseActive: Bool = false 
@@ -31,6 +32,7 @@ public final class SDKStorage {
     var isTest: Bool = false
     var featureAppBackendUrl: String?
     var featureAppBackendApiKey: String?
+    var appleAppID: String?
     
     // MARK: Dependencies
     public var restApiTransport: RestAPITransport {
@@ -56,6 +58,9 @@ public final class SDKStorage {
     }
     public var amplitudeManager: AmplitudeManager {
         AmplitudeManagerCore.shared
+    }
+    public var appsFlyerManager: AppsFlyerManager {
+        AppsFlyerManagerCore.shared
     }
     public var pushNotificationsManager: PushNotificationsManager {
         PushNotificationsManagerCore.shared
