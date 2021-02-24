@@ -69,8 +69,6 @@
 		96224E1D2537637C002C1988 /* AmplitudeManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */; };
 		96224E2325383B37002C1988 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E2225383B37002C1988 /* DictionaryExtension.swift */; };
 		96224E27253855EC002C1988 /* SDKNumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224E26253855EC002C1988 /* SDKNumberLaunches.swift */; };
-		9656D49925937E67006755EC /* IDFAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D49825937E67006755EC /* IDFAManager.swift */; };
-		9656D49F25937EE0006755EC /* IDFAManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D49E25937EE0006755EC /* IDFAManagerCore.swift */; };
 		965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */; };
 		965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */; };
 		965E05F3253DC91A006F8A24 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E05F2253DC91A006F8A24 /* UserManager.swift */; };
@@ -172,8 +170,6 @@
 		96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManagerCore.swift; sourceTree = "<group>"; };
 		96224E2225383B37002C1988 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		96224E26253855EC002C1988 /* SDKNumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKNumberLaunches.swift; sourceTree = "<group>"; };
-		9656D49825937E67006755EC /* IDFAManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDFAManager.swift; sourceTree = "<group>"; };
-		9656D49E25937EE0006755EC /* IDFAManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDFAManagerCore.swift; sourceTree = "<group>"; };
 		965E05E8253D9C5A006F8A24 /* RegisterInstallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallManager.swift; sourceTree = "<group>"; };
 		965E05EC253D9DCD006F8A24 /* RegisterInstallManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallManagerCore.swift; sourceTree = "<group>"; };
 		965E05F2253DC91A006F8A24 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -289,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				9619CA6325A3233200C0D03C /* Configuration */,
-				9656D49625937E4F006755EC /* IDFA */,
 				968E40D42540E2EF006F3CFC /* PushNotifications */,
 				965E07BB25406252006F8A24 /* Firebase */,
 				965E05F0253DC906006F8A24 /* User */,
@@ -614,23 +609,6 @@
 			children = (
 				96224E1825376340002C1988 /* AmplitudeManager.swift */,
 				96224E1C2537637C002C1988 /* AmplitudeManagerCore.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		9656D49625937E4F006755EC /* IDFA */ = {
-			isa = PBXGroup;
-			children = (
-				9656D49725937E58006755EC /* Manager */,
-			);
-			path = IDFA;
-			sourceTree = "<group>";
-		};
-		9656D49725937E58006755EC /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				9656D49825937E67006755EC /* IDFAManager.swift */,
-				9656D49E25937EE0006755EC /* IDFAManagerCore.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1018,7 +996,6 @@
 				96224C1C252FC088002C1988 /* Routines.swift in Sources */,
 				967446D7253C862F00E32205 /* SetADAttributionsRequest.swift in Sources */,
 				96224DD02535EF53002C1988 /* FeatureAppMediator.swift in Sources */,
-				9656D49F25937EE0006755EC /* IDFAManagerCore.swift in Sources */,
 				96224D092535A1F7002C1988 /* PurchaseInteractorCore.swift in Sources */,
 				96224BF5252F7BF7002C1988 /* IAPManagerMock.swift in Sources */,
 				96224DA12535DB94002C1988 /* SDKPurchaseMediatorDelegate.swift in Sources */,
@@ -1026,7 +1003,6 @@
 				9619CA6F25A325F500C0D03C /* GetConfigurationResponseMapper.swift in Sources */,
 				965E05E9253D9C5A006F8A24 /* RegisterInstallManager.swift in Sources */,
 				96224CAF253495FE002C1988 /* ABTestsManagerMock.swift in Sources */,
-				9656D49925937E67006755EC /* IDFAManager.swift in Sources */,
 				965E05ED253D9DCD006F8A24 /* RegisterInstallManagerCore.swift in Sources */,
 				9618386F2563FE8B001424AC /* InfoHelper.swift in Sources */,
 				96224CE625350909002C1988 /* ReceiptValidateResponse.swift in Sources */,
@@ -1263,7 +1239,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1293,7 +1269,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

@@ -16,7 +16,6 @@ struct UpdateUserMetaDataRequest: APIRequestBody {
     private let country: String
     private let locale: String
     private let applicationAnonymousID: String
-    private let idfa: String
     
     init(domain: String,
          apiKey: String,
@@ -25,8 +24,7 @@ struct UpdateUserMetaDataRequest: APIRequestBody {
          currency: String,
          country: String,
          locale: String,
-         applicationAnonymousID: String,
-         idfa: String) {
+         applicationAnonymousID: String) {
         self.domain = domain
         self.apiKey = apiKey
         self.userToken = userToken
@@ -35,7 +33,6 @@ struct UpdateUserMetaDataRequest: APIRequestBody {
         self.country = country
         self.locale = locale
         self.applicationAnonymousID = applicationAnonymousID
-        self.idfa = idfa
     }
     
     var url: String {
@@ -54,8 +51,7 @@ struct UpdateUserMetaDataRequest: APIRequestBody {
             "ab_parameters": abParameters,
             "currency": currency,
             "country": country,
-            "locale": locale,
-            "idfa": idfa
+            "locale": locale
         ]
     }
 }

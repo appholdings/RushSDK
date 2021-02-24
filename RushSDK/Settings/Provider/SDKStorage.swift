@@ -90,9 +90,6 @@ public final class SDKStorage {
     var pushNotificationsUpdater: PushNotificationsTokenUpdater {
         PushNotificationsTokenUpdater.shared
     }
-    var idfaManager: IDFAManager {
-        IDFAManagerCore.shared
-    }
     var configurationManager: SDKConfigurationManager {
         SDKConfigurationManagerCore()
     }
