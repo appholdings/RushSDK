@@ -219,10 +219,10 @@ private extension ADAttributionsManagerCore {
         SDKStorage.shared
             .adAttributionDetails
             .request { result in
-                if SDKStorage.shared.adAttributionDetails.isTest(attributionsDetails: result) {
-                    handler(nil)
+                if let details = result, !SDKStorage.shared.adAttributionDetails.isTest(attributionsDetails: details) {
+                    handler(details)
                 } else {
-                    handler(result)
+                    handler(nil)
                 }
             }
     }
