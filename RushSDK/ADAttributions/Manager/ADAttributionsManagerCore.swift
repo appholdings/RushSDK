@@ -155,7 +155,8 @@ private extension ADAttributionsManagerCore {
         let attributions = ADLinkAttributions(channel: dict["channel"] as? String,
                                               campaign: dict["campaign"] as? String,
                                               adgroup: dict["adgroup"] as? String,
-                                              feature: dict["feature"] as? String)
+                                              feature: dict["feature"] as? String,
+                                              userToken: dict["user_token"] as? String)
         
         let result = isEmpty(attributions: attributions) ? nil : attributions
         
@@ -191,6 +192,21 @@ private extension ADAttributionsManagerCore {
     }
     
     func setLinkAttributions(_ attributions: ADLinkAttributions) {
+        setLinkAttributionsUserToken(attributions)
+        setLinkAttributionsParams(attributions)
+    }
+    
+    func setLinkAttributionsUserToken(_ attributions: ADLinkAttributions) {
+        guard let userToken = attributions.userToken else {
+            return
+        }
+        
+        SDKUserManagerMediator.shared.notifyAboutReceivedFeatureApp(userToken: userToken)
+        
+        log(text: "branch contained userToken: \(userToken)")
+    }
+    
+    func setLinkAttributionsParams(_ attributions: ADLinkAttributions) {
         guard let domain = SDKStorage.shared.backendBaseUrl, let apiKey = SDKStorage.shared.backendApiKey else {
             return
         }
