@@ -20,6 +20,7 @@ target 'RushSDK' do
   pod 'Amplitude-iOS'
   pod 'Branch'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   pod 'Firebase/Messaging'
   pod 'AppsFlyerFramework'
 end
