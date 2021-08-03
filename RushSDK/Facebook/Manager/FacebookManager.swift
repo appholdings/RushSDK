@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FacebookManager: class {
+protocol FacebookManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
     

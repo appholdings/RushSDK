@@ -5,7 +5,7 @@
 //  Created by Andrey Chernyshev on 13.10.2020.
 //
 
-public protocol SDKIAPMediatorDelegate: class {
+public protocol SDKIAPMediatorDelegate: AnyObject {
     func iapMediatorBiedProduct(with result: IAPActionResult)
     func iapMediatorRestoredPurchases()
 }

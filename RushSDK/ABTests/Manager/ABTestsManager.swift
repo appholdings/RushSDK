@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-protocol ABTestsManager: class {
+protocol ABTestsManager: AnyObject {
     // MARK: API
     func clearCache()
     func getCachedTests() -> ABTestsOutput?

@@ -97,6 +97,7 @@
 		968E410B2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */; };
 		968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */; };
 		968E41142540F333006F3CFC /* PushNotificationsTokenUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */; };
+		96CA367126B92D2F00865CEB /* TokenValidateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA367026B92D2F00865CEB /* TokenValidateRequest.swift */; };
 		96D38A4725AF2F5600EADC9A /* FeatureAppNewUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */; };
 		96D38A4D25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */; };
 		96D38A5225AF306F00EADC9A /* FeatureAppLoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */; };
@@ -202,6 +203,7 @@
 		968E410A2540F17C006F3CFC /* SendUserPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendUserPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
 		968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAnonymousPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
 		968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsTokenUpdater.swift; sourceTree = "<group>"; };
+		96CA367026B92D2F00865CEB /* TokenValidateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenValidateRequest.swift; sourceTree = "<group>"; };
 		96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppNewUserRequest.swift; sourceTree = "<group>"; };
 		96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppNewUserResponseMapper.swift; sourceTree = "<group>"; };
 		96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppLoginUserRequest.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			children = (
 				96224CE1253505A5002C1988 /* ReceiptValidateRequest.swift */,
 				96224CE525350909002C1988 /* ReceiptValidateResponse.swift */,
+				96CA367026B92D2F00865CEB /* TokenValidateRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1041,6 +1044,7 @@
 				96224BAD252F303F002C1988 /* APIRequestBody.swift in Sources */,
 				96224DE825370DE1002C1988 /* FacebookManagerCore.swift in Sources */,
 				9619CA7C25A32CE300C0D03C /* SDKConfigurationError.swift in Sources */,
+				96CA367126B92D2F00865CEB /* TokenValidateRequest.swift in Sources */,
 				968E40DE2540E67B006F3CFC /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				96D38A4D25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift in Sources */,
 				968E41022540EAC0006F3CFC /* PushNotificationsManagerDelegate.swift in Sources */,

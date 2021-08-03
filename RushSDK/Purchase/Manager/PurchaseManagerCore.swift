@@ -19,6 +19,15 @@ extension PurchaseManagerCore {
                 log(text: "purchaseManager did validate receipt with response: \(response as Any)")
             })
     }
+    
+    func validateReceiptBySDK() -> Single<ReceiptValidateResponse?> {
+        executeValidateToken()
+            .do(onSuccess: { response in
+                SDKStorage.shared.purchaseMediator.notifyAboutValidateReceiptCompleted(with: response)
+                
+                log(text: "purchaseManager did validate receipt with response: \(response as Any)")
+            })
+    }
 }
 
 // MARK: Private
@@ -56,5 +65,28 @@ private extension PurchaseManagerCore {
                     .callServerApi(requestBody: request)
                     .map { ReceiptValidateResponseMapper.map(from: $0) }
             }
+    }
+    
+    func executeValidateToken() -> Single<ReceiptValidateResponse?> {
+        guard
+            let domain = SDKStorage.shared.backendBaseUrl,
+            let apiKey = SDKStorage.shared.backendApiKey
+        else {
+            return Single.error(PurchaseError(code: .sdkNotInitialized))
+        }
+        
+        guard let userToken = SDKStorage.shared.userToken else {
+            return Single.error(RxError.noElements)
+        }
+        
+        let request = TokenValidateRequest(domain: domain,
+                                           apiKey: apiKey,
+                                           userToken: userToken,
+                                           applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { ReceiptValidateResponseMapper.map(from: $0) }
     }
 }

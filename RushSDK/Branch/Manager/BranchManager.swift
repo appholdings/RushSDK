@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol BranchManager: class {
+protocol BranchManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol AppsFlyerManager: class {
+public protocol AppsFlyerManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
     

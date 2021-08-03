@@ -5,7 +5,7 @@
 //  Created by Andrey Chernyshev on 21.10.2020.
 //
 
-protocol FirebaseManager: class {
+protocol FirebaseManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
 }

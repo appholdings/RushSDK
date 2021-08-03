@@ -5,7 +5,7 @@
 //  Created by Andrey Chernyshev on 14.10.2020.
 //
 
-public protocol AmplitudeManager: class {
+public protocol AmplitudeManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
     

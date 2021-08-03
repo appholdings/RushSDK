@@ -7,7 +7,7 @@
 
 import RxSwift
 
-protocol UserManager: class {
+protocol UserManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ADAttributionsManager: class {
+protocol ADAttributionsManager: AnyObject {
     func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
     func application(with userActivity: NSUserActivity)
     func application(with url: URL, options: [UIApplication.OpenURLOptionsKey : Any])

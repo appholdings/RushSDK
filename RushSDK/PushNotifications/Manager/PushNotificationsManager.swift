@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol PushNotificationsManager: class {
+public protocol PushNotificationsManager: AnyObject {
     @discardableResult
     func initialize() -> Bool
     

@@ -5,7 +5,7 @@
 //  Created by Andrey Chernyshev on 13.01.2021.
 //
 
-public protocol SDKUserManagerMediatorDelegate: class {
+public protocol SDKUserManagerMediatorDelegate: AnyObject {
     func userManagerMediatorDidReceivedFeatureApp(userToken: String)
 }
 

@@ -8,7 +8,7 @@
 import RxSwift
 import StoreKit
 
-public protocol IAPManager: class {
+public protocol IAPManager: AnyObject {
     func initialize()
     
     func obtainProducts(ids: [String]) -> Single<[IAPProduct]>

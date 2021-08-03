@@ -5,7 +5,7 @@
 //  Created by Andrey Chernyshev on 22.10.2020.
 //
 
-public protocol PushNotificationsManagerDelegate: class {
+public protocol PushNotificationsManagerDelegate: AnyObject {
     func pushNotificationsManagerDidReceive(authorizationStatus: PushNotificationsAuthorizationStatus)
     func pushNotificationsManagerDidReceive(token: String?)
     func pushNotificationsManagerDidReceive(model: PushNotificationsModel)
