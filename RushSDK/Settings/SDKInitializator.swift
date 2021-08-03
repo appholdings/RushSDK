@@ -117,9 +117,12 @@ private extension SDKInitializator {
                     .check(token: userToken)
                     .catchAndReturn(false)
             }
-            .flatMapLatest { [purchaseManager] tokenIsValidated -> Single<(ReceiptValidateResponse?, Bool)> in
-                purchaseManager
-                    .validateReceipt()
+            .flatMapLatest { [weak self] tokenIsValidated -> Single<(ReceiptValidateResponse?, Bool)> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.validate()
                     .map { ($0, tokenIsValidated) }
             }
             .flatMap { [weak self] stub -> Single<Bool> in
@@ -176,5 +179,22 @@ private extension SDKInitializator {
         core.purchaseMediatorDidValidateReceipt(response: receipt)
         
         return .deferred { .just(true) }
+    }
+    
+    func validate() -> Single<ReceiptValidateResponse?> {
+        purchaseManager
+            .validateReceipt()
+            .flatMap { [weak self] receipt -> Single<ReceiptValidateResponse?> in
+                guard let self = self else {
+                    return .just(nil)
+                }
+                
+                guard receipt?.userToken == nil else {
+                    return .deferred { .just(receipt) }
+                }
+                
+                return self.purchaseManager
+                    .validateReceiptBySDK()
+            }
     }
 }
