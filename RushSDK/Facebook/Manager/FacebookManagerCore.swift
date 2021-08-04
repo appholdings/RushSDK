@@ -29,10 +29,6 @@ extension FacebookManagerCore {
         SDKStorage.shared.featureAppMediator.add(delegate: self)
         SDKStorage.shared.iapMediator.add(delegate: self)
         
-        AppEvents.activateApp()
-        
-        setupInputSDKParams()
-        
         log(text: "facebook activate")
         
         return true
@@ -56,6 +52,10 @@ extension FacebookManagerCore {
         }
         
         ApplicationDelegate.shared.application(app, didFinishLaunchingWithOptions: launchOptions)
+        
+        AppEvents.activateApp()
+        
+        setupInputSDKParams()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) {
