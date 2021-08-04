@@ -20,8 +20,8 @@ extension PurchaseManagerCore {
             })
     }
     
-    func validateReceiptBySDK() -> Single<ReceiptValidateResponse?> {
-        executeValidateToken()
+    func validateReceipt(by token: String) -> Single<ReceiptValidateResponse?> {
+        executeValidate(token: token)
             .do(onSuccess: { response in
                 SDKStorage.shared.purchaseMediator.notifyAboutValidateReceiptCompleted(with: response)
                 
@@ -67,7 +67,7 @@ private extension PurchaseManagerCore {
             }
     }
     
-    func executeValidateToken() -> Single<ReceiptValidateResponse?> {
+    func executeValidate(token: String) -> Single<ReceiptValidateResponse?> {
         guard
             let domain = SDKStorage.shared.backendBaseUrl,
             let apiKey = SDKStorage.shared.backendApiKey
@@ -75,13 +75,9 @@ private extension PurchaseManagerCore {
             return Single.error(PurchaseError(code: .sdkNotInitialized))
         }
         
-        guard let userToken = SDKStorage.shared.userToken else {
-            return Single.error(RxError.noElements)
-        }
-        
         let request = TokenValidateRequest(domain: domain,
                                            apiKey: apiKey,
-                                           userToken: userToken,
+                                           userToken: token,
                                            applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
         
         return SDKStorage.shared

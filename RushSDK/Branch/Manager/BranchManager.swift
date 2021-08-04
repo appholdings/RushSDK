@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol BranchManager: AnyObject {
     @discardableResult
@@ -16,4 +17,5 @@ protocol BranchManager: AnyObject {
     func application(continue userActivity: NSUserActivity)
     
     func getLatestReferringParams() -> [AnyHashable: Any]?
+    func obtainInstallUserToken() -> Single<String?>
 }

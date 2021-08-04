@@ -28,7 +28,7 @@ extension PurchaseManagerMock {
         }
     }
     
-    func validateReceiptBySDK() -> Single<ReceiptValidateResponse?> {
+    func validateReceipt(by token: String) -> Single<ReceiptValidateResponse?> {
         guard
             SDKStorage.shared.backendBaseUrl != nil,
             SDKStorage.shared.backendApiKey != nil

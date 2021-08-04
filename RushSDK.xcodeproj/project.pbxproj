@@ -98,6 +98,7 @@
 		968E410F2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */; };
 		968E41142540F333006F3CFC /* PushNotificationsTokenUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */; };
 		96CA367126B92D2F00865CEB /* TokenValidateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA367026B92D2F00865CEB /* TokenValidateRequest.swift */; };
+		96CA369A26BAE3A500865CEB /* BranchInstallRefParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA369926BAE3A500865CEB /* BranchInstallRefParams.swift */; };
 		96D38A4725AF2F5600EADC9A /* FeatureAppNewUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */; };
 		96D38A4D25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */; };
 		96D38A5225AF306F00EADC9A /* FeatureAppLoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */; };
@@ -204,6 +205,7 @@
 		968E410E2540F246006F3CFC /* SendAnonymousPushNotificationsTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAnonymousPushNotificationsTokenRequest.swift; sourceTree = "<group>"; };
 		968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsTokenUpdater.swift; sourceTree = "<group>"; };
 		96CA367026B92D2F00865CEB /* TokenValidateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenValidateRequest.swift; sourceTree = "<group>"; };
+		96CA369926BAE3A500865CEB /* BranchInstallRefParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchInstallRefParams.swift; sourceTree = "<group>"; };
 		96D38A4625AF2F5600EADC9A /* FeatureAppNewUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppNewUserRequest.swift; sourceTree = "<group>"; };
 		96D38A4C25AF300500EADC9A /* FeatureAppNewUserResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppNewUserResponseMapper.swift; sourceTree = "<group>"; };
 		96D38A5125AF306F00EADC9A /* FeatureAppLoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureAppLoginUserRequest.swift; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 		96224DFB25374933002C1988 /* Branch */ = {
 			isa = PBXGroup;
 			children = (
+				96CA369826BAE38B00865CEB /* Utils */,
 				96224DFC2537495B002C1988 /* Manager */,
 			);
 			path = Branch;
@@ -801,6 +804,14 @@
 				968E41132540F333006F3CFC /* PushNotificationsTokenUpdater.swift */,
 			);
 			path = Updater;
+			sourceTree = "<group>";
+		};
+		96CA369826BAE38B00865CEB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				96CA369926BAE3A500865CEB /* BranchInstallRefParams.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		96D38A4525AF2F3900EADC9A /* FeatureAppNewUser */ = {
@@ -1063,6 +1074,7 @@
 				96224D0025351372002C1988 /* PurchaseManagerMock.swift in Sources */,
 				96224DF825374161002C1988 /* SDKInitializator.swift in Sources */,
 				96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */,
+				96CA369A26BAE3A500865CEB /* BranchInstallRefParams.swift in Sources */,
 				96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */,
 				96D38A4725AF2F5600EADC9A /* FeatureAppNewUserRequest.swift in Sources */,
 				96224BA5252F2DBB002C1988 /* IAPError.swift in Sources */,
@@ -1275,7 +1287,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.7.0;
+				MARKETING_VERSION = 2.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1305,7 +1317,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.7.0;
+				MARKETING_VERSION = 2.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

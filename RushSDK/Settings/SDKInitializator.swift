@@ -108,21 +108,21 @@ private extension SDKInitializator {
     
     func initializeUserToken() {
         abTestsTrigger
-            .flatMapLatest { [userManager] success -> Single<Bool> in
-                guard let userToken = SDKStorage.shared.userToken else {
-                    return .deferred { .just(false) }
+            .flatMapLatest { [weak self] success -> Single<(String?, Bool)> in
+                guard let self = self else {
+                    return .just((nil, false))
                 }
                 
-                return userManager
-                    .check(token: userToken)
-                    .catchAndReturn(false)
+                return self.checkToken()
             }
-            .flatMapLatest { [weak self] tokenIsValidated -> Single<(ReceiptValidateResponse?, Bool)> in
+            .flatMapLatest { [weak self] stub -> Single<(ReceiptValidateResponse?, Bool)> in
                 guard let self = self else {
                     return .never()
                 }
                 
-                return self.validate()
+                let (userToken, tokenIsValidated) = stub
+                
+                return self.validate(userTokenFromBranch: userToken)
                     .map { ($0, tokenIsValidated) }
             }
             .flatMap { [weak self] stub -> Single<Bool> in
@@ -149,6 +149,47 @@ private extension SDKInitializator {
 
 // MARK: Private (utils)
 private extension SDKInitializator {
+    func checkToken() -> Single<(String?, Bool)> {
+        SDKStorage.shared.branchManager
+            .obtainInstallUserToken()
+            .map { $0 ?? SDKStorage.shared.userToken }
+            .flatMap { [weak self] token -> Single<(String?, Bool)> in
+                guard let self = self else {
+                    return .deferred { .just((token, false)) }
+                }
+                
+                guard let userToken = token else {
+                    return .deferred { .just((token, false)) }
+                }
+                
+                return self.userManager
+                    .check(token: userToken)
+                    .catchAndReturn(false)
+                    .map { (userToken, $0) }
+            }
+    }
+    
+    func validate(userTokenFromBranch: String?) -> Single<ReceiptValidateResponse?> {
+        purchaseManager
+            .validateReceipt()
+            .flatMap { [weak self] receipt -> Single<ReceiptValidateResponse?> in
+                guard let self = self else {
+                    return .just(nil)
+                }
+                
+                guard receipt?.userToken == nil else {
+                    return .deferred { .just(receipt) }
+                }
+                
+                guard let userToken = userTokenFromBranch else {
+                    return .deferred { .just(nil) }
+                }
+                
+                return self.purchaseManager
+                    .validateReceipt(by: userToken)
+            }
+    }
+    
     func flatMapUserTokenIfTokenNil(receipt: ReceiptValidateResponse?) -> Single<Bool> {
         guard let userToken = receipt?.userToken else {
             return userManager
@@ -179,22 +220,5 @@ private extension SDKInitializator {
         core.purchaseMediatorDidValidateReceipt(response: receipt)
         
         return .deferred { .just(true) }
-    }
-    
-    func validate() -> Single<ReceiptValidateResponse?> {
-        purchaseManager
-            .validateReceipt()
-            .flatMap { [weak self] receipt -> Single<ReceiptValidateResponse?> in
-                guard let self = self else {
-                    return .just(nil)
-                }
-                
-                guard receipt?.userToken == nil else {
-                    return .deferred { .just(receipt) }
-                }
-                
-                return self.purchaseManager
-                    .validateReceiptBySDK()
-            }
     }
 }

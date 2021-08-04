@@ -10,5 +10,5 @@ import RxSwift
 public protocol PurchaseManager: AnyObject {
     // MARK: API
     func validateReceipt() -> Single<ReceiptValidateResponse?>
-    func validateReceiptBySDK() -> Single<ReceiptValidateResponse?>
+    func validateReceipt(by token: String) -> Single<ReceiptValidateResponse?>
 }

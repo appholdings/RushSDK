@@ -6,9 +6,12 @@
 //
 
 import Branch
+import RxSwift
 
 final class BranchManagerCore: BranchManager {
     static let shared = BranchManagerCore()
+    
+    private lazy var installRedParams = BranchInstallRefParams()
     
     private init() {}
 }
@@ -61,6 +64,10 @@ extension BranchManagerCore {
         }
         
         return Branch.getInstance().getLatestReferringParams()
+    }
+    
+    func obtainInstallUserToken() -> Single<String?> {
+        installRedParams.obtainInstallRefParams()
     }
 }
 

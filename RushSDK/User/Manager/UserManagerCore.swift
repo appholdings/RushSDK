@@ -24,6 +24,7 @@ extension UserManagerCore {
     func initialize() -> Bool {
         SDKStorage.shared.purchaseMediator.add(delegate: self)
         SDKStorage.shared.featureAppMediator.add(delegate: self)
+        SDKStorage.shared.userManagerMediator.add(delegate: self)
         
         userToken = SDKStorage.shared.userToken
         
@@ -130,6 +131,15 @@ extension UserManagerCore: FeatureAppMediatorDelegate {
     func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
         updateMetaDataAfterReceive(userToken: userToken)
         syncTokens(userToken: userToken)
+        
+        self.userToken = userToken
+    }
+}
+
+// MARK: SDKUserManagerMediatorDelegate
+extension UserManagerCore: SDKUserManagerMediatorDelegate {
+    func userManagerMediatorDidReceivedFeatureApp(userToken: String) {
+        updateMetaDataAfterReceive(userToken: userToken)
         
         self.userToken = userToken
     }
