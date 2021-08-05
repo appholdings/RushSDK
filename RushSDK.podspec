@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "RushSDK"
-  spec.version      = "2.8.2"
+  spec.version      = "2.8.3"
   spec.summary      = "SDK for analytics in Rush apps"
   spec.description  = "SDK for analytics in Rush apps"
   spec.homepage     = "https://github.com/AgentChe/"
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'RxCocoa'
   spec.dependency 'SwiftyStoreKit'
   spec.dependency 'FacebookSDK', '11.0.1'
-  spec.dependency 'FBSDKCoreKit'
+  spec.dependency 'FBSDKCoreKit', '11.0.1'
   spec.dependency 'Amplitude-iOS'
   spec.dependency 'Branch'
   spec.dependency 'Firebase/Analytics'

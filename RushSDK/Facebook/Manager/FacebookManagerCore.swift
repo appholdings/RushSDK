@@ -53,7 +53,7 @@ extension FacebookManagerCore {
         
         ApplicationDelegate.shared.application(app, didFinishLaunchingWithOptions: launchOptions)
         
-        AppEvents.activateApp()
+        AppEvents.singleton.activateApp()
         
         setupInputSDKParams()
     }

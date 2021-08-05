@@ -18,18 +18,13 @@ PODS:
     - FacebookSDK/CoreKit
   - FacebookSDK/ShareKit (11.0.1):
     - FacebookSDK/CoreKit
-  - FBAEMKit (11.1.0):
-    - FBAEMKit/AEM (= 11.1.0)
-  - FBAEMKit/AEM (11.1.0):
-    - FBSDKCoreKit_Basics (~> 11.1.0)
-  - FBSDKCoreKit (11.1.0):
-    - FBSDKCoreKit/Core (= 11.1.0)
-  - FBSDKCoreKit/Core (11.1.0):
-    - FBAEMKit (~> 11.1.0)
-    - FBSDKCoreKit_Basics (~> 11.1.0)
-  - FBSDKCoreKit_Basics (11.1.0):
-    - FBSDKCoreKit_Basics/Basics (= 11.1.0)
-  - FBSDKCoreKit_Basics/Basics (11.1.0)
+  - FBSDKCoreKit (11.0.1):
+    - FBSDKCoreKit/Core (= 11.0.1)
+  - FBSDKCoreKit/Core (11.0.1):
+    - FBSDKCoreKit_Basics (~> 11.0.1)
+  - FBSDKCoreKit_Basics (11.0.1):
+    - FBSDKCoreKit_Basics/Basics (= 11.0.1)
+  - FBSDKCoreKit_Basics/Basics (11.0.1)
   - Firebase/Analytics (8.5.0):
     - Firebase/Core
   - Firebase/Core (8.5.0):
@@ -131,13 +126,13 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
-  - RushSDK (2.8.0):
+  - RushSDK (2.8.2):
     - Alamofire
     - Amplitude-iOS
     - AppsFlyerFramework
     - Branch
     - FacebookSDK (= 11.0.1)
-    - FBSDKCoreKit
+    - FBSDKCoreKit (= 11.0.1)
     - Firebase/Analytics
     - Firebase/Crashlytics
     - Firebase/Messaging
@@ -173,7 +168,6 @@ SPEC REPOS:
     - AppsFlyerFramework
     - Branch
     - FacebookSDK
-    - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
     - Firebase
@@ -203,9 +197,8 @@ SPEC CHECKSUMS:
   AppsFlyerFramework: df3920affb393748b111cd8b686584508f2193f5
   Branch: d21c40c47b5c15c6ab709cdf7d965a50059e0546
   FacebookSDK: 7193c934c71b7be5b28009d2fd2547807969f2c3
-  FBAEMKit: 5c8a8d08e5b2c79628490784883e0fcc75b12615
-  FBSDKCoreKit: 7ccb8b4bb2b5ee2ad94327b774dc23f03509675d
-  FBSDKCoreKit_Basics: 8f978bce195845f609b0ec6b425949d0d24f525b
+  FBSDKCoreKit: 38c9e29a3f1436362acacff6486d3a28628c288f
+  FBSDKCoreKit_Basics: 06780a4a12e16596bde8406add02c6aa1bf38616
   Firebase: ff8c73105b90e33e1dc6c8e5445d7adc2ccdc7c1
   FirebaseAnalytics: 96325c1e0acbd2bb805c6a613028b1fe599d6a37
   FirebaseCore: 1c1ca72483b59b17050f5b4cec4fb748425a3901
@@ -218,7 +211,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  RushSDK: 0876da5d161661105a910fc00abc5687866bf253
+  RushSDK: 94a06e93178abcb75fd5628364ea611a8bdd0797
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
