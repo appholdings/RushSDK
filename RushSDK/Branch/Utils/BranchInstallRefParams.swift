@@ -63,7 +63,7 @@ private extension BranchInstallRefParams {
             let params = Branch.getInstance().getFirstReferringParams()
             let userToken = params?["user_token"] as? String
             
-            if userToken != nil || self.tick > 10 {
+            if userToken != nil || self.tick > 4 {
                 self.timer?.invalidate()
                 self.timer = nil
                 
