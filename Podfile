@@ -16,7 +16,7 @@ target 'RushSDK' do
   
   pod 'SwiftyStoreKit'
   
-  pod 'FacebookSDK'
+  pod 'FBSDKCoreKit'
   pod 'Amplitude-iOS'
   pod 'Branch'
   pod 'Firebase/Analytics'
