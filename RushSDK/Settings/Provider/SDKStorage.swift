@@ -45,7 +45,7 @@ public final class SDKStorage {
         SDKIAPMediator.shared
     }
     public var purchaseManager: PurchaseManager {
-        isTest ? PurchaseManagerMock() : PurchaseManagerCore()
+        PurchaseManagerCore()
     }
     public var purchaseMediator: SDKPurchaseMediator {
         SDKPurchaseMediator.shared

@@ -49,7 +49,6 @@
 		96224CEB25350C35002C1988 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CEA25350C35002C1988 /* PurchaseManager.swift */; };
 		96224CF125350F43002C1988 /* PurchaseManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CF025350F43002C1988 /* PurchaseManagerCore.swift */; };
 		96224CFC253511AC002C1988 /* PurchaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CFB253511AC002C1988 /* PurchaseError.swift */; };
-		96224D0025351372002C1988 /* PurchaseManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224CFF25351372002C1988 /* PurchaseManagerMock.swift */; };
 		96224D052535141D002C1988 /* PurchaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224D042535141D002C1988 /* PurchaseInteractor.swift */; };
 		96224D092535A1F7002C1988 /* PurchaseInteractorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224D082535A1F6002C1988 /* PurchaseInteractorCore.swift */; };
 		96224D0D2535A334002C1988 /* PurchaseActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96224D0C2535A334002C1988 /* PurchaseActionResult.swift */; };
@@ -156,7 +155,6 @@
 		96224CEA25350C35002C1988 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		96224CF025350F43002C1988 /* PurchaseManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManagerCore.swift; sourceTree = "<group>"; };
 		96224CFB253511AC002C1988 /* PurchaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseError.swift; sourceTree = "<group>"; };
-		96224CFF25351372002C1988 /* PurchaseManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManagerMock.swift; sourceTree = "<group>"; };
 		96224D042535141D002C1988 /* PurchaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInteractor.swift; sourceTree = "<group>"; };
 		96224D082535A1F6002C1988 /* PurchaseInteractorCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInteractorCore.swift; sourceTree = "<group>"; };
 		96224D0C2535A334002C1988 /* PurchaseActionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseActionResult.swift; sourceTree = "<group>"; };
@@ -478,7 +476,6 @@
 			children = (
 				96224CEA25350C35002C1988 /* PurchaseManager.swift */,
 				96224CF025350F43002C1988 /* PurchaseManagerCore.swift */,
-				96224CFF25351372002C1988 /* PurchaseManagerMock.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1071,7 +1068,6 @@
 				96224CE2253505A5002C1988 /* ReceiptValidateRequest.swift in Sources */,
 				968564C725E6B43900238AEB /* AppsFlyerManagerCore.swift in Sources */,
 				96224D0D2535A334002C1988 /* PurchaseActionResult.swift in Sources */,
-				96224D0025351372002C1988 /* PurchaseManagerMock.swift in Sources */,
 				96224DF825374161002C1988 /* SDKInitializator.swift in Sources */,
 				96224BCF252F34E6002C1988 /* RestAPITransport.swift in Sources */,
 				96CA369A26BAE3A500865CEB /* BranchInstallRefParams.swift in Sources */,
@@ -1287,7 +1283,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.4;
+				MARKETING_VERSION = 2.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1317,7 +1313,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.4;
+				MARKETING_VERSION = 2.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
