@@ -5,12 +5,12 @@ PODS:
     - AppsFlyerFramework/Main (= 6.4.0)
   - AppsFlyerFramework/Main (6.4.0)
   - Branch (1.40.1)
-  - FBAEMKit (12.0.0):
-    - FBSDKCoreKit_Basics (= 12.0.0)
-  - FBSDKCoreKit (12.0.0):
-    - FBAEMKit (= 12.0.0)
-    - FBSDKCoreKit_Basics (= 12.0.0)
-  - FBSDKCoreKit_Basics (12.0.0)
+  - FBAEMKit (12.0.2):
+    - FBSDKCoreKit_Basics (= 12.0.2)
+  - FBSDKCoreKit (12.0.2):
+    - FBAEMKit (= 12.0.2)
+    - FBSDKCoreKit_Basics (= 12.0.2)
+  - FBSDKCoreKit_Basics (12.0.2)
   - Firebase/Analytics (8.8.0):
     - Firebase/Core
   - Firebase/Core (8.8.0):
@@ -92,28 +92,28 @@ PODS:
     - GoogleUtilities/Network (~> 7.4)
     - "GoogleUtilities/NSData+zlib (~> 7.4)"
     - nanopb (~> 2.30908.0)
-  - GoogleDataTransport (9.1.0):
+  - GoogleDataTransport (9.1.2):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/AppDelegateSwizzler (7.5.2):
+  - GoogleUtilities/AppDelegateSwizzler (7.6.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.5.2):
+  - GoogleUtilities/Environment (7.6.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.5.2):
+  - GoogleUtilities/Logger (7.6.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.5.2):
+  - GoogleUtilities/MethodSwizzler (7.6.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.5.2):
+  - GoogleUtilities/Network (7.6.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.5.2)"
-  - GoogleUtilities/Reachability (7.5.2):
+  - "GoogleUtilities/NSData+zlib (7.6.0)"
+  - GoogleUtilities/Reachability (7.6.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.5.2):
+  - GoogleUtilities/UserDefaults (7.6.0):
     - GoogleUtilities/Logger
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -121,7 +121,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
-  - RushSDK (2.8.7):
+  - RushSDK (2.8.9):
     - Alamofire
     - Amplitude-iOS
     - AppsFlyerFramework
@@ -190,9 +190,9 @@ SPEC CHECKSUMS:
   Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
   AppsFlyerFramework: 9c37252d3edce38257afc065ad48a48c0f004000
   Branch: e9cf368f79b6da7537fd1866b81037aec32ceb5b
-  FBAEMKit: 7eff0522e86d66591d080612882fa0784026926b
-  FBSDKCoreKit: 23481c9231b64ce25b0980b0a270f1b10aae91ee
-  FBSDKCoreKit_Basics: 99ca5885c4fe153462ae3370edd60077394911c1
+  FBAEMKit: c6b8ddf8371640fcd1a3b844d0f8884c8f334cea
+  FBSDKCoreKit: 506c0fd1c09a3075f62be8fa36bdd921c563daa9
+  FBSDKCoreKit_Basics: c0701d1634c944d60dd3c6361d66dbd0e707a456
   Firebase: 629510f1a9ddb235f3a7c5c8ceb23ba887f0f814
   FirebaseAnalytics: 5506ea8b867d8423485a84b4cd612d279f7b0b8a
   FirebaseCore: 98b29e3828f0a53651c363937a7f7d92a19f1ba2
@@ -201,11 +201,11 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 2563cb18a723ef9c6ef18318a49519b75dce613c
   FirebaseMessaging: 419b5c9d84f294a753c6501d8cfb9ced1ce37304
   GoogleAppMeasurement: 5ba1164e3c844ba84272555e916d0a6d3d977e91
-  GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
-  GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
+  GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  RushSDK: bf4912426dd71e4633b59487e9308ab2139f1ee4
+  RushSDK: d752555cd3d7c97bda8db784128fec42134d13bc
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f

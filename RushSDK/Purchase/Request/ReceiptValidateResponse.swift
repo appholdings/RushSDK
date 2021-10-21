@@ -24,6 +24,7 @@ public struct ReceiptValidateResponse: Decodable {
     public let userToken: String
     public let activeSubscription: Bool
     public let accessValidTill: String
+    public let usedProducts: [String]
     
     private enum Keys: String, CodingKey {
         case data = "_data"
@@ -31,13 +32,19 @@ public struct ReceiptValidateResponse: Decodable {
         case userToken = "user_token"
         case activeSubscription = "active_subscription"
         case accessValidTill = "access_valid_till"
+        case usedProducts = "used_products"
     }
     
-    init(userId: Int, userToken: String, activeSubscription: Bool, onTrial: Bool, accessValidTill: String) {
+    init(userId: Int,
+         userToken: String,
+         activeSubscription: Bool,
+         accessValidTill: String,
+         usedProducts: [String]) {
         self.userId = userId
         self.userToken = userToken
         self.activeSubscription = activeSubscription
         self.accessValidTill = accessValidTill
+        self.usedProducts = usedProducts
     }
     
     public init(from decoder: Decoder) throws {
@@ -49,5 +56,6 @@ public struct ReceiptValidateResponse: Decodable {
         userToken = try data.decode(String.self, forKey: .userToken)
         activeSubscription = try data.decode(Bool.self, forKey: .activeSubscription)
         accessValidTill = try data.decode(String.self, forKey: .accessValidTill)
+        usedProducts = try data.decode([String].self, forKey: .usedProducts)
     }
 }
