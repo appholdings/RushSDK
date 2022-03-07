@@ -112,7 +112,7 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                 let price = product.price.doubleValue * factor
                 let currency = product.priceLocale.currencyCode ?? "unknown"
                 
-                AppEvents.logPurchase(price, currency: currency)
+                AppEvents.shared.logPurchase(amount: price, currency: currency)
                 
                 log(text: "faceboook log purchase with price: \(price), currency: \(currency)")
             })
@@ -136,11 +136,11 @@ extension FacebookManagerCore {
     }
     
     func set(userID: Int) {
-        AppEvents.userID = String(userID)
+        AppEvents.shared.userID = String(userID)
     }
     
     func logEvent(name: String) {
         let eventName = AppEvents.Name(name)
-        AppEvents.logEvent(eventName)
+        AppEvents.shared.logEvent(eventName)
     }
 }

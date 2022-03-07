@@ -1,119 +1,119 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.5.0)
   - Amplitude-iOS (4.10.0)
-  - AppsFlyerFramework (6.4.0):
-    - AppsFlyerFramework/Main (= 6.4.0)
-  - AppsFlyerFramework/Main (6.4.0)
-  - Branch (1.40.1)
-  - FBAEMKit (12.0.2):
-    - FBSDKCoreKit_Basics (= 12.0.2)
-  - FBSDKCoreKit (12.0.2):
-    - FBAEMKit (= 12.0.2)
-    - FBSDKCoreKit_Basics (= 12.0.2)
-  - FBSDKCoreKit_Basics (12.0.2)
-  - Firebase/Analytics (8.8.0):
+  - AppsFlyerFramework (6.5.3):
+    - AppsFlyerFramework/Main (= 6.5.3)
+  - AppsFlyerFramework/Main (6.5.3)
+  - Branch (1.41.0)
+  - FBAEMKit (13.0.0):
+    - FBSDKCoreKit_Basics (= 13.0.0)
+  - FBSDKCoreKit (13.0.0):
+    - FBAEMKit (= 13.0.0)
+    - FBSDKCoreKit_Basics (= 13.0.0)
+  - FBSDKCoreKit_Basics (13.0.0)
+  - Firebase/Analytics (8.12.1):
     - Firebase/Core
-  - Firebase/Core (8.8.0):
+  - Firebase/Core (8.12.1):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 8.8.0)
-  - Firebase/CoreOnly (8.8.0):
-    - FirebaseCore (= 8.8.0)
-  - Firebase/Crashlytics (8.8.0):
+    - FirebaseAnalytics (~> 8.12.0)
+  - Firebase/CoreOnly (8.12.1):
+    - FirebaseCore (= 8.12.1)
+  - Firebase/Crashlytics (8.12.1):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 8.8.0)
-  - Firebase/Messaging (8.8.0):
+    - FirebaseCrashlytics (~> 8.12.0)
+  - Firebase/Messaging (8.12.1):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 8.8.0)
-  - FirebaseAnalytics (8.8.0):
-    - FirebaseAnalytics/AdIdSupport (= 8.8.0)
+    - FirebaseMessaging (~> 8.12.0)
+  - FirebaseAnalytics (8.12.0):
+    - FirebaseAnalytics/AdIdSupport (= 8.12.0)
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/MethodSwizzler (~> 7.7)
+    - GoogleUtilities/Network (~> 7.7)
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - FirebaseAnalytics/AdIdSupport (8.8.0):
+  - FirebaseAnalytics/AdIdSupport (8.12.0):
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleAppMeasurement (= 8.8.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - GoogleAppMeasurement (= 8.12.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/MethodSwizzler (~> 7.7)
+    - GoogleUtilities/Network (~> 7.7)
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - FirebaseCore (8.8.0):
+  - FirebaseCore (8.12.1):
     - FirebaseCoreDiagnostics (~> 8.0)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/Logger (~> 7.4)
-  - FirebaseCoreDiagnostics (8.8.0):
-    - GoogleDataTransport (~> 9.0)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/Logger (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+  - FirebaseCoreDiagnostics (8.12.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
     - nanopb (~> 2.30908.0)
-  - FirebaseCrashlytics (8.8.0):
+  - FirebaseCrashlytics (8.12.0):
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleDataTransport (~> 9.0)
-    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseInstallations (8.8.0):
+  - FirebaseInstallations (8.12.0):
     - FirebaseCore (~> 8.0)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/UserDefaults (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
     - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseMessaging (8.8.0):
+  - FirebaseMessaging (8.12.0):
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleDataTransport (~> 9.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/Reachability (~> 7.4)
-    - GoogleUtilities/UserDefaults (~> 7.4)
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Reachability (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement (8.8.0):
-    - GoogleAppMeasurement/AdIdSupport (= 8.8.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+  - GoogleAppMeasurement (8.12.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.12.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/MethodSwizzler (~> 7.7)
+    - GoogleUtilities/Network (~> 7.7)
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (8.8.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.8.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+  - GoogleAppMeasurement/AdIdSupport (8.12.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.12.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/MethodSwizzler (~> 7.7)
+    - GoogleUtilities/Network (~> 7.7)
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (8.8.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+  - GoogleAppMeasurement/WithoutAdIdSupport (8.12.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/MethodSwizzler (~> 7.7)
+    - GoogleUtilities/Network (~> 7.7)
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
     - nanopb (~> 2.30908.0)
   - GoogleDataTransport (9.1.2):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/AppDelegateSwizzler (7.6.0):
+  - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.6.0):
+  - GoogleUtilities/Environment (7.7.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.6.0):
+  - GoogleUtilities/Logger (7.7.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.6.0):
+  - GoogleUtilities/MethodSwizzler (7.7.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.6.0):
+  - GoogleUtilities/Network (7.7.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.6.0)"
-  - GoogleUtilities/Reachability (7.6.0):
+  - "GoogleUtilities/NSData+zlib (7.7.0)"
+  - GoogleUtilities/Reachability (7.7.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.6.0):
+  - GoogleUtilities/UserDefaults (7.7.0):
     - GoogleUtilities/Logger
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -121,7 +121,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
-  - RushSDK (2.8.9):
+  - RushSDK (2.8.10):
     - Alamofire
     - Amplitude-iOS
     - AppsFlyerFramework
@@ -133,12 +133,12 @@ PODS:
     - RxCocoa
     - RxSwift
     - SwiftyStoreKit
-  - RxCocoa (6.2.0):
-    - RxRelay (= 6.2.0)
-    - RxSwift (= 6.2.0)
-  - RxRelay (6.2.0):
-    - RxSwift (= 6.2.0)
-  - RxSwift (6.2.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
@@ -186,29 +186,29 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
-  AppsFlyerFramework: 9c37252d3edce38257afc065ad48a48c0f004000
-  Branch: e9cf368f79b6da7537fd1866b81037aec32ceb5b
-  FBAEMKit: c6b8ddf8371640fcd1a3b844d0f8884c8f334cea
-  FBSDKCoreKit: 506c0fd1c09a3075f62be8fa36bdd921c563daa9
-  FBSDKCoreKit_Basics: c0701d1634c944d60dd3c6361d66dbd0e707a456
-  Firebase: 629510f1a9ddb235f3a7c5c8ceb23ba887f0f814
-  FirebaseAnalytics: 5506ea8b867d8423485a84b4cd612d279f7b0b8a
-  FirebaseCore: 98b29e3828f0a53651c363937a7f7d92a19f1ba2
-  FirebaseCoreDiagnostics: fe77f42da6329d6d83d21fd9d621a6b704413bfc
-  FirebaseCrashlytics: 3660c045c8e45cc4276110562a0ef44cf43c8157
-  FirebaseInstallations: 2563cb18a723ef9c6ef18318a49519b75dce613c
-  FirebaseMessaging: 419b5c9d84f294a753c6501d8cfb9ced1ce37304
-  GoogleAppMeasurement: 5ba1164e3c844ba84272555e916d0a6d3d977e91
+  AppsFlyerFramework: daff1a8ac502cef2c9408794bac68c852e3483d4
+  Branch: bd6c472d6cab03206877ac86c1241327a3f217d1
+  FBAEMKit: 11a0bcdc7a88e26ed764bcf56372afc6cbbbdcd9
+  FBSDKCoreKit: 00e1e751257e1005304fa29cb683d2dfe008f41a
+  FBSDKCoreKit_Basics: 96ec2ddb67a032e54f0754ea3d59db6f84f42389
+  Firebase: 580d09e8edafc3073ebf09c03fd42e4d80d35fe9
+  FirebaseAnalytics: bd10d7706ba8d6e01ea2816f8fe9e9b881cb0918
+  FirebaseCore: 8138de860a90ca7eec5e324da5788fb0ebf1d93c
+  FirebaseCoreDiagnostics: 3b40dfadef5b90433a60ae01f01e90fe87aa76aa
+  FirebaseCrashlytics: 7952ffd988006128325510664b99dc8ca5851dff
+  FirebaseInstallations: 25764cf322e77f99449395870a65b2bef88e1545
+  FirebaseMessaging: 23db8bf05585e929ada8af0f0968933c25252808
+  GoogleAppMeasurement: ae033c3aad67e68294369373056b4d74cc8ae0d6
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
-  GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  RushSDK: d752555cd3d7c97bda8db784128fec42134d13bc
-  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
-  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
-  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RushSDK: fff65c62943eaf17dea4dd6e450a5a924273dcb4
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
 PODFILE CHECKSUM: b306b9aabeb18d8f1a5d62b0a05b8e7cfd731f25
