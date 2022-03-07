@@ -25,6 +25,8 @@ extension FacebookManagerCore {
             return false
         }
         
+        Settings.shared.isAdvertiserTrackingEnabled = true
+        
         SDKStorage.shared.purchaseMediator.add(delegate: self)
         SDKStorage.shared.featureAppMediator.add(delegate: self)
         SDKStorage.shared.iapMediator.add(delegate: self)
