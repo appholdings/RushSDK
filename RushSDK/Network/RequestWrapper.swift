@@ -45,7 +45,6 @@ private extension RequestWrapper {
             return false
         }
         
-        return code == 200
+        return (code >= 200 && code <= 299) || (code >= 400 && code <= 499)
     }
 }
-
