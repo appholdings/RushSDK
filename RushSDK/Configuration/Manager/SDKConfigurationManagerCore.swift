@@ -11,6 +11,8 @@ final class SDKConfigurationManagerCore: SDKConfigurationManager {
     struct Constants {
         static let cachedConfigurationKey = "configuration_manager_core_cached_configuration"
     }
+    
+    private let requestWrapper = RequestWrapper()
 }
 
 // MARK: API
@@ -43,10 +45,9 @@ extension SDKConfigurationManagerCore {
         let request = GetConfigurationRequest(domain: domain,
                                               apiKey: apiKey)
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: request)
-            .map (GetConfigurationResponseMapper.map(from:))
+            .map(GetConfigurationResponseMapper.map(from:))
             .flatMap(store(configuration:))
     }
 }

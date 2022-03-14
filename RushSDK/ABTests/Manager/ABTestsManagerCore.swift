@@ -13,6 +13,8 @@ final class ABTestsManagerCore: ABTestsManager {
         static let cachedTestsKey = "ab_tests_manager_core_cached_tests_key"
     }
     
+    private let requestWrapper = RequestWrapper()
+    
     private var delegates = [Weak<ABTestsManagerDelegate>]()
     
     private let didUpdatedTestsTrigger = PublishRelay<ABTestsOutput>()
@@ -64,8 +66,7 @@ extension ABTestsManagerCore {
                                      dictionary: lastABTests,
                                      applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: request)
             .map { ABTestsResponse.map(from: $0) }
             .do(onSuccess: { [weak self] tests in

@@ -7,7 +7,9 @@
 
 import RxSwift
 
-final class PurchaseManagerCore: PurchaseManager {}
+final class PurchaseManagerCore: PurchaseManager {
+    private let requestWrapper = RequestWrapper()
+}
 
 // MARK: PurchaseManager
 extension PurchaseManagerCore {
@@ -49,19 +51,18 @@ private extension PurchaseManagerCore {
         
         return Single
             .zip(receipt, abTestsValues)
-            .flatMap {
-                guard let receipt = $0 else {
+            .flatMap { [weak self] stub -> Single<ReceiptValidateResponse?> in
+                guard let self = self, let receipt = stub.0 else {
                     return Single<ReceiptValidateResponse?>.just(nil)
                 }
                 
                 let request = ReceiptValidateRequest(domain: domain,
                                                      apiKey: apiKey,
                                                      receipt: receipt,
-                                                     abTestsValues: $1,
+                                                     abTestsValues: stub.1,
                                                      applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
                 
-                return SDKStorage.shared
-                    .restApiTransport
+                return self.requestWrapper
                     .callServerApi(requestBody: request)
                     .map { ReceiptValidateResponseMapper.map(from: $0) }
             }
@@ -80,8 +81,7 @@ private extension PurchaseManagerCore {
                                            userToken: token,
                                            applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: request)
             .map { ReceiptValidateResponseMapper.map(from: $0) }
     }

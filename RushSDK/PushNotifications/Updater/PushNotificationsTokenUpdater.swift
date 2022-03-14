@@ -12,6 +12,8 @@ final class PushNotificationsTokenUpdater {
     
     private let disposeBag = DisposeBag()
     
+    private let requestWrapper = RequestWrapper()
+    
     private init() {}
 }
 
@@ -52,8 +54,7 @@ extension PushNotificationsTokenUpdater: PushNotificationsManagerDelegate {
             log(text: "send push token at /anonymous")
         }
         
-        SDKStorage.shared
-            .restApiTransport
+        requestWrapper
             .callServerApi(requestBody: request)
             .subscribe()
             .disposed(by: disposeBag)

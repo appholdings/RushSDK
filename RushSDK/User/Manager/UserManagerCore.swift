@@ -12,6 +12,8 @@ final class UserManagerCore: UserManager {
     
     private let disposeBag = DisposeBag()
     
+    private let requestWrapper = RequestWrapper()
+    
     // Храним в менеджере токен, чтобы сверять его с новым полученным после валидации токеном. Напрямую из SDKStorage нельзя брать токен, потому что он обновляется сам после покупки и может быть рассинхронизация.
     private var userToken: String?
     
@@ -43,8 +45,7 @@ extension UserManagerCore {
             return .error(UserError(code: .userTokenNotFound))
         }
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: UpdateUserMetaDataRequest(domain: domain,
                                                                   apiKey: apiKey,
                                                                   userToken: userToken,
@@ -67,8 +68,7 @@ extension UserManagerCore {
         
         let request = FeatureAppNewUserRequest(domain: domain, apiKey: apiKey)
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: request)
             .map(FeatureAppNewUserResponseMapper.map(from:))
             .flatMap(flatMap(newFeatureAppUserToken:))
@@ -86,8 +86,7 @@ extension UserManagerCore {
                                                  apiKey: apiKey,
                                                  userToken: userToken)
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: request)
             .map { _ in true }
             .catchAndReturn(false)
@@ -105,8 +104,7 @@ extension UserManagerCore {
                                         apiKey: apiKey,
                                         token: token)
         
-        return SDKStorage.shared
-            .restApiTransport
+        return requestWrapper
             .callServerApi(requestBody: request)
             .map(CheckTokenResponseMapper.isValideToken(in:))
     }
@@ -155,8 +153,7 @@ private extension UserManagerCore {
             return
         }
         
-        SDKStorage.shared
-            .restApiTransport
+        requestWrapper
             .callServerApi(requestBody: UpdateUserMetaDataRequest(domain: domain,
                                                                   apiKey: apiKey,
                                                                   userToken: userToken,
@@ -189,8 +186,7 @@ private extension UserManagerCore {
                                                   oldToken: oldToken,
                                                   newToken: userToken)
         
-        SDKStorage.shared
-            .restApiTransport
+        requestWrapper
             .callServerApi(requestBody: request)
             .subscribe(onSuccess: { response in
                 log(text: "userManager did sync tokens; old: \(oldToken), new: \(userToken)")

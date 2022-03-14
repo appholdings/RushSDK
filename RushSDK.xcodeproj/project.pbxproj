@@ -104,6 +104,7 @@
 		96D38A5A25AF310000EADC9A /* FeatureAppSyncTokensRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5925AF310000EADC9A /* FeatureAppSyncTokensRequest.swift */; };
 		96D38A5F25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A5E25AF3D5C00EADC9A /* SDKUserManagerMediatorDelegate.swift */; };
 		96D38A6525AF3DFA00EADC9A /* SDKUserManagerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D38A6425AF3DFA00EADC9A /* SDKUserManagerMediator.swift */; };
+		DE2B10E827DF802F005280DB /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B10E727DF802F005280DB /* RequestWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +213,7 @@
 		96D38A6425AF3DFA00EADC9A /* SDKUserManagerMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserManagerMediator.swift; sourceTree = "<group>"; };
 		CD5D3D94FDEDFD18B2ABA6EC /* Pods_RushSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EB6408FA8DDD72A251FBC5 /* Pods_RushSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2B10E727DF802F005280DB /* RequestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 				96224BAC252F303F002C1988 /* APIRequestBody.swift */,
 				96224BCE252F34E6002C1988 /* RestAPITransport.swift */,
 				96224BD4252F3518002C1988 /* NetworkError.swift */,
+				DE2B10E727DF802F005280DB /* RequestWrapper.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1091,6 +1094,7 @@
 				96224C9F25348EAF002C1988 /* ABTestsManagerDelegate.swift in Sources */,
 				96224C7A25348576002C1988 /* ABTestsOutput.swift in Sources */,
 				968E40DA2540E61A006F3CFC /* PushNotificationsManager.swift in Sources */,
+				DE2B10E827DF802F005280DB /* RequestWrapper.swift in Sources */,
 				9619CA6B25A3254000C0D03C /* SDKConfiguration.swift in Sources */,
 				96224E0225374AD2002C1988 /* BranchManagerCore.swift in Sources */,
 				96224DB52535E374002C1988 /* SDKIAPMediator.swift in Sources */,
@@ -1283,7 +1287,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.12;
+				MARKETING_VERSION = 2.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1313,7 +1317,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.12;
+				MARKETING_VERSION = 2.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = akonst.RushSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

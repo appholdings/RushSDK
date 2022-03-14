@@ -13,6 +13,8 @@ final class ADAttributionsManagerCore: ADAttributionsManager {
     
     private let disposeBag = DisposeBag()
     
+    private let requestWrapper = RequestWrapper()
+    
     private init() {}
 }
 
@@ -194,7 +196,7 @@ private extension ADAttributionsManagerCore {
             return
         }
         
-        RestAPITransport()
+        requestWrapper
             .callServerApi(requestBody: SetADLinkAttributionsRequest(domain: domain,
                                                                      apiKey: apiKey,
                                                                      anonymousID: SDKStorage.shared.applicationAnonymousID,
@@ -233,7 +235,7 @@ private extension ADAttributionsManagerCore {
             return
         }
         
-        RestAPITransport()
+        requestWrapper
             .callServerApi(requestBody: SetADAttributionsRequest(domain: domain,
                                                                  apiKey: apiKey,
                                                                  anonymousId: SDKStorage.shared.applicationAnonymousID,
@@ -273,8 +275,7 @@ private extension ADAttributionsManagerCore {
                                                anonymousId: SDKStorage.shared.applicationAnonymousID,
                                                adServiceToken: adServiceToken)
         
-        SDKStorage.shared
-            .restApiTransport
+        requestWrapper
             .callServerApi(requestBody: request)
             .subscribe()
             .disposed(by: disposeBag)
