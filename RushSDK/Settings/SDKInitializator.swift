@@ -233,19 +233,18 @@ private extension SDKInitializator {
         guard let userToken = receipt?.userToken else {
             return userManager
                 .rxNewFeatureAppUser()
-                .map { _ in true }
+                .map { $0 != nil }
                 .catchAndReturn(false)
         }
 
         return userManager
             .rxFeatureAppLoginUser(with: userToken)
-            .map { _ in true }
             .catchAndReturn(false)
     }
     
     func flatMapUserTokenIfTokenNotNil(receipt: ReceiptValidateResponse?, storedUserToken: String) -> Single<Bool> {
         guard let userToken = receipt?.userToken else {
-            return .deferred { .just(false) }
+            return .deferred { .just(true) }
         }
         
         guard userToken != storedUserToken else {
@@ -253,7 +252,7 @@ private extension SDKInitializator {
         }
         
         guard let core = (userManager as? UserManagerCore) else {
-            return .deferred { .just(false) }
+            return .deferred { .just(true) }
         }
         
         core.purchaseMediatorDidValidateReceipt(response: receipt)

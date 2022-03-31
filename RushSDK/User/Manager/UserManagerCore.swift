@@ -88,7 +88,7 @@ extension UserManagerCore {
         
         return requestWrapper
             .callServerApi(requestBody: request)
-            .map { _ in true }
+            .map { CheckTokenResponseMapper.isValideToken(in: $0)}
             .catchAndReturn(false)
     }
     
