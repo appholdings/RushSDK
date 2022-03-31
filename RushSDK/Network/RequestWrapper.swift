@@ -18,7 +18,7 @@ final class RequestWrapper {
 private extension RequestWrapper {
     func execute(request: APIRequestBody, attempt: Int = 1, maxCount: Int = 3) -> Single<Any> {
         guard attempt <= maxCount else {
-            return .deferred { .error(NSError(domain: "Request wrapper attempt limited", code: 404)) }
+            return .deferred { .error(NetworkError(.serverNotAvailable)) }
         }
         
         print("sdk request wrapper execute request with url: \(request.url), attempt: \(attempt)")

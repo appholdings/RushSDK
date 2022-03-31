@@ -16,7 +16,7 @@ public final class SDKProvider {
 
 // MARK: Инициализация SDK
 public extension SDKProvider {
-    func initialize(settings: SDKSettings, completion: (() -> Void)? = nil) {
+    func initialize(settings: SDKSettings, completion: ((Bool) -> Void)? = nil) {
         let storage = SDKStorage.shared
         
         storage.backendBaseUrl = settings.backendBaseUrl
@@ -38,6 +38,10 @@ public extension SDKProvider {
         SDKNumberLaunches().launch()
         
         sdkInitializator.initialize(completion: completion)
+    }
+    
+    func refreshInstallUserToken(completion: ((Bool) -> Void)? = nil) {
+        sdkInitializator.tryAgain(completion: completion)
     }
 }
 

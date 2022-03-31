@@ -24,16 +24,18 @@ final class SDKInitializator {
     
     private let disposeBag = DisposeBag()
     
-    func initialize(completion: (() -> Void)?) {
+    func initialize(completion: ((Bool) -> Void)?) {
         Observable
-            .zip([
+            .zip(
                 registerInstallTrigger,
                 featureAppUserTrigger,
                 userUpdateMetaDataTrigger,
                 configurationTrigger
-            ])
-            .subscribe(onNext: { _ in
-                completion?()
+            )
+            .subscribe(onNext: { stub in
+                let (_, featureAppUser, _, _) = stub
+                
+                completion?(featureAppUser)
             })
             .disposed(by: disposeBag)
         
@@ -56,6 +58,16 @@ final class SDKInitializator {
         initializeABTests()
         initializeRegisterInstall()
         initializeConfiguration()
+    }
+    
+    func tryAgain(completion: ((Bool) -> Void)?) {
+        tryAgainInitializeUserToken()
+            .subscribe(onSuccess: { success in
+                completion?(success)
+            }, onFailure: { _ in 
+                completion?(false)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -144,6 +156,33 @@ private extension SDKInitializator {
                 self?.featureAppUserTrigger.accept(false)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func tryAgainInitializeUserToken() -> Single<Bool> {
+        checkToken()
+            .flatMap { [weak self] stub -> Single<(ReceiptValidateResponse?, Bool)> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let (userToken, tokenIsValidated) = stub
+                
+                return self.validate(userTokenFromBranch: userToken)
+                    .map { ($0, tokenIsValidated) }
+            }
+            .flatMap { [weak self] stub -> Single<Bool> in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                let (receipt, tokenIsValidated) = stub
+                
+                guard tokenIsValidated, let storedUserToken = SDKStorage.shared.userToken else {
+                    return this.flatMapUserTokenIfTokenNil(receipt: receipt)
+                }
+                
+                return this.flatMapUserTokenIfTokenNotNil(receipt: receipt, storedUserToken: storedUserToken)
+            }
     }
 }
 
