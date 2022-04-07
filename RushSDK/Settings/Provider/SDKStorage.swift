@@ -98,9 +98,6 @@ public final class SDKStorage {
     var pushNotificationsUpdater: PushNotificationsTokenUpdater {
         PushNotificationsTokenUpdater.shared
     }
-    var configurationManager: SDKConfigurationManager {
-        SDKConfigurationManagerCore()
-    }
     
     // MARK: Computed
     public var applicationAnonymousID: String {

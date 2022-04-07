@@ -12,7 +12,6 @@ final class SDKInitializator {
     private let abTestsTrigger = PublishRelay<Bool>()
     private let registerInstallTrigger = PublishRelay<Bool>()
     private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
-    private let configurationTrigger = PublishRelay<Bool>()
     private let featureAppUserTrigger = PublishRelay<Bool>()
     
     private let abTestsManager = SDKStorage.shared.abTestsManager
@@ -20,7 +19,6 @@ final class SDKInitializator {
     private let purchaseManager = SDKStorage.shared.purchaseManager
     private let registerInstallManager = SDKStorage.shared.registerInstallManager
     private let userManager = SDKStorage.shared.userManager
-    private let configurationManager = SDKStorage.shared.configurationManager
     
     private let disposeBag = DisposeBag()
     
@@ -29,11 +27,10 @@ final class SDKInitializator {
             .zip(
                 registerInstallTrigger,
                 featureAppUserTrigger,
-                userUpdateMetaDataTrigger,
-                configurationTrigger
+                userUpdateMetaDataTrigger
             )
             .subscribe(onNext: { stub in
-                let (_, featureAppUser, _, _) = stub
+                let (_, featureAppUser, _) = stub
                 
                 completion?(featureAppUser)
             })
@@ -57,7 +54,6 @@ final class SDKInitializator {
         
         initializeABTests()
         initializeRegisterInstall()
-        initializeConfiguration()
     }
     
     func tryAgain(completion: ((Bool) -> Void)?) {
@@ -103,17 +99,6 @@ private extension SDKInitializator {
                 self?.userUpdateMetaDataTrigger.accept(success)
             }, onError: { [weak self] _ in
                 self?.userUpdateMetaDataTrigger.accept(false)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func initializeConfiguration() {
-        configurationManager
-            .rxObtainConfiguration()
-            .subscribe(onSuccess: { [weak self] config in
-                self?.configurationTrigger.accept(true)
-            }, onFailure: { [weak self] error in
-                self?.configurationTrigger.accept(false)
             })
             .disposed(by: disposeBag)
     }
