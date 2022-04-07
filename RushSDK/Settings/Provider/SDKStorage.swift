@@ -68,9 +68,6 @@ public final class SDKStorage {
     public var userManagerMediator: SDKUserManagerMediator {
         SDKUserManagerMediator.shared
     }
-    var abTestsManager: ABTestsManager {
-        isTest ? ABTestsManagerMock() : ABTestsManagerCore()
-    }
     var facebookManager: FacebookManager {
         FacebookManagerCore.shared
     }
@@ -102,9 +99,6 @@ public final class SDKStorage {
     // MARK: Computed
     public var applicationAnonymousID: String {
         ApplicationAnonymousID.anonymousID
-    }
-    public var abTestsOutput: ABTestsOutput? {
-        abTestsManager.getCachedTests()
     }
     var isFirstLaunch: Bool {
         SDKNumberLaunches().isFirstLaunch()

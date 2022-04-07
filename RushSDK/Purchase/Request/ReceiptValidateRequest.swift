@@ -11,18 +11,15 @@ struct ReceiptValidateRequest: APIRequestBody {
     private let domain: String
     private let apiKey: String
     private let receipt: String
-    private let abTestsValues: [String: Any]?
     private let applicationAnonymousID: String
     
     init(domain: String,
          apiKey: String,
          receipt: String,
-         abTestsValues: [String: Any]?,
          applicationAnonymousID: String) {
         self.domain = domain
         self.apiKey = apiKey
         self.receipt = receipt
-        self.abTestsValues = abTestsValues
         self.applicationAnonymousID = applicationAnonymousID
     }
     
@@ -35,12 +32,10 @@ struct ReceiptValidateRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
-        var params = abTestsValues ?? [:]
-        
-        params["_api_key"] = apiKey
-        params["receipt"] = receipt
-        params["anonymous_id"] = applicationAnonymousID
-        
-        return params
+        [
+            "_api_key": apiKey,
+            "receipt": receipt,
+            "anonymous_id": applicationAnonymousID
+        ]
     }
 }

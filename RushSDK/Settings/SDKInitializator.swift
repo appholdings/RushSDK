@@ -9,12 +9,10 @@ import RxSwift
 import RxCocoa
 
 final class SDKInitializator {
-    private let abTestsTrigger = PublishRelay<Bool>()
     private let registerInstallTrigger = PublishRelay<Bool>()
     private let userUpdateMetaDataTrigger = PublishRelay<Bool>()
     private let featureAppUserTrigger = PublishRelay<Bool>()
     
-    private let abTestsManager = SDKStorage.shared.abTestsManager
     private let iapManager = SDKStorage.shared.iapManager
     private let purchaseManager = SDKStorage.shared.purchaseManager
     private let registerInstallManager = SDKStorage.shared.registerInstallManager
@@ -52,7 +50,6 @@ final class SDKInitializator {
         initializeUserToken()
         initializeUserUpdateMetaData()
         
-        initializeABTests()
         initializeRegisterInstall()
     }
     
@@ -69,17 +66,6 @@ final class SDKInitializator {
 
 // MARK: Private
 private extension SDKInitializator {
-    func initializeABTests() {
-        abTestsManager
-            .rxObtainTests()
-            .subscribe(onSuccess: { [weak self] _ in
-                self?.abTestsTrigger.accept(true)
-            }, onFailure: { [weak self] _ in
-                self?.abTestsTrigger.accept(false)
-            })
-            .disposed(by: disposeBag)
-    }
-    
     func initializeRegisterInstall() {
         registerInstallManager
             .register { [weak self] result in
@@ -88,31 +74,19 @@ private extension SDKInitializator {
     }
     
     func initializeUserUpdateMetaData() {
-        abTestsTrigger
-            .flatMap { [userManager] success in
-                userManager
-                    .rxUpdateMetaData()
-                    .map { _ in true }
-                    .catchAndReturn(false)
-            }
-            .subscribe(onNext: { [weak self] success in
-                self?.userUpdateMetaDataTrigger.accept(success)
-            }, onError: { [weak self] _ in
+        userManager
+            .rxUpdateMetaData()
+            .subscribe(onSuccess: { [weak self] _ in
+                self?.userUpdateMetaDataTrigger.accept(true)
+            }, onFailure: { [weak self] _ in
                 self?.userUpdateMetaDataTrigger.accept(false)
             })
             .disposed(by: disposeBag)
     }
     
     func initializeUserToken() {
-        abTestsTrigger
-            .flatMapLatest { [weak self] success -> Single<(String?, Bool)> in
-                guard let self = self else {
-                    return .just((nil, false))
-                }
-                
-                return self.checkToken()
-            }
-            .flatMapLatest { [weak self] stub -> Single<(ReceiptValidateResponse?, Bool)> in
+        checkToken()
+            .flatMap { [weak self] stub -> Single<(ReceiptValidateResponse?, Bool)> in
                 guard let self = self else {
                     return .never()
                 }
@@ -135,9 +109,9 @@ private extension SDKInitializator {
                 
                 return this.flatMapUserTokenIfTokenNotNil(receipt: receipt, storedUserToken: storedUserToken)
             }
-            .subscribe(onNext: { [weak self] success in
+            .subscribe(onSuccess: { [weak self] success in
                 self?.featureAppUserTrigger.accept(success)
-            }, onError: { [weak self] _ in
+            }, onFailure: { [weak self] _ in
                 self?.featureAppUserTrigger.accept(false)
             })
             .disposed(by: disposeBag)

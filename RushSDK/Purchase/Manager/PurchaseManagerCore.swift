@@ -43,23 +43,16 @@ private extension PurchaseManagerCore {
         }
         
         let receipt = SDKStorage.shared.iapManager.retrieveReceipt(forceUpdate: false)
-        let abTestsValues = Single<[String: Any]?>
-            .deferred {
-                let dictionary = SDKStorage.shared.abTestsManager.getCachedTests()?.dictionary
-                return .just(dictionary)
-            }
         
-        return Single
-            .zip(receipt, abTestsValues)
-            .flatMap { [weak self] stub -> Single<ReceiptValidateResponse?> in
-                guard let self = self, let receipt = stub.0 else {
+        return receipt
+            .flatMap { [weak self] receipt -> Single<ReceiptValidateResponse?> in
+                guard let self = self, let receipt = receipt else {
                     return Single<ReceiptValidateResponse?>.just(nil)
                 }
                 
                 let request = ReceiptValidateRequest(domain: domain,
                                                      apiKey: apiKey,
                                                      receipt: receipt,
-                                                     abTestsValues: stub.1,
                                                      applicationAnonymousID: SDKStorage.shared.applicationAnonymousID)
                 
                 return self.requestWrapper
