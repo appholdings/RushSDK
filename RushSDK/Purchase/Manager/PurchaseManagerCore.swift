@@ -9,6 +9,8 @@ import RxSwift
 
 final class PurchaseManagerCore: PurchaseManager {
     private let requestWrapper = RequestWrapper()
+    
+    private lazy var iapManager = SDKStorage.shared.iapManager
 }
 
 // MARK: PurchaseManager
@@ -42,7 +44,7 @@ private extension PurchaseManagerCore {
             return Single.error(PurchaseError(code: .sdkNotInitialized))
         }
         
-        let receipt = SDKStorage.shared.iapManager.retrieveReceipt(forceUpdate: false)
+        let receipt = iapManager.retrieveReceipt(forceUpdate: false)
         
         return receipt
             .flatMap { [weak self] receipt -> Single<ReceiptValidateResponse?> in

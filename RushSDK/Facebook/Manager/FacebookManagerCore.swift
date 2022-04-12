@@ -11,6 +11,8 @@ import RxSwift
 final class FacebookManagerCore: FacebookManager {
     static let shared = FacebookManagerCore()
     
+    private lazy var iapManager = SDKStorage.shared.iapManager
+    
     private let disposeBag = DisposeBag()
     
     private init() {}
@@ -98,15 +100,14 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
             return
         }
         
-        SDKStorage.shared
-            .iapManager
+        iapManager
             .obtainProducts(ids: [productId])
             .subscribe(onSuccess: { products in
                 guard let product = products.first(where: { $0.product.productIdentifier == productId })?.product else {
                     return
                 }
                 
-                let isSubscription = SDKStorage.shared.iapManager.isSubscription(product: product)
+                let isSubscription = Self.shared.iapManager.isSubscription(product: product)
                 
                 let factor: Double = isSubscription ? 0 : 1
                 

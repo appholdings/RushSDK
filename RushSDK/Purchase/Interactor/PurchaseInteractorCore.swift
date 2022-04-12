@@ -7,7 +7,10 @@
 
 import RxSwift
 
-final class PurchaseInteractorCore: PurchaseInteractor {}
+final class PurchaseInteractorCore: PurchaseInteractor {
+    private lazy var iapManager = SDKStorage.shared.iapManager
+    private lazy var purchaseManager = SDKStorage.shared.purchaseManager
+}
 
 // MARK: PurchaseInteractor
 extension PurchaseInteractorCore {
@@ -29,14 +32,18 @@ extension PurchaseInteractorCore {
 // MARK: Private
 private extension PurchaseInteractorCore {
     func executeMakeActiveSubscriptionByBuy(productId: String) -> Single<PurchaseActionResult> {
-        SDKStorage.shared.iapManager
+        iapManager
             .buyProduct(with: productId)
-            .flatMap { result in
+            .flatMap { [weak self] result in
+                guard let self = self else {
+                    return .never()
+                }
+                
                 switch result {
                 case .cancelled:
                     return .just(PurchaseActionResult.cancelled)
                 case .completed:
-                    return SDKStorage.shared.purchaseManager
+                    return self.purchaseManager
                         .validateReceipt()
                         .map { PurchaseActionResult.completed($0) }
                 }
@@ -44,9 +51,9 @@ private extension PurchaseInteractorCore {
     }
     
     func executeMakeActiveSubscriptionByRestore() -> Single<PurchaseActionResult> {
-        SDKStorage.shared.iapManager
+        iapManager
             .restorePurchases()
-            .andThen(SDKStorage.shared.purchaseManager.validateReceipt())
+            .andThen(purchaseManager.validateReceipt())
             .map { PurchaseActionResult.completed($0) }
     }
 }

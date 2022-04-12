@@ -121,7 +121,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.1.0)
-  - RushSDK (2.10.2):
+  - RushSDK (2.11.1):
     - Alamofire
     - Amplitude-iOS
     - AppsFlyerFramework
@@ -205,7 +205,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
-  RushSDK: 3f33c4e198f91673b372dd0e8f9355b0009bfeb4
+  RushSDK: e658eb551dd84095223171f050897bff0d6e6d3b
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8

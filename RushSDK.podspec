@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "RushSDK"
-  spec.version      = "2.11.1"
+  spec.version      = "2.11.2"
   spec.summary      = "SDK for analytics in Rush apps"
   spec.description  = "SDK for analytics in Rush apps"
   spec.homepage     = "https://github.com/AgentChe/"
