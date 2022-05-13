@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class InfoHelper {
     static var locale: String? {
@@ -22,5 +23,9 @@ final class InfoHelper {
     
     static var countryCode: String? {
         (Locale.current as NSLocale).countryCode
+    }
+    
+    static var idfv: String? {
+        UIDevice.current.identifierForVendor?.uuidString
     }
 }
