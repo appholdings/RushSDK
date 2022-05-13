@@ -28,6 +28,7 @@ extension BranchManagerCore {
         
         SDKStorage.shared.featureAppMediator.add(delegate: self)
         SDKStorage.shared.purchaseMediator.add(delegate: self)
+        SDKStorage.shared.iapMediator.add(delegate: self)
         
         return true
     }
@@ -88,6 +89,14 @@ extension BranchManagerCore: SDKPurchaseMediatorDelegate {
             
             log(text: "branch set userId: \(userId) in purchaseMediatorDidValidateReceipt")
         }
+    }
+}
+
+// MARK: SDKIAPMediatorDelegate
+extension BranchManagerCore: SDKIAPMediatorDelegate {
+    func iapMediatorBiedProduct(with result: IAPActionResult) {
+        BranchEvent(name: "CLIENT_SUBSCRIBE_OR_PURCHASE")
+            .logEvent()
     }
 }
 

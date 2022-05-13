@@ -43,7 +43,7 @@ extension RegisterInstallManagerCore {
         guard
             let domain = SDKStorage.shared.backendBaseUrl,
             let apiKey = SDKStorage.shared.backendApiKey,
-            let url = URL(string: String(format: "%@/api/sdk/register_install?_api_key=%@&anonymous_id=%@&currency=%@&locale=%@&country=%@&idfv=%@",
+            let url = URL(string: String(format: "%@/api/sdk/register_install?_api_key=%@&anonymous_id=%@&currency=%@&locale=%@&country=%@&platform_instance_identifier=%@",
                                          domain, apiKey,
                                          SDKStorage.shared.applicationAnonymousID,
                                          InfoHelper.currencyCode ?? "",
