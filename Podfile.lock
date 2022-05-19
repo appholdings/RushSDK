@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (5.6.1)
   - Amplitude-iOS (4.10.0)
-  - AppsFlyerFramework (6.6.0):
-    - AppsFlyerFramework/Main (= 6.6.0)
-  - AppsFlyerFramework/Main (6.6.0)
+  - AppsFlyerFramework (6.6.1):
+    - AppsFlyerFramework/Main (= 6.6.1)
+  - AppsFlyerFramework/Main (6.6.1)
   - Branch (1.41.0)
   - FBAEMKit (13.2.0):
     - FBSDKCoreKit_Basics (= 13.2.0)
@@ -124,7 +124,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.1.0)
-  - RushSDK (2.11.2):
+  - RushSDK (2.11.3):
     - Alamofire
     - Amplitude-iOS
     - AppsFlyerFramework
@@ -192,7 +192,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
-  AppsFlyerFramework: 55821f40c687dc7a683835eeb821994cef437807
+  AppsFlyerFramework: 5e4b385a27dc6179e132b1617f76809412eb2f88
   Branch: bd6c472d6cab03206877ac86c1241327a3f217d1
   FBAEMKit: c2b2895363b7e57192013d1dc49fdf498b28624c
   FBSDKCoreKit: 58139803d861e72c7661dc875611a759352a55ac
@@ -210,7 +210,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
-  RushSDK: a6ee5bfc19d5d5ddd997c6f2b26a8f06584ac100
+  RushSDK: b7414c469507f6cf2cf2c51fab4fce5c4c3b7a21
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8

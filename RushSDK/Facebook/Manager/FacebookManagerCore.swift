@@ -7,6 +7,7 @@
 
 import FBSDKCoreKit
 import RxSwift
+import StoreKit
 
 final class FacebookManagerCore: FacebookManager {
     static let shared = FacebookManagerCore()
@@ -107,16 +108,8 @@ extension FacebookManagerCore: SDKIAPMediatorDelegate {
                     return
                 }
                 
-                let isSubscription = Self.shared.iapManager.isSubscription(product: product)
-                
-                let factor: Double = isSubscription ? 0 : 1
-                
-                let price = product.price.doubleValue * factor
-                let currency = product.priceLocale.currencyCode ?? "unknown"
-                
-                AppEvents.shared.logPurchase(amount: price, currency: currency)
-                
-                log(text: "faceboook log purchase with price: \(price), currency: \(currency)")
+                FacebookManagerCore.shared.logPurchase(product: product)
+                FacebookManagerCore.shared.logEventAfterPurchase(product: product)
             })
             .disposed(by: disposeBag)
     }
@@ -145,4 +138,28 @@ extension FacebookManagerCore {
         let eventName = AppEvents.Name(name)
         AppEvents.shared.logEvent(eventName)
     }
+    
+    func logPurchase(product: SKProduct) {
+        let isSubscription = Self.shared.iapManager.isSubscription(product: product)
+
+        let factor: Double = isSubscription ? 0 : 1
+        
+        let price = product.price.doubleValue * factor
+        let currency = product.priceLocale.currencyCode ?? "unknown"
+
+        AppEvents.shared.logPurchase(amount: price, currency: currency)
+
+        log(text: "faceboook log purchase with price: \(price), currency: \(currency)")
+    }
+
+     func logEventAfterPurchase(product: SKProduct) {
+         if let userId = SDKStorage.shared.userId {
+             set(userID: userId)
+         }
+
+         let isSubscription = SDKStorage.shared.iapManager.isSubscription(product: product)
+
+         let logName = isSubscription ? "StartTrial" : "fb_mobile_purchase"
+         logEvent(name: logName)
+     }
 }
