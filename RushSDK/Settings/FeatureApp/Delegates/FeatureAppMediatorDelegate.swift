@@ -6,9 +6,9 @@
 //
 
 protocol FeatureAppMediatorDelegate: AnyObject {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String)
+    func featureAppMediatorDidUpdate(userId: String, userToken: String)
 }
 
-extension FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {}
-}
+//extension FeatureAppMediatorDelegate {
+//    func featureAppMediatorDidUpdate(userId: String, userToken: String) {}
+//}

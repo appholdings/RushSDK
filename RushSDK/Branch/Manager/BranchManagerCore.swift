@@ -74,8 +74,8 @@ extension BranchManagerCore {
 
 // MARK: FeatureAppMediatorDelegate
 extension BranchManagerCore: FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
-        Branch.getInstance().setIdentity(String(userId))
+    func featureAppMediatorDidUpdate(userId: String, userToken: String) {
+        Branch.getInstance().setIdentity(userId)
         
         log(text: "branch set userId: \(userId) in featureAppMediatorDidUpdate")
     }

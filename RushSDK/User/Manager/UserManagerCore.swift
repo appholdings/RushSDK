@@ -125,7 +125,7 @@ extension UserManagerCore: SDKPurchaseMediatorDelegate {
 
 // MARK: FeatureAppMediatorDelegate
 extension UserManagerCore: FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
+    func featureAppMediatorDidUpdate(userId: String, userToken: String) {
         updateMetaDataAfterReceive(userToken: userToken)
         syncTokens(userToken: userToken)
         

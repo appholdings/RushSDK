@@ -42,7 +42,7 @@ extension AppsFlyerManagerCore {
 
 // MARK: FeatureAppMediatorDelegate
 extension AppsFlyerManagerCore: FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
+    func featureAppMediatorDidUpdate(userId: String, userToken: String) {
         set(userId: userId)
     }
 }
@@ -51,7 +51,7 @@ extension AppsFlyerManagerCore: FeatureAppMediatorDelegate {
 extension AppsFlyerManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            set(userId: userId)
+            set(userId: String(userId))
         }
     }
 }
@@ -62,7 +62,7 @@ private extension AppsFlyerManagerCore {
         SDKStorage.shared.appsFlyerApiKey != nil && SDKStorage.shared.appleAppID != nil
     }
     
-    func set(userId: Int) {
-        AppsFlyerLib.shared().customerUserID = String(userId)
+    func set(userId: String) {
+        AppsFlyerLib.shared().customerUserID = userId
     }
 }

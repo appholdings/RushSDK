@@ -75,7 +75,7 @@ extension FacebookManagerCore {
 extension FacebookManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            set(userID: userId)
+            set(userID: String(userId))
             logEvent(name: "client_user_id_set")
             
             log(text: "facebook set userId: \(userId) in purchaseMediatorDidValidateReceipt")
@@ -85,7 +85,7 @@ extension FacebookManagerCore: SDKPurchaseMediatorDelegate {
 
 // MARK: FeatureAppMediatorDelegate
 extension FacebookManagerCore: FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
+    func featureAppMediatorDidUpdate(userId: String, userToken: String) {
         set(userID: userId)
         logEvent(name: "client_user_id_set")
         
@@ -137,8 +137,8 @@ extension FacebookManagerCore {
         }
     }
     
-    func set(userID: Int) {
-        AppEvents.shared.userID = String(userID)
+    func set(userID: String) {
+        AppEvents.shared.userID = userID
     }
     
     func logEvent(name: String) {

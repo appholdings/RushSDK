@@ -20,7 +20,7 @@ public struct SDKSettings {
     let applicationTag: String?
     
     let userToken: String?
-    let userId: Int?
+    let userId: String?
     
     let view: Weak<UIView>?
     
@@ -41,7 +41,7 @@ public struct SDKSettings {
         firebaseActive: Bool = false,
         applicationTag: String? = nil,
         userToken: String? = nil,
-        userId: Int? = nil,
+        userId: String? = nil,
         view: UIView? = nil,
         shouldAddStorePayment: Bool = false,
         featureAppBackendUrl: String? = nil,

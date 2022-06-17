@@ -26,7 +26,7 @@ public final class SDKStorage {
     var firebaseActive: Bool = false 
     var applicationTag: String?
     var userToken: String?
-    var userId: Int?
+    var userId: String?
     var view: Weak<UIView>?
     var shouldAddStorePayment: Bool = false 
     var isTest: Bool = false
@@ -112,14 +112,14 @@ extension SDKStorage: SDKPurchaseMediatorDelegate {
             return
         }
         
-        self.userId = userId
+        self.userId = String(userId)
         self.userToken = userToken
     }
 }
 
 // MARK: FeatureAppMediatorDelegate
 extension SDKStorage: FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
+    func featureAppMediatorDidUpdate(userId: String, userToken: String) {
         self.userId = userId
         self.userToken = userToken
     }

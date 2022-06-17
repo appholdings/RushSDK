@@ -59,7 +59,7 @@ extension AmplitudeManagerCore {
 
 // MARK: FeatureAppMediatorDelegate
 extension AmplitudeManagerCore: FeatureAppMediatorDelegate {
-    func featureAppMediatorDidUpdate(userId: Int, userToken: String) {
+    func featureAppMediatorDidUpdate(userId: String, userToken: String) {
         set(userId: userId)
         syncedUserIdIfNeeded(userId)
     }
@@ -69,8 +69,8 @@ extension AmplitudeManagerCore: FeatureAppMediatorDelegate {
 extension AmplitudeManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            set(userId: userId)
-            syncedUserIdIfNeeded(userId)
+            set(userId: String(userId))
+            syncedUserIdIfNeeded(String(userId))
         }
     }
 }
@@ -88,20 +88,20 @@ private extension AmplitudeManagerCore {
         }
     }
     
-    func set(userId: Int) {
+    func set(userId: String) {
         guard let applicationTag = SDKStorage.shared.applicationTag else {
             return
         }
         
-        let logTag = String(format: "%@_%i", applicationTag, userId)
+        let logTag = String(format: "%@_%@", applicationTag, userId)
         
         Amplitude.instance()?.setUserId(logTag)
         
         log(text: "amplitude set userId: \(logTag)")
     }
     
-    func syncedUserIdIfNeeded(_ userId: Int) {
-        var userIdList = UserDefaults.standard.array(forKey: Constants.userIdListKey) as? [Int] ?? [Int]()
+    func syncedUserIdIfNeeded(_ userId: String) {
+        var userIdList = UserDefaults.standard.array(forKey: Constants.userIdListKey) as? [String] ?? [String]()
         
         if !userIdList.contains(userId) {
             logEvent(name: "UserIDSynced")
