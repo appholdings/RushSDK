@@ -75,7 +75,7 @@ extension FacebookManagerCore {
 extension FacebookManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            set(userID: String(userId))
+            set(userID: userId)
             logEvent(name: "client_user_id_set")
             
             log(text: "facebook set userId: \(userId) in purchaseMediatorDidValidateReceipt")

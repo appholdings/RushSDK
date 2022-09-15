@@ -51,7 +51,7 @@ extension AppsFlyerManagerCore: FeatureAppMediatorDelegate {
 extension AppsFlyerManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            set(userId: String(userId))
+            set(userId: userId)
         }
     }
 }

@@ -15,7 +15,7 @@ public final class SDKIAPMediator {
 
 // MARK: API
 extension SDKIAPMediator {
-    func notifyAboutBiedProduct(with result: IAPActionResult) {
+    public func notifyAboutBiedProduct(with result: IAPActionResult) {
         DispatchQueue.main.async {
             SDKIAPMediator.shared.delegates.forEach {
                 $0.weak?.iapMediatorBiedProduct(with: result)
@@ -23,7 +23,7 @@ extension SDKIAPMediator {
         }
     }
     
-    func notifyAboutRestoredPurchases() {
+    public func notifyAboutRestoredPurchases() {
         DispatchQueue.main.async {
             SDKIAPMediator.shared.delegates.forEach {
                 $0.weak?.iapMediatorRestoredPurchases()

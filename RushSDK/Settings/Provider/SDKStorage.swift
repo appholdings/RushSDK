@@ -112,7 +112,7 @@ extension SDKStorage: SDKPurchaseMediatorDelegate {
             return
         }
         
-        self.userId = String(userId)
+        self.userId = userId
         self.userToken = userToken
     }
 }

@@ -21,7 +21,7 @@ public final class SDKPurchaseMediator {
 
 // MARK: API
 extension SDKPurchaseMediator {
-    func notifyAboutValidateReceiptCompleted(with response: ReceiptValidateResponse?) {
+    public func notifyAboutValidateReceiptCompleted(with response: ReceiptValidateResponse?) {
         DispatchQueue.main.async { [weak self] in
             SDKPurchaseMediator.shared.delegates.forEach {
                 $0.weak?.purchaseMediatorDidValidateReceipt(response: response)
@@ -31,7 +31,7 @@ extension SDKPurchaseMediator {
         }
     }
     
-    func notifyAboutMakedActiveSubscriptionByBuy(with result: PurchaseActionResult) {
+    public func notifyAboutMakedActiveSubscriptionByBuy(with result: PurchaseActionResult) {
         DispatchQueue.main.async { [weak self] in
             SDKPurchaseMediator.shared.delegates.forEach {
                 $0.weak?.purchaseMediatorDidMakedActiveSubscriptionByBuy(result: result)
@@ -41,7 +41,7 @@ extension SDKPurchaseMediator {
         }
     }
     
-    func notifyAboutMakedActiveSubscriptionByRestore(with result: PurchaseActionResult) {
+    public func notifyAboutMakedActiveSubscriptionByRestore(with result: PurchaseActionResult) {
         DispatchQueue.main.async { [weak self] in
             SDKPurchaseMediator.shared.delegates.forEach {
                 $0.weak?.purchaseMediatorDidMakedActiveSubscriptionByRestore(result: result)

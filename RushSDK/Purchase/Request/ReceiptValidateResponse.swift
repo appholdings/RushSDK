@@ -20,7 +20,7 @@ final class ReceiptValidateResponseMapper {
 }
 
 public struct ReceiptValidateResponse: Decodable {
-    public let userId: Int
+    public let userId: String
     public let userToken: String
     public let activeSubscription: Bool
     public let accessValidTill: String
@@ -37,7 +37,7 @@ public struct ReceiptValidateResponse: Decodable {
         case userSince = "user_since"
     }
     
-    init(userId: Int,
+    public init(userId: String,
          userToken: String,
          activeSubscription: Bool,
          accessValidTill: String,
@@ -56,7 +56,9 @@ public struct ReceiptValidateResponse: Decodable {
         
         let data = try container.nestedContainer(keyedBy: Keys.self, forKey: .data)
         
-        userId = try data.decode(Int.self, forKey: .userId)
+        let intUserId = try data.decode(Int.self, forKey: .userId)
+        userId = String(intUserId)
+        
         userToken = try data.decode(String.self, forKey: .userToken)
         activeSubscription = try data.decode(Bool.self, forKey: .activeSubscription)
         accessValidTill = try data.decode(String.self, forKey: .accessValidTill)

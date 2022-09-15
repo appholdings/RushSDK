@@ -85,7 +85,7 @@ extension BranchManagerCore: FeatureAppMediatorDelegate {
 extension BranchManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            Branch.getInstance().setIdentity(String(userId))
+            Branch.getInstance().setIdentity(userId)
             
             log(text: "branch set userId: \(userId) in purchaseMediatorDidValidateReceipt")
         }

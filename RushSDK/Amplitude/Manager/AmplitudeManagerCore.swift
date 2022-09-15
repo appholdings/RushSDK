@@ -69,8 +69,8 @@ extension AmplitudeManagerCore: FeatureAppMediatorDelegate {
 extension AmplitudeManagerCore: SDKPurchaseMediatorDelegate {
     func purchaseMediatorDidValidateReceipt(response: ReceiptValidateResponse?) {
         if let userId = response?.userId {
-            set(userId: String(userId))
-            syncedUserIdIfNeeded(String(userId))
+            set(userId: userId)
+            syncedUserIdIfNeeded(userId)
         }
     }
 }
