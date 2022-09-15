@@ -80,4 +80,10 @@ extension RegisterInstallManagerCore: WKNavigationDelegate {
         
         log(text: "register install manager complete failure")
     }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        completion?(false)
+        
+        log(text: "register install manager complete failure")
+    }
 }
