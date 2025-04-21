@@ -5,20 +5,20 @@
 //  Created by Andrey Chernyshev on 14.10.2020.
 //
 
-import iAd
-
 final class ADAttributionDetails {
     func request(handler: @escaping ([String: Any]?) -> Void) {
         guard isAvailable() else {
             handler(nil)
             return
         }
-        
+
+        /*        
         ADClient.shared().requestAttributionDetails { details, _ in
             let attributionsDetails = details?.first?.value as? [String: Any] ?? [:]
             
             handler(attributionsDetails)
         }
+        */
     }
     
     func isTest(attributionsDetails: [String: Any]) -> Bool {
@@ -34,6 +34,10 @@ private extension ADAttributionDetails {
         let os = ProcessInfo().operatingSystemVersion
         
         guard os.majorVersion <= 14 else {
+            return false
+        }
+        
+        guard os.majorVersion > 15 else {
             return false
         }
         
